@@ -26,6 +26,7 @@
 \newcommand{\PP}{\mathbb P}
 \newcommand{\OO}{\mathcal O}
 \renewcommand{\to}{\rightarrow}
+\newcommand{\pr}{\rm{pr}}
 \newcommand{\A}{\mathcal A}
 \newcommand{\B}{\mathcal B}
 \newcommand{\X}{\mathcal X}
@@ -64,7 +65,6 @@
 \newcommand{\Isom}{\text{Isom}}
 \newcommand{\Spec}{\operatorname{Spec}}
 \newcommand{\Pic}{\operatorname{Pic}}
-\newcommand{\pr}{\operatorname{pr}}
 \newcommand{\id}{{\rm id}}
 
 \theoremstyle{plain}
@@ -315,7 +315,11 @@ Note that the only type of nodal curves that we are getting rid of is the one wi
 \begin{thm}
 There exists a morphism $\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}\to\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}(1)$ which extends the identity on the smooth locus.
 \end{thm} 
-Since it is hard to define such a map on an arbitrary base, we proceed as follows. Let $\mathcal C$ and $\mathcal C'$ be the universal curves over $\mathfrak{M}:=\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}$ and $\mathfrak{M}':=\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}(1)$ respectively. Abusing notation slightly, we will still write $\mathcal C$ and $\mathcal C'$ for their pullbacks to the product $\mathfrak{M}\times\mathfrak{M}'$ along the two projections. The proof of the theorem follows from two Lemmas:
+We approach the proof in two different manners: first we adopt the strategy of constructing the graph of such morphism and prove that projection on the source is an isomorphism; second we construct the $1$-stabilisation at the level of curves with divisors with an argument \'{a} la Hassett \cite{HassettHyeon}, then argue that it descends to a morphism between moduli spaces of weighted curves.
+
+\subsection{First approach: the graph}
+
+Let $\mathcal C$ and $\mathcal C'$ be the universal curves over $\mathfrak{M}:=\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}$ and $\mathfrak{M}':=\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}(1)$ respectively. Abusing notation, we will still write $\mathcal C$ and $\mathcal C'$ for their pullbacks to the product $\mathfrak{M}\times\mathfrak{M}'$ along the two projections. The proof of the theorem follows from two Lemmas:
 
 \begin{lem}\label{lemma:def_X}
  There is a locally closed substack $\mathcal X\subseteq\operatorname{Mor}_{\mathfrak{M}\times\mathfrak{M}'}(\mathcal C,\mathcal C')$ representing morphisms $C\to C'$ that contract weight-zero elliptic tails to cusps and are weight-preserving isomorphisms everywhere else. 
@@ -326,24 +330,24 @@ Since it is hard to define such a map on an arbitrary base, we proceed as follow
 \end{lem}
 
 \begin{proof}\ref{lemma:def_X}
-Recall that $\operatorname{Mor}_{\mathfrak{M}\times\mathfrak{M}'}(\mathcal C,\mathcal C')$ is an algebraic stack; in fact the map to $\mathfrak{M}\times\mathfrak{M}'$ is representable by Grothendieck's theory of the Hilbert scheme for projective morphisms. We now proceed to construct $\mathcal X$ as a locally closed substack in the space of morphisms.
+Recall that $\operatorname{Mor}_{\mathfrak{M}\times\mathfrak{M}'}(\mathcal C,\mathcal C')$ is an algebraic stack; in fact the map to $\mathfrak{M}\times\mathfrak{M}'$ is representable (by algebraic spaces) \cite{OlssonHOM}. We now proceed to construct $\mathcal X$ as a locally closed substack in the space of morphisms.
 
 \begin{description}[labelindent=0cm,leftmargin=\parindent]
 
 \item[Step 1] Consider
  \[\pi\colon\mathfrak{P}=\mathfrak{Pic}^{tot deg=d,st}_{1,n}\to\mathfrak{M},\ \pi'\colon\mathfrak{P}'=\mathfrak{Pic}^{tot deg=d,st}_{1,n}(1)\to\mathfrak{M}'\]
-  the Picard stacks on $\mathfrak{M}$ and $\mathfrak{M'}$ with universal line bundles $\mathfrak{L}$ and $\mathfrak{L'}$, where $\pi$ and $\pi'$ are defined by taking the multi-degree of line bundles. We can now look at the algebraic stack $\operatorname{Mor}_{\mathfrak{P}\times\mathfrak{P}'}(\mathcal C,\mathcal C')$ with universal morphism
+  the Picard stacks of $\cC\to\mathfrak{M}$ and $\cC'\to\mathfrak{M'}$ with universal line bundles $\mathfrak{L}$ and $\mathfrak{L'}$, where $\pi$ and $\pi'$ are defined by taking the multi-degree of line bundles. We can now look at the algebraic stack $\operatorname{Mor}_{\mathfrak{P}\times\mathfrak{P}'}(\mathcal C,\mathcal C')$ with universal morphism
  $\Phi$ and natural projection $\Pi$ to $\operatorname{Mor}_{\mathfrak{M}\times\mathfrak{M}'}(\mathcal C,\mathcal C')$. We claim that there exists a locally closed substack $\mathcal{Y'}\subseteq \operatorname{Mor}_{\mathfrak{P}\times\mathfrak{P}'}(\mathcal C,\mathcal C')$ representing those morphisms that \emph{preserve the line bundles}. Indeed, given a chart 
- \begin{equation}\label{equation:Spoints} 
+ \begin{equation*}%\label{equation:Spoints} 
  S\to\operatorname{Mor}_{\mathfrak{P}\times\mathfrak{P}'}(\mathcal C,\mathcal C'),
-  \end{equation} 
-   the locus of $s\in S$ where $\Phi_s^*\mathfrak{L}'_s\cong\mathfrak{L}_s$ is nothing else than the locus $T$ where the two sections $\mathfrak{L}_S$ and $\Phi_S^*\mathfrak{L}'_S$ of $\mathfrak{P}(S)\to\mathfrak{M}(S)$ induced by \ref{equation:Spoints} coincide. In other words, we are looking for the fiber product 
+  \end{equation*} 
+   the locus of $s\in S$ where $\Phi_s^*\mathfrak{L}'_s\cong\mathfrak{L}_s$ is nothing else than the locus $T$ where the two sections $\mathfrak{L}_S$ and $\Phi_S^*\mathfrak{L}'_S$ of $\mathfrak{P}(S)\to\mathfrak{M}(S)$ coincide. In other words, we are looking at the fiber product 
   \[\xymatrix{T\ar[r]\ar[d]&\mathfrak{P}\ar[d]^{\Delta}\\
   S\ar[r]&\mathfrak{P}\times_{\mathfrak{M}}\mathfrak{P}}\]
-Being $\mathfrak{P}\to\mathfrak{M}$ representable by schemes, it follows that $U\to S$ is a locally closed immersion.
+Being $\mathfrak{P}\to\mathfrak{M}$ representable by locally separated algebraic spaces \cite[Theorem~8.3.1]{neron}, $\Delta$ is a quasi-compact locally closed immersion \cite[\href{http://stacks.math.columbia.edu/tag/04YU}{Tag 04YU}]{stacks-project}, so in particular $T\subseteq S$ is locally closed.
 
 \item[Step 2] 
-Furthermore, there is a closed substack $\mathcal Y\subseteq \mathcal Y'$ representing \emph{surjective morphisms that preserve the markings}.
+Furthermore there is a closed substack $\mathcal Y\subseteq \mathcal Y'$ representing \emph{surjective morphisms that preserve the markings}.
 
 Given a chart $S\to\operatorname{Mor}_{\mathfrak{P}\times\mathfrak{P}'}(\mathcal C,\mathcal C')$, the locus of $s\in S$ where $\Phi_s$ is marking-preserving is the equaliser of the two sections
 \bcd
@@ -351,65 +355,103 @@ S \ar[r,shift left, "\times\sigma_i'" above]\ar[r,shift right,"\times\Phi\circ\s
 \ecd
 This defines a closed subscheme of $S$, since $\mathcal C_S'\to S$ is separated.
 
-As regards surjectivity, since $\Phi$ is proper, and by upper semicontinuity of the dimension of the fiber \cite[\href{http://stacks.math.columbia.edu/tag/0D4I}{Tag 0D4I}]{stacks-project}, the locus in $\mathcal C_S'$ where the fiber of $\Phi$ is empty is open. The complement of its image in $S$ is the locus we were after.
+As regards surjectivity, since $\Phi$ is proper and the dimension of the fiber is upper semicontinuous \cite[\href{http://stacks.math.columbia.edu/tag/0D4I}{Tag 0D4I}]{stacks-project}, the locus in $\mathcal C_S'$ where the fiber of $\Phi$ is empty is open. Its image in $S$ is open by flatness of $\cC'\to S$ \cite[\href{http://stacks.math.columbia.edu/tag/01UA}{Tag 01UA}]{stacks-project}, and the complement of it is the locus we need.
  
-\item[Step 3] Let $\mathcal{X}'$ be the image of $\mathcal Y$ under $\Pi$. This is a constructible substack of $\operatorname{Mor}_{\mathfrak{M}\times\mathfrak{M}'}(\mathcal C,\mathcal C')$ by Chevalley's theorem \cite[\href{http://stacks.math.columbia.edu/tag/054K}{Tag 054K}]{stacks-project}. Recall that, to show that a constructioble set is open (respectively closed), it is enough to check that it contains all the generisations of its points (respectively all the specialisations) \cite[\href{http://stacks.math.columbia.edu/tag/0903}{Tag 0903}]{stacks-project}. Finally, under Noetherian assumptions, two points related by specialisation/generisation are contained in the image of a DVR scheme \cite[\href{http://stacks.math.columbia.edu/tag/054F}{Tag 054F}]{stacks-project}.
+\item[Step 3] Let $\mathcal{X}'$ be the image of $\mathcal Y$ under $\Pi$. This is a constructible substack of $\operatorname{Mor}_{\mathfrak{M}\times\mathfrak{M}'}(\mathcal C,\mathcal C')$ by Chevalley's theorem \cite[Theorem 5.9.4]{LMB}. Recall that to show that a constructible set is open (respectively closed) it is enough to check that it contains all the generisations of its points (respectively all the specialisations) \cite[\href{http://stacks.math.columbia.edu/tag/0DQN}{Tag 0DQN}\href{http://stacks.math.columbia.edu/tag/0903}{Tag 0903}]{stacks-project}. Finally, under Noetherian assumptions, two points related by specialisation/generisation are contained in the image of a DVR scheme \cite[\href{http://stacks.math.columbia.edu/tag/054F}{Tag 054F}]{stacks-project}.
 
 It is clear that being surjective and marking-preserving are closed conditions, as above. The requirement that $\phi$ can be covered by a line bundle-preserving map can be translated into the following combinatorial conditions:
 
 \begin{enumerate}
-\item\emph{$\phi$ contracts only weight zero components.} We show that this is open. Assume that $S$ is a DVR scheme with closed point $0$ and generic point $\eta$, and we are given $S\to\mathcal X'$ such that $\phi_0\colon\mathcal C_0\to \mathcal C_0'$ does not contract any positive weight component. Suppose, by contradiction, that there exists an irreducible component $W\subseteq C_{\eta}$ of positive weight $d_W$ which is contracted by $\phi_{\eta}.$ The contracted locus, i.e. $\left\{c\in \mathcal{C}_{S} | \dim_c\phi^{-1}(\phi(c))=1\right\}$, is closed by semicontinuity of fiber dimension and contains all the components $D_i\subseteq C_0$ to which $D$ specialises; at least one of them must have positive weight, since the sum of their weights is $d_W$, which is a contradiction.
+\item\emph{$\phi$ contracts only weight zero components.} We show that this is open. Assume that $S$ is a DVR scheme with closed point $0$ and generic point $\eta$, and we are given $S\to\mathcal X'$ such that $\phi_0\colon\mathcal C_0\to \mathcal C_0'$ does not contract any positive weight component. Suppose there exists an irreducible component $D_\eta\subseteq C_{\eta}$ of positive weight $d_W$ which is contracted by $\phi_{\eta}.$ The contracted locus, i.e. $\left\{c\in \mathcal{C}_{S} | \dim_c\phi^{-1}(\phi(c))\geq 1\right\}$, is closed by semicontinuity of fiber dimension, hence it contains all the components $D_i\subseteq C_0$ to which $D_\eta$ specialises. At least one of them has positive weight, since the sum of their weights is $d_W$, which is a contradiction.
 
-\item\emph{$\phi$ has degree 1 on every non contracted component}, or, equivalently, there is an $S$-dense open in $\mathcal C'_S$ such that the restriction of $\phi_S$ to its preimage is an isomorphism.
-This is an open and closed condition; we show it is open. Let $S$ be a DVR scheme as above and assume that $\phi_0$ satisfies the property. We may assume that $S$ is the local ring at $0$ of a smooth projective curve $\bar S$ \cite[Thm. I.6.9]{HAR} and that $S\to\operatorname{Mor}_{\mathfrak{M}\times\mathfrak{M}'}(\mathcal C,\mathcal C')$ extends to $\bar S$ (by the valuative criterion of properness). \marginpar{FIX ME: properness seems to fail, but we don't need to extend to $\bar S$ to use Fulton's intersection theory} Let us now write $\phi_{\bar S,*}[\mathcal C_{\bar S}]=\sum n_i[\mathcal C'_{\bar S,i}]$; by Gysin pull-back to $0$ and \cite[Prop. 10.1(a)]{FUL}, we see that all the $n_i$'s are 1, apart from some that involve components of $\mathcal C'_{\bar S}$ away from $0$. Discarding these, we find an open neighborhood of $0$ such that the restriction of the morphism to every closed point in the base is birational in our sense, i.e. we find a $\bar S$-dense (around $0$) open in $\mathcal C'_{\bar S}$ on which $\phi$ gives an isomorphism, hence $\phi_\eta$ also satisfies the property.
+\item\emph{$\phi$ has degree 1 on every non contracted component} or, equivalently, there is an $S$-dense open in $\mathcal C'_S$ such that the restriction of $\phi_S$ to its preimage is an isomorphism.
+This is an open and closed condition; we show it is open. Let $S$ be a DVR scheme as above and assume that $\phi_0$ satisfies the property. Since $\phi_S$ is proper, we may consider 
+\[\phi_{S,*}[\mathcal C_{S}]=\sum n_i[\mathcal C'_{S,i}]\in A_2(\cC'_S)\]. Applying Gysin pull-back to $0$ (which is a regular closed point of the base) \cite[Prop. 10.1(a)]{FUL}, we see that all the $n_i$'s are 1 for those $\cC'_i$'s such that $0^![\cC'_i]\neq 0$. On the other hand there is no irreducible component of $\cC'$ supported on $\cC'_\eta$.
 
-\item\emph{$\phi$ is weight-preserving.} This is again an open condition: assume that $\phi_0$ is weight-preserving; the existence of $\phi_S$ implies that the maps $\tilde \phi_0$ and $\tilde\phi_\eta$ (induced at the level of weighted dual graphs) are compatible with the specialisation maps. Since the weight of a component of the generic fiber is determined by those of the components to which it specialises, this proves that $\phi_\eta$ must be weight-preserving as well.
+\item\emph{$\phi$ is weight-preserving.} This is again an open condition, as we can see from the weighted dual graphs. Let $\tilde \phi$ be the map induced at the level of weighted dual graphs $\Gamma(\cC)\to\Gamma(\cC')$. It is compatible with the specialisation maps:
+\bcd
+\Gamma(\cC_0)\ar[r,"\tilde\phi_0"]\ar[d,"\rm{sp}"] & \Gamma(\cC'_0)\ar[d,"\rm{sp}"] \\
+\Gamma(\cC_{\eta})\ar[r,"\tilde\phi_\eta"]& \Gamma(\cC'_\eta)
+\ecd
+Since the weight of a component of the generic fiber is determined by those of the components to which it specialises
+\[ \deg(v)=\sum_{w\in\rm{sp}^{-1}(v)}\deg(w)
+\]
+$\tilde{\phi}_\eta$ has to be weight-preserving as well.
 \end{enumerate}
 
-\item[Step 4] We have seen that, if $\phi$ contracts a component $E$ of the fiber, it must have zero weight. Then it has to be elliptic by the stability condition. Since the target has only nodes and cusps as singularities, it must be $|\overline{C\setminus E}\cap E|\leq 2$, i.e. $E$ is either an elliptic tail or an elliptic bridge. There are basically two possibilities:
-(a) the elliptic tail gets contracted to a cusp, or $\phi$ is an isomorphism everywhere; (b) the elliptic tail/bridge gets contracted to a smooth point or node, then a non-separating node or a cusp must be created somewhere else in order to preserve the genus. 
-We want to get rid of case (b), so we define the open substack $\mathcal X\subseteq \mathcal X'$ as follows.
+\item[Step 4] We have seen that, if $\phi$ contracts a connected subcurve $E$ of the fiber, it must have zero weight. Since the target only has nodes and cusps as singularities, and the markings are required to be smooth points, we observe that $E$ must be of arithmetic genus one by weighted stability and $|\overline{C\setminus E}\cap E|\leq 2$, i.e. $E$ is either an elliptic tail or an elliptic bridge. There are basically two possibilities:
+\begin{enumerate}
+\item $\phi$ contracts an elliptic tail to a cusp and is an isomorphism everywhere else, or there is no elliptic tail to start with and $\phi$ is an isomorphism;
+\item the elliptic tail/bridge is contracted to a smooth point/node, then a non-separating node or a cusp must be created somewhere else in order to preserve the arithmetic genus.
+\end{enumerate} 
+We want to avoid the second scenario, so we define the open substack $\mathcal X\subseteq \mathcal X'$ as follows.
 Given $\mathcal{C}_S\to\mathcal C_S'\in\mathcal X'(S)$, let $U'\subseteq \mathcal C'$ be the \emph{maximal} $S$-dense open subset such that $\phi_S|_{\phi_S^{-1}(U')}\colon\phi_S^{-1}(U')\to U'$ is an isomorphism and $Z'$ its closed complement in $\mathcal C_S'$. 
-Then $\mathcal X$ is the open locus \cite[\href{http://stacks.math.columbia.edu/tag/055D}{Tag 055D}, \href{http://stacks.math.columbia.edu/tag/055G}{Tag 055G}]{stacks-project} where the fibers of $\pi|_{\phi^{-1}(Z')}\colon \phi^{-1}(Z')\to S$ are geometrically connected.
+Then $\mathcal X$ is the open locus \cite[\href{http://stacks.math.columbia.edu/tag/055G}{Tag 055G}]{stacks-project} where the fibers of $\pi|_{\phi^{-1}(Z')}\colon \phi^{-1}(Z')\to S$ are geometrically connected.
 \end{description} 
  \end{proof}
  
  \begin{proof}\ref{lamma:projection_iso}
  This result will follow from an application of Zariski's Main Theorem for algebraic spaces.
-First of all, we claim that the projection is \emph{representable by algebraic spaces}: by \cite[\href{http://stacks.math.columbia.edu/tag/04Y5}{Tag 04Y5}]{stacks-project} we only need to check that it is faithful, and by \cite[Theorem 2.2.5]{CONR} it is enough to look at geometric points; hence we are just saying that
-$\operatorname{Aut}(\phi)\subseteq\operatorname{Aut}(C).$ 
- This follows from the fact that, if $\phi\in\mathcal X$, then it is dominant and of degree one.
-Secondly, $\pr_{1|\mathcal X}$ is \emph{proper}: this can be seen using the valuative criterion
+First we claim that the projection is \emph{representable by algebraic spaces}: by \cite[\href{http://stacks.math.columbia.edu/tag/04Y5}{Tag 04Y5}]{stacks-project} we only need to check that it is faithful, and by \cite[Theorem 2.2.5]{CONR} it is enough to look at geometric points. Hence we need to say that, given $\phi\colon C\to C'$ a $k$-point of $\X$, we have
+$\operatorname{Aut}(\phi)\subseteq\operatorname{Aut}(C)$. Recall that automorphisms of $\phi$ are commutative diagrams:
+\bcd C\ar[r,"\phi"]\ar[d,"\psi"] & C'\ar[d,"\psi'"] \\ C\ar[r,"\phi"] & C' \ecd
+ Now $\psi'$ is determined by $\psi$ due to our description of $\phi$.
+ 
+Secondly $\pr_{1|\mathcal X}$ is \emph{proper}: this can be seen using the valuative criterion
 \bcd
-\eta=\Spec(K)\ar[r]\ar[d] & \mathcal X \ar[d] \\
-S=\Spec(R)\ar[r] & \mathfrak M
+\eta'=\Spec(K')\ar[r]\ar[d] & \eta=\Spec(K)\ar[r]\ar[d] & \mathcal X \ar[d] \\
+S'=\Spec(R')\ar[r]\ar[urr,dashed,"\exists?", left] & S=\Spec(R)\ar[r] & \mathfrak M
 \ecd
 Let $\pi \colon \mathcal C_S\to S$ be the family of nodal curves on $S$; there are three cases to consider:
 \begin{enumerate}
-\item the central fiber contains no elliptic tail, then so does $\mathcal C_\eta$, hence $\phi_\eta$ 
-\marginpar{\begin{color}{red} It's right but confusing! Write it better!!!\end{color}}is an isomorphism and admits a unique extension to an isomorphism $\phi\colon \mathcal C_S\cong \mathcal C_S'.$
+\item the central fiber contains no elliptic tail, then the same is true for $\mathcal C_\eta$, hence $\phi_\eta$ is an isomorphism. We can extend $\phi_\eta$ as follows:
+\bcd
+\cC_\eta\arrow{r}{\sim}[swap]{\phi_\eta}\ar[d,hook,"\iota"] & \cC'_\eta\ar[d,hook,"\iota\circ\phi_\eta^{-1}"] \\
+\cC_S\ar[r,"\id_\cC"] & \cC_S=:\cC'_S
+\ecd
+Another extension $\phi'\colon \mathcal C_S\cong \mathcal C_S'$ would be isomorphic to the previous one via:
+\bcd
+\cC_S\ar[r,"\phi'"]\ar[d,"\id"] &\cC_S'\ar[d,"(\phi')^{-1}"] \\
+\cC_S\ar[r,"\id"] & \cC_S
+\ecd
 
 \end{enumerate}
 If instead $\mathcal C_0$ has got an elliptic tail, then we have two possibilities:
 \begin{enumerate}
 \setcounter{enumi}{1}
-\item $\mathcal C_{\eta}$ still has an elliptic tail, i.e. the node separating the weight zero, genus one curve from the rest of $\mathcal C_S$ is not smoothened. Then $\mathcal C_S$ is the push-out of a family of rational curves $\mathcal R_S$ and a family of genus one curves $\mathcal Z_S$.
-%The map $S\to\partial \mathfrak M_{1,n}$ lifts to the normalisation of the boundary, i.e. $\mathfrak M_{0,n_0+1}\times\mathfrak M_{1,n_1+1}$, which gives two families of pointed curves on $S$; there is a map from the push-out to $\mathcal C_S$ by the universal property, and it is proper bijective and flat (crit\`{e}re de platitude par fibres \cite[\href{http://stacks.math.columbia.edu/tag/039A}{Tag 039A}]{stacks-project}).
+\item $\mathcal C_{\eta}$ has an elliptic tail as well; that is the image of $S\to\MM$ is contained in the boundary, so we can find a lift
 \bcd
+ & \MM_{1,1}\times\MM_{0,1+n}^\text{wt}\ar[d] & \\
+ S\ar[r]\ar[ur,dashed] & \mathfrak D_{\{1,\emptyset\},\{0,n\}}\ar[r,hook] &\MM.
+\ecd
+ Then $\mathcal C_S$ is the push-out of a family of rational curves $\mathcal R_S$ and a family of genus one curves $\mathcal Z_S$:
+%The map $S\to\partial \mathfrak M_{1,n}$ lifts to the normalisation of the boundary, i.e. $\mathfrak M_{0,n_0+1}\times\mathfrak M_{1,n_1+1}$, which gives two families of pointed curves on $S$; there is a map from the push-out to $\mathcal C_S$ by the universal property, and it is proper bijective and flat (crit\`{e}re de platitude par fibres \cite[\href{http://stacks.math.columbia.edu/tag/039A}{Tag 039A}]{stacks-project}).
+\begin{equation}\label{eq:pushout}
+\begin{tikzcd}
 S\ar[d]\ar[r] & \mathcal R_S \ar[d] \\
 \mathcal Z_S\ar[r] & \mathcal C_S
+\end{tikzcd}
+\end{equation}
+Recall that the cuspidal curve $\cC'_K$ can be characterised as the push-out of the following diagram:
+\bcd
+2K\ar[r]\ar[d] & \mathcal R_K\ar[d] \\
+K\ar[r] & \mathcal C'_K.
 \ecd
-\marginpar{\begin{color}{red} Before writing the push down diagram we might need to change base. Write down the double push-out diagram\end{color}}
-Locally around the node, $\phi_{\eta}$ is the contraction of the elliptic curve to the cusp, and, on the adjacent rational component, it is the normalisation of the cusp; by the universal property of push-outs, it can be uniquely extended to the same map on the central fiber (far from this node, $\phi_\eta$ is an isomorphism).
-\item If $\mathcal C_S$ smoothens the elliptic tail, then the map is given on the generic fiber by a $\pi$-ample line bundle $\mathcal L_{\eta}$. Then the extension to the central fiber is determined by the unique extension $\mathcal L_0$ of $\mathcal L_{\eta}$ which is trivial on the minimal subcurve $Z\subseteq \mathcal C_0$ of arithmetic genus 1 and, possibly after twisting, is ample elsewhere. 
+Since the smooth section $S\to\mathcal R_S$ defines a Cartier divisor, it makes sense to take its double and we can thus define $\cC'_S$ by means of the similar diagram:
+\bcd
+2S\ar[r]\ar[d] & \mathcal R_S\ar[d] \\
+S\ar[r] & \mathcal C'_S
+\ecd
+The morphism $\phi_S\colon\cC_S\to\cC'_S$ extending $\phi_\eta$ is then defined by exploiting the description of $\cC_S$ as a push-out \eqref{eq:pushout}, and the morphisms $\id\colon\mathcal R_S\to \mathcal R_S$ and $\pr_{\mathcal Z_S}\colon\mathcal Z_S\to S$.
+\item If $\mathcal C_S$ smoothens the elliptic tail, then $\phi_\eta$ is an isomorphism. We may assume that $S$ is the spectrum of a complete DVR with algebraically closed residue field \cite[Theorem 7.10]{LMB}. Then we may pick one smooth section for each rational component of $\cC_0$ and extend them to sections of $\cC_S\to S$ by Grothendieck's existence theorem; let us denote by $\Sigma$ the Cartier divisor that is the sum of all such sections. Let $Z$ be the elliptic tail in the central fiber; then we claim that $\omega_{\cC_S/S}(Z)\otimes\mathcal O_{\cC_S}(\Sigma)$ is $\pi_S$ semi-ample, ample on the generic fiber, and gives the contraction of the elliptic tail to the cusp in the central fiber. We shall not prove the claim here, since this is the core of the second approach.
 \end{enumerate}
-Finally, observe that the map is bijective by construction and $\mathfrak M$ is normal, hence $\pi_{|\mathcal X}\colon\mathcal X\to \mathfrak M$ is an isomorphism by an application of Zariski's main theorem (as in \cite[\href{http://stacks.math.columbia.edu/tag/082I}{Tag 082I}]{stacks-project}).
+Finally, observe that the map is bijective by construction and $\mathfrak M$ is normal, hence $\pi_{|\mathcal X}\colon\mathcal X\to \mathfrak M$ is an isomorphism by Zariski's main theorem (as in \cite[\href{http://stacks.math.columbia.edu/tag/082I}{Tag 082I}]{stacks-project}).
  \end{proof}
 \subsection*{Why only cusps?} 
 \subsection*{Alternative constructions}
 \begin{itemize}
 \item adapt the ideas of \cite{HassettHyeon}: check out section 3 of this paper;
-\item check \cite[\S 3]{RSPW}.
+\item check \cite[\S 4]{RSPW}.
 \end{itemize}
  \section{Comparison with $p$-fields and splitting}
 \subsection{Notation}
