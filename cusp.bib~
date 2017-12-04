@@ -416,19 +416,3 @@
 	year = "1997"
 }
 
-@article{KLcosection,
-	author = "Kiem, Young-Hoon and Li, Jun",
-	fjournal = "Journal of the American Mathematical Society",
-	issn = "0894-0347",
-	journal = "J. Amer. Math. Soc.",
-	mrclass = "14N35",
-	mrnumber = "3073883",
-	mrreviewer = "Flavia Poma",
-	number = "4",
-	pages = "1025--1050",
-	title = "{Localizing virtual cycles by cosections}",
-	url = "https://doi.org/10.1090/S0894-0347-2013-00768-7",
-	volume = "26",
-	year = "2013"
-}
-
