@@ -22,11 +22,7 @@
 \usepackage[all]{xy}
 \usepackage{hyperref}
 
-\usepackage{calrsfs}
-\DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
-
 \newcommand{\M}[4]{\overline{\mathcal M}_{#1,#2}(#3,#4)}
-\newcommand{\Mone}[3]{\overline{\mathcal M}^{(1)}_{#1}(#2,#3)}
 \newcommand{\PP}{\mathbb P}
 \newcommand{\OO}{\mathcal O}
 \renewcommand{\to}{\rightarrow}
@@ -43,12 +39,9 @@
 \newcommand{\Z}{\mathcal Z}
 \newcommand{\MM}{\mathfrak M}
 \newcommand{\pP}{\mathfrak P}
-\newcommand{\hP}{\hat{\mathfrak P}}
 \newcommand{\oM}{\overline{\mathcal M}}
 \newcommand{\R}{\operatorname{R}}
 \newcommand{\Gm}{\mathbb{G}_{\rm{m}}}
-\newcommand{\w}{\mathbf{w}}
-\newcommand{\PtoM}{\rho}
 
 \newcommand{\bq}{\begin{equation}}
 \newcommand{\eq}{\end{equation}}
@@ -460,7 +453,7 @@ The morphism $\phi_S\colon\cC_S\to\cC'_S$ extending $\phi_\eta$ is then defined 
 Finally, observe that the map is bijective by construction and $\mathfrak M$ is normal, hence $\pi_{|\mathcal X}\colon\mathcal X\to \mathfrak M$ is an isomorphism by Zariski's main theorem (as in \cite[\href{http://stacks.math.columbia.edu/tag/082I}{Tag 082I}]{stacks-project}).
  \end{proof}
  
-\subsection{Second approach: constructing the contraction}
+\subsection*{Second approach: constructing the contraction}
 The idea of this construction is essentially due to Hassett \cite[\S2]{HassettHyeon} and it has recently been reviewed and simplified in \cite[\S3.7]{RSPW}.
 
 Let $\mathfrak{P}=\mathfrak{Pic}^d_{\cC/\MM_1}$ with the stability condition that $\omega_\pi\otimes \mathcal L^{\otimes 3}$ is $\pi$-ample. We work over $\MM_1^{\rm{div}}$, parametrising families of nodal curves with a relative Cartier divisor. More precisely, this can be thought of as the open inside $C(\pi_*\mathcal L)=\Spec_\pP(\R^1\pi_*\mathcal L)$ (see \cite{CLpfields}), where the section is not $0$ on any irreducible component of the curve. Alternatively one can think of the moduli functor of a line bundle with a section up to scalar as the hom-stack $\Hom_{\MM_1}(\C,[\Aaff^1/\Gm])$, again requiring the section not to be $0$ and the total degree of the line bundle to be $d$.
@@ -469,13 +462,89 @@ We shall first construct the contraction over $\MM^{\rm{div}}$ and then show tha
 
 Let $E$ be the locus inside the universal curve spanned by elliptic tails; this is a Cartier divisor in the universal curve over $\MM^{wt}_1$, which we shall freely pullback and keep denoting by $E$. We write $\mathcal M:=\omega_{\pi}(E)\otimes\mathcal O_{\cC}(3D)$, where $D$ is the universal Cartier divisor over $\MM_1^{\rm{div}}$ (so $\mathcal O_{\cC}(D)$ is the pullback of the universal line bundle on $\pP$).
 
-\begin{prop}
+\begin{prop}\label{1-stabilization-div}
  The $1$-stabilisation $\MM_1^{\rm{div}}\to\MM_1^{(1),\rm{div}}$ is defined by the line bundle $\mathcal M$:
  \bcd
  (\cC,D)\ar[rr,"\phi"]\ar[dr,"\pi"] & & (\hat\cC=\operatorname{Proj}_{\MM_1^{\rm{div}}}(\bigoplus_{n\geq 0}\pi_*\mathcal M^{\otimes n}),\phi(D))\ar[ld,"\hat\pi"] \\
  & \MM_1^{\rm{div}} &
  \ecd
 \end{prop}
+We prove a proposition through a series of Lemma s. The first one is a technical statement telling us that we can reduce to verify semi-ampleness and local freeness on families over DVR.
+\begin{lem}{Reduction to DVR}\label{DVR}
+Let $T$ the spectrum of a DVR with closed point $0$ and generic point $\eta$ and let $f\colon T\to\MM_1^{\rm{div}}$ such that $0\in \mathfrak{D}^1$ and $\eta\in \MM_1^{\rm{div}}\setminus \mathfrak{D}^1.$ Then 
+\[f^*\pi_*\mathcal M\cong \pi_*f^*\mathcal M.\]
+We have denoted with $\mathfrak{D}^1$ the Cartier divisor image of the locus spanned by elliptic tails.
+\end{lem}
+\begin{proof}
+The argument is taken from \cite[Lemmma~3.7.2.2]{RSPW}.
+Let $K^{\bullet}$ the complex of locally free sheaves on $S$ which satisfy cohomology and base change, i.e. such that for any $T\xrightarrow{f} S$  we get
+$H^i(f^*K^{\bullet})=\R^i\pi_*f^*\mathcal M.$ The construction of $K^{\bullet}$ is standard, (see e.g. \cite[Proposition~12.2]{HAR} and since the cohomology is concentrated in degree 0,1, we can assume $K^{\bullet}=K_0\to K_1.$ Let $f$ be the map defined in the statement of the Lemma.
+Then we have the following exact sequences:
+\begin{equation}\label{eq:exact1}
+0\to \pi_*\mathcal M\to K^0\to K^1\to \R^1\pi_*\mathcal M\to 0,
+\end{equation}
+\begin{equation}\label{eq:exact2}
+0\to \pi_*f^*\mathcal M\to f^*K^0\to f^*K^1\to \R^1\pi_*f^*\mathcal M\to 0.
+\end{equation}
+The derived pull-back $Lf^*$ of the complex~\eqref{eq:exact1} is zero since the complex is exact. Writing down explicitly the spectral sequence which compute the derived pull-back, we find that its convergence to zero implies that:
+\begin{align*}
+\operatorname{coker}(f^*\pi_*\mathcal M\to\pi_*f^*\mathcal M)&\cong \rm{L}_1f^*\R^1\pi_*\mathcal M\\
+\operatorname{ker}(f^*\pi_*\mathcal M\to\pi_*f^*\mathcal M)&\cong \rm{L}_2f^*\R^1\pi_*\mathcal M.
+\end{align*} 
+Now, notice that $\R^1\pi_*\mathcal M$ is a line bundle supported on the Cartier divisor $\mathfrak{D}^1;$ it is clearly zero on the smooth locus and one can easily check that is rank is constant and equal to one on the divisor.
+To prove that $\rm{L}_if^*\R^1\pi_*\mathcal M=0$ for $i=1,2$ it is enough to work locally on $S$, where we have a free resolution for  of the form $\R^1\pi_*\mathcal M$ of the form:
+\[0\rightarrow \OO_S\xrightarrow{g}\OO_S\rightarrow \R^1\pi_*\mathcal M\rightarrow 0\] 
+and thus pulling back along $f$
+\[0\rightarrow  \rm{L}_1f^*\R^1\pi_*\mathcal M \OO_T\xrightarrow{f^*g}\OO_T\rightarrow f^*\R^1\pi_*\mathcal M\rightarrow 0.\] 
+It immediately follows that $ \rm{L}_2f^*\R^1\pi_*\mathcal M=0.$ Finally notice that since the image of $f$ is not contained in the boundary divisor $f^*g\neq 0$ and thus injective of sheaves as $T$ is a DVR. We can then conclude $ \rm{L}_1f^*\R^1\pi_*\mathcal M=0$ as well which implies the Lemma.
+\end{proof}
+\begin{lem}\label{lemma:semiample}
+The line bundle $\mathcal M$ is $\pi$ semi-ample, i.e. the natural map
+\[\pi^*\pi_*\mathcal M^{\otimes n}\to \mathcal M^{\otimes n}\]
+is surjective.
+\end{lem}
+\begin{proof}
+Outside the locus of elliptic tails $\mathcal M$ is $\pi$- ample and thus in particular $\pi$-semi ample. To check that it is still $\pi$-semi ample also for any $x\in C$ when $C$ has an elliptic tail, thanks to the above Lemma we can reduce to check this condition when $C$ is the central fiber of a one parameter smoothing of the elliptic tail. But then this has been proved by Smyth~\cite[Lemma~2.12]{SMY1}.
+\end{proof}
+
+
+
+\begin{lem}
+$\pi_*\mathcal M$ is locally free of rank $d$ on $\MM_1^{\rm{div}}.$
+\end{lem}
+\begin{proof}\cite[Proposition~3.7.2.1]{RSPW}
+We have essentially to check that $\pi_*\mathcal M$ has constant rank.
+On $\MM_1^{\rm{div}}\setminus \mathfrak{D}^1$ this follows simply from the fact that $\R^1\pi_*\mathcal M=0$ and the rank is determined by Riemann-Roch.
+Given a point $x$ on the boundary $\mathfrak{D}^1$, we can always find a DVR $T$ whose closed point maps to $x$ and whose generic point maps to $\MM_1^{\rm{div}}\setminus \mathfrak{D}^1.$ Then we are in the hypothesis of Lemma~\ref{DVR} and thus we can check the rank looking at $\pi_*f^*\mathcal M$ over the DVR  $T.$ But notice that $\pi_*f^*\mathcal M$ is torsion free over $T$, which conclude the proof.
+\end{proof}
+
+\begin{proof}\ref{1-stabilization-div}
+Let $S\to \MM_1^{\rm{div}}$ be a smooth atlas, then we have:
+ \bcd
+ (C,D)\ar[rr,"\phi"]\ar[dr,"\pi"] & & (\hat C=\operatorname{Proj}_{S}(\bigoplus_{n\geq 0}\pi_*\mathcal M^{\otimes n}),\phi(D))\ar[ld,"\hat\pi"] \\
+ & S &
+ \ecd
+where: $\phi$ is proper and birational  since $\mathcal M$ is $\pi$-semi-ample and $\hat{\pi}$ is flat since $\pi_*\mathcal M$ is locally free. 
+
+Consider the caresian diagram 
+\bcd
+C'\ar[r,"f_C"]\ar[d,"\pi'"] & C\ar[d,"\pi"] \\
+S'\ar[r,"f"] & S.
+\ecd
+To show that the above construction is compatible with base change it is enough to show that for any base change holds what we proved in Lemma~\ref{DVR}:
+\begin{equation}\label{eq:generalbasechange}
+f^*\pi_*\mathcal M\cong \pi'_*f^*\mathcal M.
+\end{equation}
+Since $\pi$ is flat we do have an isomorphism if we consider everything derived:
+\begin{equation}\label{eq:derivedbasechange}
+\rm{L}f^*\R\pi_*\mathcal M\cong \R\pi'_*\rm{L}f^*\mathcal M.
+\end{equation}
+First notice that the $H^0$ on the LHS of \eqref{eq:derivedbasechange} is exactly the LHS of \ref{eq:generalbasechange}.
+
+
+\end{proof}
+
+
 \begin{prop}
 The $1$-stabilisation with divisors descends to the level of weighted curves:
 \bcd
@@ -483,6 +552,8 @@ The $1$-stabilisation with divisors descends to the level of weighted curves:
 \MM_1^{\rm{wt}}\ar[r] & \MM_1^{(1),\rm{wt}}
 \ecd
 \end{prop} 
+
+
  
 \subsection*{Why only cusps?} 
 \subsection*{Alternative constructions}
@@ -490,125 +561,7 @@ The $1$-stabilisation with divisors descends to the level of weighted curves:
 \item adapt the ideas of \cite{HassettHyeon}: check out section 3 of this paper;
 \item check \cite[\S 4]{RSPW}.
 \end{itemize}
-
-\section{From $p$-fields to the quintic three-fold}
-We shall introduce the moduli space $\Mone{1}{\PP^4}{d}^p$ of $1$-stable curves with $p$-fields, endow it with a $0$-dimensional virtual class, and show that its degree coincides with the genus $1$ cusp invariants of the quintic three-fold up to a sign. This is a word-by-word repetition of the arguments in \cite{CLpfields}, once noticed that they carry over to the situation where we work over a family of Gorenstein (not necessarily nodal) curves. Our aim in this section is to improve the legibility of our paper by providing the non-expert reader with a r\'{e}sum\'{e} of some of the key ideas contained in \cite{CLpfields}.
-
-Let us first establish some notation: let $\w\in k[x_0,\ldots,x_4]_5$ be a homogeneous polynomial such that $X=V(\w)\subseteq\PP^4$ is a smooth quintic three-fold. In this section we shall denote by $\rm{M}:=\oM_1^{(1)}(\PP^4,d)$, by $(\hat\pi_{\rm M},f_{\rm M})\colon \hat\cC_{\rm M}\to \rm M\times \PP^4$ the universal $1$-stable curve and map over it, by $\L_{\rm M}=f_{\rm M}^*\OO_{\PP^4}(1)$ and by $\mathcal P_{\rm M}=\L_{\rm M}^{\otimes -5}\otimes\omega_{\hat\pi_{\rm M}}$. Furthermore we shall write $\hP$ for $\mathfrak{Pic}_{\hat\cC\to\MM_1^{(1)}}$.
-
-\begin{lem}
- $\hP$ is a smooth Artin stack of dimension $0$. Furthermore there is a compatible triple of dual perfect obstruction theories:
- \bcd
- \lambda^*\mathbb T_{\hP/\MM_1^{(1)}}[-1]\ar[r]\ar[d,"\wr"] &  \mathbb T_{\rm M/\hP} \ar[r]\ar[d] &  \mathbb T_{\rm M/\MM_1^{(1)}} \ar[r,"{[}1{]}"]\ar[d] & {} \\
- \R^\bullet\hat\pi_{\rm M,*}(\OO_{\hat \cC})\ar[r] & \R^\bullet\hat\pi_{\rm M,*}(\bigoplus \mathcal L_{\rm M}^{\oplus 5})\ar[r] & \R^\bullet\hat\pi_{\rm M,*}(f_{\rm M}^* T_{\PP^4})\ar[r,"{[}1{]}"] & {}
- \ecd
- implying that $\mathbb T_{\rm M/\hP}\to \mathbb E_{\rm M/\hP}:=\R^\bullet\hat\pi_{\rm M,*}(\bigoplus \mathcal L_{\rm M}^{\oplus 5})$ gives the standard Behrend-Fantechi-Viscardi virtual class on $\rm M$.
-\end{lem}
-\begin{proof}
- The first statement follows from deformation theory: the projection $\lambda\colon\hP\to\MM_1^{(1)}$ is unobstructed of relative dimension $0$ and $\MM_1^{(1)}$ is a smooth Artin stack of dimension $0$, since both nodal and cuspidal singularities are l.c.i., so obstructions to their deformations can be found inside $\operatorname{Ext}^2_{\OO_{\hat C}}(\Omega_{\hat C},\OO_{\hat C})=0$.
- 
- The fact that $\mathbb T_{\rm M/\MM_1^{(1)}}\to \mathbb E_{\rm M/\MM_1^{(1)}}:=\R^\bullet\hat\pi_{\rm M,*}(f_{\rm M}^* T_{\PP^4})$ is a perfect obstruction theory when $\hat\cC\to\rm M$ is a family of Gorenstein curves is \cite[Proposition 6.3]{BF}.
- 
- The lower row in the above diagram is induced by the Euler sequence of $\PP^4$. The middle column comes from identifying the space of stable maps as an open substack of the cone of sections of $\rm{Vb}(\bigoplus_0^4\mathcal L)$ over $\hP$. The existence of such a commutative diagram is \cite[Lemma 2.8]{CLpfields}.
- 
- The last claim follows from functoriality of virtual pullback \cite{Manolache-pullback}.
-\end{proof}
-
-We proceed to define the moduli space of $p$-fields as the cone of sections of the line bundle $\mathcal P_{\rm M}$ over $\hat\cC_{\rm M}$.
-
-\begin{dfn}
- The moduli space of $1$-stable maps with $p$-fields $\Mone{1}{\PP^4}{d}^p$ parametrises $1$-stable maps
- \bcd
- \hat\cC_S\ar[r,"f_S"]\ar[d,"\hat\pi_S"] & \PP^4 \\
- S &
- \ecd
- with a $p$-field $\hat\psi\in H^0(\hat\cC_S,f_{S}^*\OO_{\PP^4}(-5)\otimes\omega_{\hat\pi_{S}})$.
-\end{dfn}
-Due to the fact that $\R^1\hat\pi_*\mathcal F$ behaves well under base change, while $\hat\pi_*\mathcal F$ may not, the correct way to formalise this is via relative Serre duality: \[\Mone{1}{\PP^4}{d}^p=C(\hat\pi_{\rm M,*}(\mathcal P_{\rm M})):=\Spec_{\rm M}(\R^1\hat\pi_{\rm M,*}(\L_{\rm M}^{\otimes 5}))\]
-We shall abbreviate $\pazocal P:=\Mone{1}{\PP^4}{d}^p$. This should be thought of as the space of sections of the line bundle $\mathcal P_{\rm M}$ over $\hat\cC_{\rm M}$:
-\bcd
-& \rm{Vb}(\mathcal P_{\rm M})\ar[d] \\
-\hat \cC_{\pazocal P}\ar[ur,bend left,"\mathfrak e"]\ar[d,"\hat\pi_{\pazocal P}"]\ar[r] & \hat\cC_{\rm M}\ar[d,"\hat\pi_{\rm M}"] \\
-\pazocal P \ar[r,"\PtoM"] & \rm M
-\ecd
-
-\begin{lem}
- There is a compatible triple of dual perfect obstruction theories \[(\R^\bullet\hat\pi_{\pazocal P,*}(\mathcal P_{\pazocal P}),\R^\bullet\hat\pi_{\pazocal P,*}(\mathcal L_{\pazocal P}^{\oplus 5}\oplus\mathcal P_{\pazocal P}),\R^\bullet\hat\pi_{\pazocal P,*}(\mathcal L_{\pazocal P}^{\oplus 5}))\] for the triangle:
- \bcd
- \pazocal P\ar[rr,"\PtoM"]\ar[dr] & & \rm M\ar[dl] \\
- & \hP &
- \ecd
-\end{lem}
-See \cite[Proposition 3.1]{CLpfields}. Notice that the virtual rank of $\mathbb E_{\pazocal P/\hP}:=\R^\bullet\hat\pi_{\pazocal P,*}(\mathcal L_{\pazocal P}^{\oplus 5}\oplus\mathcal P_{\pazocal P})$ is $0$, hence it endows the moduli space of $1$-stable maps with $p$-fields with a cycle class of dimension $0$. In facts such a cycle is supported on a way smaller closed substack, namely $\Mone{1}{X}{d}$; this follows from the existence of a cosection of the obstruction bundle whose degeneracy locus is the afore-mentioned substack, and the machinery of cosection localised virtual classes \cite{KLcosection}. Recall their Theorem 1.1:
-
-\begin{teo*}[Localization by cosection]\label{thm:KLlocalisation}
-Let $\pazocal M$ be a Deligne-Mumford stack endowed with a perfect
-obstruction theory. Suppose the obstruction sheaf $\rm{Ob}_\pazocal M$ admits a
-surjective homomorphism $\sigma:\rm{Ob}_\pazocal M|_U  \to \OO_U$
-over an open $U\subseteq \pazocal M$.
-Let $\pazocal{M}(\sigma)=\pazocal{M}\setminus U$.
-Then $(\pazocal{M},\sigma)$ has a localized virtual cycle
-$$[\pazocal{M}]^{\rm{virt}}_{\rm{loc}}\in A_* \pazocal{M}(\sigma).
-$$
-This cycle enjoys the usual properties of the virtual cycles; it relates to
-the usual virtual cycle $[\pazocal{M}]^{\rm{virt}}$ via 
-$[\pazocal{M}]^{\rm{virt}} = \iota_*[\pazocal{M}]^{\rm{virt}}_{\rm{loc}} \in A_*  \pazocal{M}$, where
-$\iota: \pazocal{M}(\sigma)\to \pazocal{M}$ is the inclusion.
-\end{teo*}
-
-In \cite[\S\S3.2-3.4]{CLpfields} the following facts are proved. Based on Serre duality, there is a morphism
-\[ h_1\colon\rm{Vb}(\mathcal L_{\hP}^{\oplus 5}\oplus\mathcal P_{\hP})\to \rm{Vb}(\omega_{\hat\pi_{\hP}}),\quad h_1(z,p)=p\w(z_0,\ldots,z_4)\]
-By differentiating it and pulling it back along the universal evaluation
-\bcd
-& \rm{Vb}(\mathcal L_{\hP}^{\oplus 5}\oplus\mathcal P_{\hP})\ar[d] \\
-\hat \cC_{\pazocal P}\ar[ur,bend left,"\mathfrak e"]\ar[d,"\hat\pi_{\pazocal P}"]\ar[r] & \hat\cC_{\hP}\ar[d,"\hat\pi_{\hP}"] \\
-\pazocal P \ar[r] & \rm \hP
-\ecd
-we obtain a cosection of the relative obstruction sheaf
-\[\begin{split}
- \sigma_1\colon\rm{Ob}_{\pazocal P/\hP}=\R^1\hat\pi_{\pazocal P,*}(\mathcal L_{\pazocal P}^{\oplus 5}\oplus\mathcal P_{\pazocal P})\to \R^1\hat\pi_{\pazocal P,*}(\omega_{\hat\pi_{\pazocal P}})\simeq \OO_{\pazocal P} \\
- \sigma_{1|(u,\psi)}(z,p)=p\w(u)+\psi\sum_{i=0}^4\partial_i\w(u)z_i
-\end{split}\]
-The degeneracy locus of such cosection is $\Mone{1}{X}{d}$ (again based on Serre duality) and $\sigma_1$ lifts to a cosection of the absolute obstruction bundle $\rm{Ob}_{\pazocal P}\to\OO_{\pazocal P}$ with the same degeneracy locus.
-
-We are left with proving the following:
-\begin{prop}
- \[\deg[\Mone{1}{\PP^4}{d}^p]^{\rm{vir}}_{\rm{loc}}= (-1)^{5d}\deg[\Mone{1}{X}{d}]^{\rm{vir}}=:GW_1^{\rm{cusp}}(X,d)\]
-\end{prop}
-This is achieved in \cite[\S4]{CLpfields} by a family version of the previous construction applied to the deformation to the normal cone of $X\subseteq \PP^4$; let us denote the latter by $V\to\Aaff^1_t$, so that $V_{t\neq 0}=\PP^4$ and $V_0=N_{X/\PP^4}$.
-
-\begin{lem}
- The deformation to the normal cone $V$ is cut inside $\rm{Vb}(\OO_{\PP^4}(5))\times\Aaff^1_t$ with basis coordinates $[x_0:\ldots:x_4]$ and fiber coordinate $y$ by the equation $\w(x)-ty=0$.
-\end{lem}
-See \cite[Lemma 4.1]{CLpfields}. This allows a description of the moduli space of maps to $V$ as the cone of sections of a certain smooth object $\pazocal Z'$ over $\hat\cC_{\hP\times\Aaff^1}$:
-
-\bcd
-& \pazocal Z'\ar[d]\ar[r]\ar[dr,phantom,"\Box"] & V\ar[d] \\
-& \rm{Vb}(\mathcal L_{\hP}^{\oplus 5})\setminus\{0\}\oplus\rm{Vb}(\mathcal L^{\otimes 5}_{\hP})\ar[d] \ar[r] & \rm{Vb}(\OO_{\PP^4}(5))\times\Aaff^1_t\\
-\hat \cC_{\pazocal V}\ar[uur,bend left,"\mathfrak e"]\ar[d,"\hat\pi_{\pazocal V}"]\ar[r] & \hat\cC_{\hP\times\Aaff^1_t}\ar[d,"\hat\pi_{\hP\times\Aaff^1_t}"] & \\
-\pazocal V:=\Mone{1}{V}{(d,0)} \ar[r] & \rm \hP\times\Aaff^1_t &
-\ecd
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\section{Comparison with $p$-fields and splitting}
+ \section{Comparison with $p$-fields and splitting}
 \subsection{Notation}
 Let $\Z$ be defined by the pullback diagram:
 \bcd
