@@ -456,27 +456,36 @@ Finally, observe that the map is bijective by construction and $\mathfrak M$ is 
 \subsection*{Second approach: constructing the contraction}
 The idea of this construction is essentially due to Hassett \cite[\S2]{HassettHyeon} and it has recently been reviewed and simplified in \cite[\S3.7]{RSPW}.
 
-Let $\mathfrak{P}=\mathfrak{Pic}^d_{\cC/\MM_1}$ with the stability condition that $\omega_\pi\otimes \mathcal L^{\otimes 3}$ is $\pi$-ample. We work over $\MM_1^{\rm{div}}$, parametrising families of nodal curves with a relative Cartier divisor. More precisely, this can be thought of as the open inside $C(\pi_*\mathcal L)=\Spec_\pP(\R^1\pi_*\mathcal L)$ (see \cite{CLpfields}), where the section is not $0$ on any irreducible component of the curve. Alternatively one can think of the moduli functor of a line bundle with a section up to scalar as the hom-stack $\Hom_{\MM_1}(\C,[\Aaff^1/\Gm])$, again requiring the section not to be $0$ and the total degree of the line bundle to be $d$.
+Let $\mathfrak{P}=\mathfrak{Pic}^d_{\cC/\MM_1}$ with the stability condition that 
+\[\omega_\pi\otimes \mathcal L^{\otimes 3}\]
+ is $\pi$-ample. We work over $\MM_1^{\rm{div}}$, parametrising families of nodal curves with a relative Cartier divisor. More precisely, this can be thought of as the open inside $C(\pi_*\mathcal L)=\Spec_\pP(\R^1\pi_*\mathcal L)$ (see \cite{CLpfields}), where the section is not $0$ on any irreducible component of the curve. Alternatively one can think of the moduli functor of a line bundle with a section up to scalar as the hom-stack $\Hom_{\MM_1}(\C,[\Aaff^1/\Gm])$, again requiring the section not to be $0$ and the total degree of the line bundle to be $d$.
 
 We shall first construct the contraction over $\MM^{\rm{div}}$ and then show that it descends to $\MM^{\rm{wt}}$.
 
-Let $E$ be the locus inside the universal curve spanned by elliptic tails; this is a Cartier divisor in the universal curve over $\MM^{wt}_1$, which we shall freely pullback and keep denoting by $E$. We write $\mathcal M:=\omega_{\pi}(E)\otimes\mathcal O_{\cC}(3D)$, where $D$ is the universal Cartier divisor over $\MM_1^{\rm{div}}$ (so $\mathcal O_{\cC}(D)$ is the pullback of the universal line bundle on $\pP$).
+Let $E$ be the locus inside the universal curve spanned by elliptic tails; this is a Cartier divisor in the universal curve over $\MM^{wt}_1$, which we shall freely pullback and keep denoting by $E$. We write 
+\begin{equation}\label{eq:linebundlecontraction}
+\mathcal N:=\omega_{\pi}(E)\otimes\mathcal O_{\cC}(3D),
+\end{equation} where $D$ is the universal Cartier divisor over $\MM_1^{\rm{div}}$ (so $\mathcal O_{\cC}(D)$ is the pullback of the universal line bundle on $\pP$).
+Notice that $\mathcal N$ is trivial on the locus of elliptic tails, so if the contraction morphism is well defined it will contract this locus.
 
 \begin{prop}\label{1-stabilization-div}
- The $1$-stabilisation $\MM_1^{\rm{div}}\to\MM_1^{(1),\rm{div}}$ is defined by the line bundle $\mathcal M$:
+ The $1$-stabilisation $\MM_1^{\rm{div}}\to\MM_1^{(1),\rm{div}}$ is defined by the line bundle $\mathcal N$:
  \bcd
  (\cC,D)\ar[rr,"\phi"]\ar[dr,"\pi"] & & (\hat\cC=\operatorname{Proj}_{\MM_1^{\rm{div}}}(\bigoplus_{n\geq 0}\pi_*\mathcal M^{\otimes n}),\phi(D))\ar[ld,"\hat\pi"] \\
  & \MM_1^{\rm{div}} &
  \ecd
 \end{prop}
-We prove a proposition through a series of Lemma s. The first one is a technical statement telling us that we can reduce to verify semi-ampleness and local freeness on families over DVR.
-\begin{lem}{Reduction to DVR}\label{DVR}
-Let $T$ the spectrum of a DVR with closed point $0$ and generic point $\eta$ and let $f\colon T\to\MM_1^{\rm{div}}$ such that $0\in \mathfrak{D}^1$ and $\eta\in \MM_1^{\rm{div}}\setminus \mathfrak{D}^1.$ Then 
+
+We shall prove this proposition through a series of lemmas. The first one is a technical tool drawn from \cite{RSPW}: it implies that the $\Proj$ construction we perform commutes with base change to generically chosen curves inside $\MM_1^{\rm{div}}$. In the following it will allow us to check that $\mathcal N$ is semi-ample and that $\pi_*\mathcal N$ is locally free assuming that $\cC\to T$ is a smoothing over the spectrum of a discrete valuation ring.
+
+\begin{lem}[pullback with a boundary]\label{DVR}
+Let $\pi\colon\cC\to S$ be a proper family of l.c.i. curves over a smooth basis, and let $\mathcal N$ be a line bundle on $\cC$ such that $\R^1\pi_*\mathcal N$ is a line bundle supported on a Cartier divisor $\Delta\subseteq S$. Then for every $T$ the spectrum of a DVR with closed point $0$ and generic point $\eta$, and for every morphism $f\colon T\to S$ such that $f(0)\in\Delta$ and $f(\eta)\in S\setminus\Delta$ we have
 \[f^*\pi_*\mathcal M\cong \pi_*f^*\mathcal M.\]
-We have denoted with $\mathfrak{D}^1$ the Cartier divisor image of the locus spanned by elliptic tails.
+%We have denoted with $\mathfrak{D}^1$ the Cartier divisor image of the locus spanned by elliptic tails.
 \end{lem}
 \begin{proof}
-The argument is taken from \cite[Lemmma~3.7.2.2]{RSPW}.
+The argument can be found in \cite[Lemmma~3.7.2.2]{RSPW}.
+
 Let $K^{\bullet}$ the complex of locally free sheaves on $S$ which satisfy cohomology and base change, i.e. such that for any $T\xrightarrow{f} S$  we get
 $H^i(f^*K^{\bullet})=\R^i\pi_*f^*\mathcal M.$ The construction of $K^{\bullet}$ is standard, (see e.g. \cite[Proposition~12.2]{HAR} and since the cohomology is concentrated in degree 0,1, we can assume $K^{\bullet}=K_0\to K_1.$ Let $f$ be the map defined in the statement of the Lemma.
 Then we have the following exact sequences:
@@ -525,23 +534,30 @@ Let $S\to \MM_1^{\rm{div}}$ be a smooth atlas, then we have:
  & S &
  \ecd
 where: $\phi$ is proper and birational  since $\mathcal M$ is $\pi$-semi-ample and $\hat{\pi}$ is flat since $\pi_*\mathcal M$ is locally free. 
+To verify that this define a morphism $S\to \MM_1^{\rm{div}}(1)$ we have to argue that $\hat{C}$ has reduced fibers and only nodes and cusps as singularities.
 
-Consider the caresian diagram 
-\bcd
-C'\ar[r,"f_C"]\ar[d,"\pi'"] & C\ar[d,"\pi"] \\
-S'\ar[r,"f"] & S.
+Since these properties only concern the fiber of $\hat{\pi}$ so we can verify them after base change to a DVR $T$ and we can choose it as in Lemma~\ref{DVR} so that the construction commutes with base change. 
+
+But then this is just the statement of Smyth's contraction Lemma~\cite[Lemma~2.13]{SMY1} if we assume $C_T$ smooth and, otherwise, one can argue following \cite[Proposition~3.7.3.1]{RSPW}:
+being $C_T$ a smoothing of a nodal curve over a DVR it is normal by Serre's criterion of normality (($R_1$), ($S_2$)). Moreover $C_0\setminus E\to\hat{C}_0$ is birational, which implies $\hat{C}_0$ is reduced as well. 
+Finally, the fact that $\hat{C}_0$ can only acquire a cusp as singularity simply follows from the classification of genus 1 uni-branch singularities \cite[Appendix~A]{SMY1}
+
+
+Finally, to conclude that this define a morphism 
+\[\MM_1^{\rm{div}}\to \MM_1^{\rm{div}}(1)\]
+it is enough to verify that
+ $\rm{pr}_1(\phi)\cong\rm{pr}_2(\phi)$ where $\rm{pr}_i\colon S'= S\times_{\MM_1^{\rm{div}}} S\to S$ and that $\rm{pr}_{ij}\colon S\times_{\MM_1^{\rm{div}}} S\times_{\MM_1^{\rm{div}}} S\to  S\times_{\MM_1^{\rm{div}}} S $ satisfy the cocycle condition.
+ The first condition follows from the fact that $\rm{pr}^*_i\phi$ are the morphism defined by 
+ $\rm{pr}_i^*\pi_{s,*}\mathcal{M}\cong\pi_ {S',*} \rm{pr}_i^*\mathcal M.$ Thus it is enough to show that 
+ \[\rm{pr}_1^*\mathcal M\cong \rm{pr}_2^*\mathcal M.\]
+  But $\mathcal M$ is actually pulled back from $\MM_1^{\rm{div}}$ and thus the wanted isomorphism just follows from the commutativity of the following diagram
+ 
+ \bcd
+S\times_{\MM_1^{\rm{div}}} S\ar[r,"\rm{pr_1}"]\ar[d, "\rm{pr_2}"] & S\ar[d] \\
+S\ar[r] & \MM_1^{\rm{div}}
 \ecd
-To show that the above construction is compatible with base change it is enough to show that for any base change holds what we proved in Lemma~\ref{DVR}:
-\begin{equation}\label{eq:generalbasechange}
-f^*\pi_*\mathcal M\cong \pi'_*f^*\mathcal M.
-\end{equation}
-Since $\pi$ is flat we do have an isomorphism if we consider everything derived:
-\begin{equation}\label{eq:derivedbasechange}
-\rm{L}f^*\R\pi_*\mathcal M\cong \R\pi'_*\rm{L}f^*\mathcal M.
-\end{equation}
-First notice that the $H^0$ on the LHS of \eqref{eq:derivedbasechange} is exactly the LHS of \ref{eq:generalbasechange}.
-
-
+ 
+The  cocycle condition is similarly straightforward to verify. 
 \end{proof}
 
 
@@ -551,16 +567,32 @@ The $1$-stabilisation with divisors descends to the level of weighted curves:
 \MM_1^{\rm{div}}\ar[r]\ar[d] & \MM_1^{(1),\rm{div}}\ar[d] \\
 \MM_1^{\rm{wt}}\ar[r] & \MM_1^{(1),\rm{wt}}
 \ecd
-\end{prop} 
+\end{prop}
+\begin{proof}
+{\'E}tale locally on $\MM_1^{\rm{wt}}$ we can always choose sections $s_i$s such that the associated Cartier divisor $D$ satisfies that $\omega_{\pi}(E)\otimes\mathcal O_{\cC}(3D)$ is trivial on elliptic tails and ample else-where.
+Then if $S\to \MM_1^{\rm{wt}}$ is a smooth atlas, up to take an {\'e}tale cover we can assume there are sections  $s_i$ s of $\mathcal C_S\xrightarrow{\pi_S} S$ defining a lifting $S\to \MM_1^{\rm{div}}$ and thus trough the above construction a morphism $S\to  \MM_1^{(1),\rm{wt}}.$
 
+Now to show this define a morphism $\MM_1^{\rm{wt}}\rightarrow \MM_1^{(1),\rm{wt}}$ we need once again to verify that, in the notation of the above Proposition,  $\rm{pr}_1(\phi)\cong\rm{pr}_2(\phi)$  and the cocycle condition is satisfied.
 
- 
+In other words, we need to check that for two different lifting $S\xrightarrow{s_i,\;s'_i}\MM_1^{\rm{div}}$, 
+\[\hat{\mathcal C}_1=\operatorname{Proj}_S\left((\omega_{\pi}(E)\otimes\mathcal O_{\cC}(D_1))^{\otimes n}\right)\cong \operatorname{Proj}_S\left((\omega_{\pi}(E)\otimes\mathcal O_{\cC}(D_2))^{\otimes n}\right)=\hat{\mathcal C}_2. \]
+By construction, we have a birational map 
+ \bcd
+&\mathcal C \ar[dl,"\phi_1"]\ar[dr,"\phi_2"]  \\
+ \hat{\mathcal C}_1\ar[rr,dashed, "\psi"] & &\hat{\mathcal C}_2.
+ \ecd
+
+We want to show that it extends to a regular morphism. 
+First of all, notice that $ \hat{\mathcal C}_i$ are normal. Indeed, since $S$ is smooth and the singularities of the fibers are in co-dimension 1, both $ \hat{\mathcal C}_i$ are regular in codimension 1. Moreover, since both $S$ (smooth) and the fibers (Cohen-Macaulay) satisfy the ($S_2$) condition of Serre, also the total spaces do\cite[Thorem~23.9]{MAT}. In particular, this implies  that
+\[\phi_{i,*}\OO_{\mathcal C}\cong \OO_{\hat{\mathcal C}_i} \]
+ Moreover notice that by construction $\operatorname{Ex}(\phi_1)\cong \operatorname{Ex}(\phi_2),$ so in particular $\phi_2$ contracts all fibers of $\phi_1.$ Then a standard argument \cite{debarre}
+shows that $\phi_2$ factorise through $\phi_1$ and vice versa. This prove the existence of the isomorphism $\psi.$ Notice that this is in fact unique as it is the one making the diagram commutative.
+
+Likewise we can show the cocycle condition and thus the proof is completed.
+\end{proof} 
+
 \subsection*{Why only cusps?} 
-\subsection*{Alternative constructions}
-\begin{itemize}
-\item adapt the ideas of \cite{HassettHyeon}: check out section 3 of this paper;
-\item check \cite[\S 4]{RSPW}.
-\end{itemize}
+
  \section{Comparison with $p$-fields and splitting}
 \subsection{Notation}
 Let $\Z$ be defined by the pullback diagram:
