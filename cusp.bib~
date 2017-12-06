@@ -1,5 +1,27 @@
 @comment{x-kbibtex-personnameformatting=<%l><, %f>}
 
+@book{debarre,
+	author = "Debarre, Olivier",
+	publisher = "Springer Science \& Business Media",
+	title = "{Higher-dimensional algebraic geometry}",
+	year = "2013"
+}
+
+@book{MAT,
+	author = "Matsumura, Hideyuki",
+	edition = "Second",
+	isbn = "0-521-36764-6",
+	mrclass = "13-01",
+	mrnumber = "1011461",
+	note = "Translated from the Japanese by M. Reid",
+	pages = "xiv+320",
+	publisher = "Cambridge University Press, Cambridge",
+	series = "{Cambridge Studies in Advanced Mathematics}",
+	title = "{Commutative ring theory}",
+	volume = "8",
+	year = "1989"
+}
+
 @book{neron,
 	author = "Bosch, Siegfried and L{\"u}tkebohmert, Werner and Raynaud, Michel",
 	publisher = "Springer Science \& Business Media",
@@ -384,35 +406,16 @@
 	year = "2009"
 }
 
-@article{Manolache-pullback,
-	author = "Manolache, Cristina",
-	fjournal = "Journal of Algebraic Geometry",
-	issn = "1056-3911",
-	journal = "J. Algebraic Geom.",
-	mrclass = "14C15 (14A20 14N35)",
-	mrnumber = "2877433",
-	mrreviewer = "Hsian-Hua Tseng",
-	number = "2",
-	pages = "201--245",
-	title = "{Virtual pull-backs}",
-	url = "https://doi.org/10.1090/S1056-3911-2011-00606-1",
-	volume = "21",
-	year = "2012"
-}
-
-@article{BF,
-	author = "Behrend, K. and Fantechi, B.",
-	fjournal = "Inventiones Mathematicae",
-	issn = "0020-9910",
-	journal = "Invent. Math.",
-	mrclass = "14F99 (14C15 14D20)",
-	mrnumber = "1437495",
-	mrreviewer = "Tohru Nakashima",
-	number = "1",
-	pages = "45--88",
-	title = "{The intrinsic normal cone}",
-	url = "https://doi.org/10.1007/s002220050136",
-	volume = "128",
-	year = "1997"
+@book{Har,
+	author = "Hartshorne, Robin",
+	isbn = "0-387-90244-9",
+	mrclass = "14-01",
+	mrnumber = "0463157",
+	mrreviewer = "Robert Speiser",
+	note = "Graduate Texts in Mathematics, No. 52",
+	pages = "xvi+496",
+	publisher = "Springer-Verlag, New York-Heidelberg",
+	title = "{Algebraic geometry}",
+	year = "1977"
 }
 
