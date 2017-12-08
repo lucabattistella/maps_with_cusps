@@ -37,7 +37,7 @@
 \newcommand{\B}{\mathcal B}
 \newcommand{\X}{\pazocal X}
 \newcommand{\XP}{\pazocal{X\!P}}
-\newcommand{\tXP}{\tilde{\pazocal{X\!P}}}
+\newcommand{\tXP}{\widetilde{\pazocal{X\!P}}}
 \renewcommand{\L}{\mathcal L}
 \newcommand{\hL}{\hat{\mathcal L}}
 \newcommand{\C}{\mathfrak C}
@@ -688,10 +688,13 @@ By differentiating it and pulling it back along the universal evaluation
 \pazocal P \ar[r] & \rm \hP
 \ecd
 (here and in future $\oplus$ at the level of geometric vector bundles means the fiber product over the base) we obtain a cosection of the relative obstruction sheaf
-\[\begin{split}
+\begin{equation*}\label{eqn:cosection}
+ \begin{split}
  \sigma_1\colon\rm{Ob}_{\pazocal P/\hP}=\R^1\hat\pi_{\pazocal P,*}(\mathcal L_{\pazocal P}^{\oplus 5}\oplus\mathcal P_{\pazocal P})\to \R^1\hat\pi_{\pazocal P,*}(\omega_{\hat\pi_{\pazocal P}})\simeq \OO_{\pazocal P} \\
  \sigma_{1|(u,\psi)}(x,p)=p\w(u)+\psi\sum_{i=0}^4\partial_i\w(u)x_i
-\end{split}\]
+\end{split}
+\end{equation*}
+
 The degeneracy locus of this cosection is $\Mone{1}{X}{d}$: by Serre duality if $\w(u)\neq 0$ then we can find a $p$ such that the cosection does not vanish; similarly we can do if $\psi\sum_{i=0}^4\partial_i\w(u)\neq 0$, but then $\psi=0$ by smoothness of $\w$. $\sigma_1$ lifts to a cosection of the absolute obstruction bundle $\rm{Ob}_{\pazocal P}\to\OO_{\pazocal P}$ with the same degeneracy locus.
 
 We may thus endow $\Mone{1}{\PP^4}{d}^p$ with a localised virtual cycle, and we want to show that it gives the same numerical invariants as the cuspidal Gromov-Witten theory of $X$, up to a sign:
@@ -1016,17 +1019,17 @@ Recall the definition of the \emph{closure of the zero section of a vector bundl
 $\overline{0}_{\mathbf F}$ is an integral stack.
 
 \begin{ex}
-When $h^0(F_\bullet)=0$, the closure of the zero section looks like $B$ with some stacky structure on the vanishing locus of $d$. Consider for example $B=\PP^1$ and $F_\bullet=[\OO_{\PP^1}\xrightarrow{x}\OO_{\PP^1}(1)]$. Then the action of $e\in F_0$ on $F_1$ is by $f\mapsto f+xe$. Clearly $\operatorname{cl}(dF_0)$ is the whole line bundle $F_1$; the $F_0$-action is transitive on the fibers over $\{x\neq 0\}$ and trivial on the $\{x=0\}$-fiber. Hence $\overline{0}_{\mathbf F}$ is isomorphic to $\PP^1\setminus\{x=0\}$ with a stacky point $B\mathbb G_{\rm a}$ replacing $\{x=0\}$.
+When $h^0(F_\bullet)=0$, the closure of the zero section looks like $B$ with some stacky structure on the vanishing locus of $d$. Consider for example $B=\PP^1$ and $F_\bullet=[\OO_{\PP^1}\xrightarrow{x}\OO_{\PP^1}(1)]$. Then the action of $e\in F_0$ on $F_1$ is by $f\mapsto f+xe$. Clearly $\operatorname{cl}(dF_0)$ is the whole line bundle $F_1$; the $F_0$-action is transitive on the fibers over $\{x\neq 0\}$ and trivial on the $\{x=0\}$-fiber. Hence $\overline{0}_{\mathbf F}$ is isomorphic to $\PP^1\setminus\{x=0\}$ with a gerbe $[\Aaff^1/\mathbb G_{\rm a}]$ replacing the point $\{x=0\}$.
 \end{ex}
 
-We may now split the cone $\mathfrak{C}_{\tZp/\tXP}$ in the following manner: we denote by $\mathfrak C^{\rm{main}}$ the closure of the zero section of $h^1/h^0(\mathbb {E}_{\tZp/\tXP})\rvert_{\tZ^{p,\rm{main}}}$, which is an irreducible cone supported on the main component; all the rest is supported on the boundary components, possibly on their intersection with the main one, and we are going to pack all the components supported on $D^k\tZp$ together and label them $\mathfrak C^k$ accordingly, so in the end we get a splitting:
+We may now split the cone $\mathfrak{C}_{\tZp/\tXP}$ in the following manner: we denote by $\mathfrak C^{\rm{main}}$ the closure of the zero section of $h^1/h^0(\mathbb {E}_{\tZp/\tXP})\rvert_{\tZ^{p,\rm{main}}}$, which is an irreducible cone supported on the main component; all the rest is supported on the boundary components, possibly on their intersection with the main one, and we are going to pack all the components supported on $D^k\tZp$ together and label them $\mathfrak C^k$ accordingly, so in the end we obtain a splitting:
 \[
  \mathfrak{C}_{\tZp/\tXP}=\mathfrak C^{\rm{main}}+\sum_{k\geq 2} \mathfrak C^k
 \]
 We are going to show that:
 \begin{enumerate}
  \item the contribution of $\mathfrak C^{\rm{main}}$ is exactly the reduced invariants of $X$;
- \item the other cones $\mathfrak C^k,\ k\geq 2$ are enumeratively meaningless.
+ \item the other cones $\mathfrak C^k,\ k\geq 2,$ are enumeratively meaningless.
 \end{enumerate}
 
 In order to prove the first we proceed as in \cite[\S5]{CLpfields}: notice that the obstruction theory $\mathbb E$ splits as $\mathbb E_1\oplus\mathbb E_2$ where $\mathbb E_1=\R\hat\pi_*(\mathcal L^{\oplus 5})$ and $\mathbb E_2=\R\hat\pi_*(\mathcal P)$. When we restrict ourselves to $\tZ^{p,\rm{main}}$ we see that $\mathbb E_1$ is the closure of its own zero section; it follows that:
@@ -1048,25 +1051,51 @@ $$0^![\mathbf{B}]=e(H^0(\mathbb E)^\vee)\in A_*(B).
 $$
 \end{lem}
 
-We apply this with $\mathbb E=\R\hat{\pi}_*\mathcal L^{\otimes 5}$. Notice that it satisfies the hypotheses by virtue of the equations in Remark \ref{rmk:eqn}.
+We apply this lemma to $\mathbb E=\R\hat{\pi}_*\mathcal L^{\otimes 5}$. Notice that it satisfies the hypotheses by virtue of the equations in Remark \ref{rmk:eqn}: indeed the question may be addressed locally; looking at the resolution of $\mathbb E$:
+\[
+ \hat\pi_*\mathcal L^{\otimes 5}(\A)\to \hat\pi_*\mathcal L^{\otimes 5}(\A)\rvert_{\A}
+\]
+we deduce from the equation that the image sheaf of this map is $\pi_*\mathcal L^{\otimes 5}(\A)\rvert_{\A}\otimes\OO_{\tZ^{p,\rm{main}}}(-\Delta)$, where $\Delta$ denotes the boundary of the main component $\Delta=\tZ^{p,\rm{main}}\cap\left(\bigcup_{k\geq 2}D^k\tZp\right)$. Then $\hat\pi_*\mathcal L^{\otimes 5}$ is a vector bundle.
 
 \begin{lem}
  If we let $i$ be the inclusion of $\tZ$ in $\tM_1(\PP^4,d)$, then:
  \[
-  i_*(c_{\text{top}}(\hat{\pi}_*\hat{\mathcal L}^{\otimes 5})\cap[\tZ^{p,\rm{main}}])=c_{\text{top}}({\pi}_*\mathcal L^{\otimes 5})\cap[\tM_1(\PP^4,d)^{p,\rm{main}}]
+  i_*(c_{\rm{top}}(\hat{\pi}_*\hat{\mathcal L}^{\otimes 5})\cap[\tZ^{p,\rm{main}}])=c_{\rm{top}}({\pi}_*\mathcal L^{\otimes 5})\cap[\tM_1(\PP^4,d)^{p,\rm{main}}]
  \]
-
 \end{lem}
+\begin{proof}
+ Obviously $i_*[\tZ^{p,\rm{main}}]=[\tM_1(\PP^4,d)^{p,\rm{main}}]$. On the other hand notice that on $\tZ^{p,\rm{main}}$ we have:
+ \[
+  \pi_*\mathcal L=\hat{\pi}_*\phi_*\phi^*\hat{\mathcal L}=\hat{\pi}_*\hat{\mathcal L}
+ \]
+by projection formula and since $\phi_*\OO_{\cC_{\tZ^{p,\rm{main}}}}=\OO_{\hat\cC_{\tZ^{p,\rm{main}}}}$. The result follows then from the projection formula for Chern classes.
+\end{proof}
 
+We are left with showing that the rest of the $\mathfrak C^k$'s do not contribute to the invariants. This is essentially a dimensional computation. The arguments of \cite[\SS6-8]{CLpfields} may be directly applied; we shall outline them for the benefit of the reader. We introduce the notation $\tZ^{p,\rm{gst}}:=\bigcup_{k\geq 2} D^k\tZp$ for the union of the boundary components, and $\mathfrak C^{\rm{gst}}=\bigcup_{k\geq 2}\mathfrak C^k$.
 
-\begin{itemize}
-\item split the cone
-\item recall lemma 5.3
-\item compare the main component with reduced invariants
-\item deal with the other bits
-\end{itemize}
+\subsection*{Step I: reduction to the case of a cone inside a vector bundle and homogeneity}
+This section deals with removing the technicalities of working with a cone stack inside a vector bundle stack.
 
+The key point is that $\mathbb E\rvert_{\tZ^{p,\rm{gst}}}$ has locally free $h^0$ \emph{and} $h^1$, as can be seen from the equations. Then, when we pick a resolution by locally free sheaves $\mathbb E=[F_0\xrightarrow{d} F_1]$, the image sheaf $d(F_0)$, which is the kernel of $F_1\to h^1(\mathbb E\rvert_{\tZ^{p,\rm{gst}}})$, is really a sub-vector bundle of $F_1$. Then the projections:
+\[
+ \beta\colon F_1\to h^1/h^0(\mathbb E) \quad \text{and} \quad \beta'\colon F_1\to \tilde{V}:=\R^1\hat{\pi}_*(\hat{\mathcal L}^{\oplus 5}\oplus\mathcal P)
+\]
+are both flat. The cone stack $\mathfrak C^{\rm{gst}}$ can be descended to a cone $C^{\rm{gst}}$ by means of taking the quotient of $\beta^{-1}\mathfrak C^{\rm{gst}}$ by the free action of $d(F_0)$; $C^{\rm{gst}}$ should then be thought of as the coarse moduli of $\mathfrak C^{\rm{gst}}$. Recall that the cosection $\sigma$ is induced by a cosection $\sigma_1$ of $\tilde V$ (see Eq. \eqref{eqn:cosection}). It follows from the commutativity of localised Gysin pullback with flat pullback that:
+\[
+ 0^!_{h^1/h^0(\mathbb E),\sigma}(\mathfrak C^{\rm{gst}})= 0^!_{\tilde V,\sigma_1}(C^{\rm{gst}})
+\]
+See \cite[Proposition 6.3]{CLpfields}.
 
+They then introduce the notion of \emph{homogeneity} for substacks of $\tilde V$: write $\tilde V=\tilde V_1\oplus\tilde V_2$ with $\tilde V_1=\R^1\hat{\pi}_*(\hat{\mathcal L}^{\oplus 5})$ and $\tilde V_2=\R^1\hat{\pi}_*(\mathcal P)$, and $\gamma\colon \tZ^{p,\rm{gst}}\to\tZ^{\rm{gst}}$ the projection. Since $\tZ^{p,\rm{gst}}$ is the total space of a line bundle over $\tZ^{\rm{gst}}$, it comes with a natural $\Gm$-action on the fibers of $\gamma$, and since $\tilde V_i=\gamma^*V_i$ for the corresponding vector bundles $V_i$ on $\tZ^{\rm{gst}}$, the total space of $\tilde V_i$ can be endowed with a $\Gm$-action that makes the projection to $\tZ^{p,\rm{gst}}$ equivariant. A closed substack of $\tilde V$ is $0$-homogeneous if it is the pullback of a closed substack of $V$ along $\gamma$. In facts the $\tilde V_i$'s can be endowed with different $\Gm$ actions that make the projection to $\tZ^{p,\rm{gst}}$ equivariant by twisting with two characters of $\Gm$, one for each $\tilde V_i$; this defines the concept of $(l_1,l_2)$-homogeneous substacks of $\tilde V$. Here is how we are going to use the homogeneity:
+
+\begin{lem}
+ Let $\tilde C\subseteq \tilde V$ be an $(l_1,l_2)$-homogeneous sub\emph{cone} of $\tilde V$; then the cone $\tilde C\cap(0\oplus\tilde V_2)$ is pulled back from a cone in $V_2$.
+\end{lem}
+\begin{proof}
+ Locally we may pick coordinates $t$ on the fibers of $\gamma$, $x_1,\ldots,x_5$ on the fibers of $\tilde V_1$, and $y_1,\ldots,y_{5d+5}$ on the fibers of $\tilde V_2$, such that the ideal of $\tilde C$ is generated by homogeneous polynomials $p_j$ in $t^{-l_1}x_i$ and $t^{-l_2}y_i$. The ideal of $\tilde C\cap(0\oplus\tilde V_2)$ is then given by $\langle x_1,\ldots, x_5,p_j(0,t^{-l_2}y)\rangle_j$, where $p_j(0,t^{-l_2}y)$ results from setting $x_i=0$ in $p_j$; notice now that $\tilde C$ being a cone, it is invariant by scalar multiplication on the fibers of $\tilde V$, so we may as well say that $\tilde C\cap(0\oplus\tilde V_2)$ is cut by the ideal $\langle x_1,\ldots, x_5,p_j(0,y)\rangle_j$. This makes it clear that $\tilde C\cap(0\oplus\tilde V_2)$ is pulled back from $(0\oplus V_2)$ on $\tZ^{\rm{gst}}$.
+\end{proof}
+
+Finally Chang and Li point out that the coarse moduli cone $C^{\rm{gst}}$ is $(0,1)$-homogeneous \cite[Proposition 6.7]{CLpfields}: recalling the interpretation of $\Mone{1}{\PP^4}{d}^p$ as an open inside the cone of sections of $\mathcal V=\rm{Vb}(\mathcal L^{\oplus 5}\oplus \mathcal P)$ over $\hat\cC_{\mathfrak{Pic}_1^{(1)}}$, the desired $\Gm$-action on the fibers of $\gamma\colon \tZ^{p,\rm{gst}}\to\tZ^{\rm{gst}}$ is induced by endowing $\rm{Vb}(\mathcal L^{\oplus 5}\oplus \mathcal P)$ with the $\Gm$-action that is trivial on the fibers of every copy of $\rm{Vb}(\mathcal L)$, and has character $1$ on those of $\rm{Vb}(\mathcal P)$, with an underlying trivial action on $\mathfrak{Pic}_1^{(1)}$. This influences the obstruction theory  $\R^\bullet\hat\pi_*\left(\mathfrak e^* T_{\mathcal V/\hat\cC_{\mathfrak{Pic}_1^{(1)}}}\right)$ of $\Mone{1}{\PP^4}{d}^p$ in the obvious way, and consequently $\mathbb E$ on $\tZp$.
 
 
 
