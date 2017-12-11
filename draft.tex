@@ -26,8 +26,8 @@
 \usepackage{calrsfs}
 \DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
 
-\newcommand{\M}[4]{\overline{\mathcal M}_{#1,#2}(#3,#4)}
-\newcommand{\Mone}[3]{\overline{\mathcal M}^{(1)}_{#1}(#2,#3)}
+\newcommand{\M}[4]{\overline{\pazocal M}_{#1,#2}(#3,#4)}
+\newcommand{\Mone}[3]{\overline{\pazocal M}^{(1)}_{#1}(#2,#3)}
 \newcommand{\PP}{\mathbb P}
 \newcommand{\OO}{\mathcal O}
 \renewcommand{\to}{\rightarrow}
@@ -132,68 +132,173 @@ abstract
 
 \maketitle
 
+\section*{Introduction}
 
-The moduli stack of stable maps to projective space is a fundamental object in Gromov-Witten theory, since any moduli space of maps to a (smooth) projective variety is cut inside that of the ambient projective space by a set of induced equations. Yet its structure in higher genus is still largely mysterious.
+The moduli stack of stable maps to projective space is a fundamental object in Gromov-Witten theory, since any moduli space of maps to a projective variety is cut inside the former by a number of equations induced by those of $X\subseteq \PP^r$. Yet its structure in higher genus is still largely mysterious.
 
-Recall that, in genus zero, $\M{0}{n}{\PP^r}{d}$ is a smooth stack of the expected dimension $\operatorname{vdim}=r-3+d(r+1)+n$ (we see that it is unobstructed from the fact that $H^1(\PP^1,f^*T_{\PP^r})=0$ for any map $f\colon\PP^1\to\PP^r$). Furthermore, for any split vector bundle $E=\oplus_{i} \mathcal O_{\PP^r}(l_i)$, the sheaf $\pi_*f^*E$ (where $\pi$ is the structure map of the universal curve and $f$ the universal stable map) is actually a vector bundle on $\M{0}{n}{\PP^r}{d}$.
+Recall that in genus zero $\M{0}{n}{\PP^r}{d}$ is a smooth stack of the expected dimension. Furthermore for any split vector bundle $E=\oplus_{i} \mathcal O_{\PP^r}(l_i)$ the sheaf $\pi_*f^*E$ is a vector bundle on $\M{0}{n}{\PP^r}{d}$.
 \bcd
 \mathcal C_{0,n}(\PP^r,d)\ar[r,"f"]\ar[d,"\pi"] & \PP^r\times \M{0}{n}{\PP^r}{d} \\
 \M{0}{n}{\PP^r}{d} &
 \ecd
 
-It is a matter of functoriality of virtual fundamental classes \cite{KON} \cite{CKL} \cite{KKP} that, if $i\colon X\to \PP^r$ is a complete intersection of degree $(l_1,\ldots,l_k)$ (if $X$ is cut by a generic section $s\in H^0(\PP^r,E)$, then the induced section $\tilde s=\pi_*f^*(s)$ is also generic) and we denote by $j$ the corresponding inclusion
-$$\bigsqcup_{\beta\in A_1(X)\colon i_*(\beta)=d}\M{0}{n}{X}{\beta}\hookrightarrow\M{0}{n}{\PP^r}{d}$$
-then the following equality, expected by the interpretation of Chern classes as zero loci, holds:
+It is a matter of functoriality of virtual fundamental classes \cite{KON} \cite{CKL} \cite{KKP} that, if $i\colon X\hookrightarrow \PP^r$ is a complete intersection of degree $(l_1,\ldots,l_k)$ and we denote by $j$ the corresponding inclusion of moduli spaces of maps,
+%$$\bigsqcup_{\beta\in A_1(X)\colon i_*(\beta)=d}\M{0}{n}{X}{\beta}\hookrightarrow\M{0}{n}{\PP^r}{d}$$
+then the following equality holds:%, which is expected from the interpretation of Chern classes as zero loci of sections (if $X$ is cut by a generic section $s\in H^0(\PP^r,E)$, then the induced section $\tilde s=\pi_*f^*(s)$ is also generic):
 $$j_*[\bigsqcup_{\beta\in A_1(X)\colon i_*(\beta)=d}\M{0}{n}{X}{\beta}]^{\operatorname{vir}}=c_{\operatorname{top}}(E)\cap[\M{0}{n}{\PP^r}{d}].$$
-This so-called ``hyperplane property'' allows us to compute GW invariants of complete intersections as twisted invariants on projective space.
-The situation in higher genera is much more intricated: the moduli space $\M{g}{n}{\PP^r}{d}$ is neither irreducible, nor pure dimensional; the sheaf $\pi_*f^*\mathcal O_{\PP^r}(l)$ is not a vector bundle. One of the reason for this (in fact the only reason in genus one) is that there are maps from reducible curves with a genus $g$ core that is contracted and some rational tails that carry all the degree; if $f\colon C\to \PP^r$ is such a map, then $H^1(C,f^*\mathcal O_{\PP^r}(1))\neq 0$, as can be easily deduced from the normalisation sequence.
+This so-called ``hyperplane property'' allows us to compute GW invariants of complete intersections as twisted invariants of projective space, which enables us to perform computations by localisation.
+
+The situation in higher genera is much more intricate: the moduli space $\M{g}{n}{\PP^r}{d}$ is neither irreducible, nor pure dimensional, and the sheaf $\pi_*f^*\mathcal O_{\PP^r}(l)$ is not a vector bundle. The enumerative meaning of the invariants is affected by the appearance of unexpected components, representing degenerate contributions from curves of lower genera.
+
+The situation in genus $1$ is better understood: the geometry of the moduli space of genus one stable maps to projective space $\M{1}{n}{\PP^r}{d}$ has been widely studied since \cite{Vre}. Contrary to higher genus, the closure of the locus of maps the source of which is a smooth elliptic curve is an irreducible component of $\M{1}{n}{\PP^r}{d}$, which is usually called the \emph{main component}.
+%One of the reasons for this (in fact the only reason in genus one) is that there are maps from reducible curves with a genus $g$ core that is contracted and some rational tails that carry all the degree; if $f\colon C\to \PP^r$ is such a map, then $H^1(C,f^*\mathcal O_{\PP^r}(1))\neq 0$, as can be easily seen from the normalisation sequence.
+
+In an attempt to extract the enumerative information hidden within Kontsevich's moduli space, Vakil and Zinger managed to desingularise the main component by performing a sequence of blow-ups on an underlying space of weighted curves \cite{VZpreview} \cite{VZ} (see also \cite{HL}). The end result $\widetilde{\pazocal M}_{1,n}(\PP^r,d)^{\rm{main}}$ is a stack on which $\tilde\pi_*\tilde f^*\mathcal O_{\PP^r}(l)$ is a vector bundle, which allows them to define a notion of \emph{reduced invariants} for complete intersections in $\PP^r$, based on the hyperplane property:  %The idea is that blowing up successively the locus of degree zero elliptic curve with one rational tail (\emph{elliptic tails}), then with two (\emph{elliptic bridges}), etc. and taking the fiber product
+%\bcd
+%\widetilde{\mathcal M}_{1,n}(\PP^r,d)\ar[r]\ar[d] & \M{1}{n}{\PP^r}{d}\ar[d] \\
+%\widetilde {\mathfrak M}_{1,n}^{\operatorname{wt}=d} \ar[r] & \mathfrak M_{1,n}^{\operatorname{wt}=d}
+%\ecd
+%the strict transform of the main component becomes smooth and meets the rest of the components in normal crossing fashion (the \'{e}tale local model being the union of two linear subspaces of different dimensions in affine space). Furthermore, the sheaves $\tilde\pi_*\tilde f^*\mathcal O_{\PP^r}(l)$ contain a vector subbundle of rank $dl$ supported on the strict transform of the main component. This paved the way to the definition of reduced invariants.
+\begin{dfn}
+Let $X$ be a complete intersection of degree $(l_1,\ldots,l_k)$ in $\PP^r$. The genus one reduced Gromov-Witten invariants of $X$ are defined by integrating against: $$[\widetilde{\pazocal M}_{1,n}(\PP^r,d)^{\rm{main}}]\cap c_{\rm{top}}(\tilde\pi_*\tilde f^*(\oplus_{i=1}^k\mathcal O_{\PP^r}(l_i))).$$
+\end{dfn}
+
+Recently there has been a different attempt to discard some of the unwanted components. Viscardi \cite{VISC} has introduced a series of \emph{alternate compactifications} of the moduli space of maps from elliptic curves, based on Smyth's work on the birational geometry of $\oM_{1,n}$. In Viscardi's space $\oM_{1,n}^{(m)}(X,\beta)$ maps that contract an elliptic curve with at most $m$ rational tails are destabilised, and replaced by maps from $l$-elliptic fold singularities with $l\leq m$.
+
+The main result of this paper is that reduced invariants of the quintic three-fold can be recovered from Viscardi's alternate compactification.
+
+\begin{thm}
+Let $X$ be a generic smooth quintic three-fold. Then:
+\[
+N_1^{\rm{red}}(X,d)=N_1^{\rm{cusp}}(X,d)
+\]
+where:
+\[N_1^{\rm{red}}(X,d):=\deg \left([\widetilde{\pazocal M}_{1}(\PP^4,d)^{\rm{main}}]\cap c_{\rm{top}}(\tilde\pi_*\tilde f^*(\mathcal O_{\PP^4}(5)))\right)\]
+and
+\[N_1^{\rm{cusp}}(X,d):=\deg [\Mone{1}{X}{d}]^{\rm{vir}}.
+\]
+\end{thm}
+
+The insight for this fact comes from the following formula, the proof of which was first given by J. Li and A. Zinger \cite{LZ} in the symplectic category:
+
+$$N_1(X,d)=N_1^{\rm{red}}(X,d)+\frac{1}{12}N_0(X,d).$$
+Noticing that the genus $0$ contribution to this formula only comes from the boundary component with a single rational tail of degree $d$ suggests that removing such component would provide a more direct approach to reduced invariants. This is precisely what Viscardi's space of 1-stable maps does.
+
+\textcolor{red}{Li-Zinger's formula was later proved in the algebro-geometric setting by H.-W. Chang and J. Li in \cite{CL}. This was only the final of a series of papers where they developed the theory of stable maps with $p$-fields and applied it together with the techniques of cosection-localised virtual classes \cite{KLcosection}. $p$-fields provide a way around the fact that we cannot control the geometry of $\oM_1(X,d)$ and there is no compatible perfect obstruction theory relative to the inclusion $\oM_1(X,d)\hookrightarrow \oM_1(\PP^4,d)$; indeed Chang and Li managed to include the unwanted part of the obstruction theory in the moduli space, and by these means endow a well-understood space (very similar to $\oM_1(\PP^4,d)$) with an obstruction theory counting genus $1$ curves in the quintic.}
+\textcolor{blue}{To prove Li-Zinger formula in the algebro-geometric setting, one would like to understand how the virtual class of  $\oM_1(X,d)$ splits on the various component of the moduli space, but this seems to be unaccesible. To overcome this difficulty, Chang Li developed the theory of stable maps with $p$- fields.}
+
+The proof of our main theorem follows from adapting the techniques of Chang and Li to Viscardi's moduli spaces. We show the following:
+\begin{prop}
+There exists a well-defined $1$-stabilisation morphism at the level of weighted pre-stable curves:
+\[
+\MM_{1,n}^{\rm{wt}}\to \MM_{1,n}^{(1),\rm{wt}}
+\]
+\end{prop}
+The fiber product
+\[
+\MM_{1,n}^{\rm{wt}}\times_{\MM_{1,n}^{(1),\rm{wt}}}\Mone{1}{\PP^4}{d}^p
+\]
+is endowed with a virtual class counting $1$-stable maps to the quintic three-fold (the arguments in \cite{CLpfields} carry over almost unchanged). On the other hand we find a way to compare the main contribution of this space with Vakil-Zinger reduced invariants. A dimensional computation shows that this is the only enumeratively meaningful component.
+
+\subsection*{Outline of the paper}
+maybe table of notations
 \section{Genus one stable maps to $\PP^r$ - Equations, components and alternate compactifications}
 
 \subsection{Local equations and components}
-
-The geometry of the genus one moduli space of Kontsevich' stable maps to projective space $\M{1}{n}{\PP^r}{d}$ has been widely studied since \cite{Vre} and is by now well understood. Assume $d>0$. Let $E$ be a smooth genus one curve with a non-constant morphism $f\colon E\to \PP^r$; then $H^1(E,f^*T_{\PP^r})=0$ by Riemann-Roch, hence we may define the \emph{main component} of $\M{1}{n}{\PP^r}{d}$ as the closure of the locus of maps the source of which is a smooth genus one curve. It is irreducible of the expected dimension $\operatorname{vdim}=d(r+1)+n$. On the other hand, for every positive integer $k$ and partitions $\lambda$ of $d$ into $k$ (positive) parts and $\mu$ of $n$ into $k$ (positive) parts, consider the boundary component $D_{\lambda,\mu}(\PP^r,d)$ that is the closure of the locus where (i) the source curve is obtained by gluing a smooth elliptic curve with $k$ many $\PP^1$'s (as rational tails), (ii) the map contracts the core elliptic curve to a point, and (iii) the rational tail $R_i$ has degree $\lambda_i$ and $\mu_i$ many marked points. In fact $D_{\lambda,\mu}(\PP^r,d)$ is the image of the gluing morphism from the fiber product
+We start by recalling a description of the global geometry of $\M{1}{n}{\PP^r}{d}$. Besides the main component, which we have defined in the Introduction, for every positive integer $k$ and partitions $\lambda\vdash d$ into $k$ parts and $\mu\vdash n$ into $k$ parts such that no $(\lambda_i,\mu_i)_{i=1}^k$ is either $(0,1)$ or $(0,2)$, there is a \emph{boundary} irreducible component $D_{\lambda,\mu}(\PP^r,d)$ defined to be the closure of the locus where:
+\begin{description}
+\item[i] the source curve is obtained by gluing a smooth elliptic curve with $k$ many $\PP^1$'s as rational tails,
+\item[ii] the map contracts the core elliptic curve to a point, and
+\item[iii] the rational tail $R_i$ has degree $\lambda_i$ and $\mu_i$-many marked points.
+\end{description}
+Indeed $D_{\lambda,\mu}(\PP^r,d)$ is the image of the gluing morphism from the fiber product:
 $$\M{1}{k}{\PP^r}{0}\times_{\PP^r}\prod_{i=1}^k\M{0}{\mu_i+1}{\PP^r}{\lambda_i}.$$
 
+The minimal arithmetic genus $1$ subcurve is called the \emph{core}. We then have:
 \begin{prop}\label{prop:components}
-\emph{(1)} The set of irreducible components of $\M{1}{n}{\PP^r}{d}$ is in bijection with $\{(\lambda\vdash d,\mu\vdash n)|\ \#(\text{parts})(\lambda)=\#(\text{parts})(\mu)\}\cup\{\circ=\operatorname{main}\}$, i.e.
-$$\M{1}{n}{\PP^r}{d}=\M{1}{n}{\PP^r}{d}^\circ\cup\bigcup_{\lambda,\mu}D_{\lambda,\mu}(\PP^r,d).$$
+\emph{(1)} The ones that we have described above are all the irreducible components of $\M{1}{n}{\PP^r}{d}$, %The set of irreducible components of $\M{1}{n}{\PP^r}{d}$ is in bijection with $\{\text{stable}\ (\lambda\vdash d,\mu\vdash n)|\ \#(\text{parts})(\lambda)=\#(\text{parts})(\mu)\}\cup\{\rm{main}\}$,
+i.e.
+$$\M{1}{n}{\PP^r}{d}=\M{1}{n}{\PP^r}{d}^{\rm{main}}\cup\bigcup_{\lambda,\mu}D_{\lambda,\mu}(\PP^r,d).$$
 
-\emph{(2)} Let $(E {}_{p_1,\ldots,p_k}\sqcup_{q_1,\ldots,q_k}\bigsqcup_{i=1}^k R_i,f)$ be a degenerate stable map with $k$ rational tails; then it lies in the boundary of the main component if and only if $\operatorname{d}\!f(T_{q_i}R_i)$ are \emph{linearly dependent} in $T_{f(E)}\PP^r$.
+\emph{(2)} A map $[f]$ lies in the boundary of the main component  if and only if:
+\begin{itemize}
+\item either $f$ is non-constant on an irreducible component of the core,
+\item or if $(E\ {}_{\mathbf p}\!\sqcup_{\mathbf q}\bigsqcup_{i=1}^k R_i,f)$ is a stable map with $k$ rational tails, where $E$ is the maximal contracted genus one subcurve, then $\{\operatorname{d}\!f(T_{q_i}R_i)\}_{i=1}^k$ are \emph{linearly dependent} in $T_{f(E)}\PP^r$.
+\end{itemize}
 \end{prop}
  
-In order to understand how the Gromov-Witten invariants differ from the naive expectation of counting smooth embedded genus $g$ curves in the given homology class, one needs to have a good understanding of the virtual fundamental class and of its splitting on the various components. 
-This has led to the study of explicit local equation for the moduli space of stable maps in a smooth (over $\mathfrak M_{1,n}$) ambient space \cite{HL}, which we shall now briefly explain. Recall that a map from a scheme $C$ to projective $r$-space is the same as the datum of a line bundle $L$ on $C$ together with $r+1$ global sections in $H^0(C,L)$ that generate the line bundle at every point of $C$. Then it seems natural to embed the space of stable maps as an open inside $\pi_*\mathcal L^{\oplus r+1}$ on the universal Picard stack $\mathfrak{P}_{1,n}$. The problem is that this cone is not smooth, due to the jumps in fiber dimension at the boundary.
+This is due to R. Vakil and A. Zinger in \cite{Vre,VZpreview}. We shall later discuss a different proof of this fact based on local equations for the moduli space.
+
+%In order to understand how the Gromov-Witten invariants differ from the naive expectation of counting smooth embedded genus $1$ curves in the given homology class, one needs a good understanding of the virtual fundamental class and of its splitting on the various components. 
+%This has led to the study of explicit local equation for the moduli space of stable maps in a smooth (relative to a moduli space of decorated curves) ambient space \cite{HL}, which we shall now briefly explain.
+We now review Hu-Li's procedure \cite{HL} to find local equations of $\M{1}{n}{\PP^r}{d}$ in a smooth ambient space. These are useful in describing the structure of the intrinsic normal cone and its splitting.
+
+Recall that a map $C\to\PP^r$ is given by a line bundle $L$ on $C$ together with $r+1$ sections in $H^0(C,L)$ that generate the line bundle. It is therefore natural to embed the space of stable maps as an open inside $\pi_*\mathcal L^{\oplus r+1}$ on the universal Picard stack $\mathfrak{P}_{1,n}=\mathfrak{Pic}(\cC_{1,n}\to\MM_{1,n})$.
+Hu and Li actually work on a local chart of the algebraic stack $\mathfrak M_{1,n}^{\rm{div}}$, parametrising families of pre-stable curves with a relative Cartier divisor of degree $d$. 
+ %The problem is that this cone is not smooth, due to the jumps in the dimension of the fiber at the boundary of the moduli space.
 %(besides there is a small issue due to the $\mathbb G_m$ automorphism group of objects of $\mathfrak{P}_{1,n}$, which can be avoided by dishomogenising).
 
-Let $[f\colon C\to \PP^r]$ be a point of $\M{1}{n}{\PP^r}{d}$; we may fix homogeneous coordinates on $\PP^r$ in a way that $D_0:=f^*\{X_0=0\}$ is a $d$-uple of smooth points on $C$ (i.e. \'{e}tale on the base) (this property will hold in a neighbourhood of $[f]$). This gives a map from (an \'{e}tale chart of) $\M{1}{n}{\PP^r}{d}$ to (an \'{e}tale chart of) the moduli space of pre-stable curves with a degree $d$ divisor $\mathfrak M_{1,n}^{\operatorname{div}=d}$, that we may assume to be landing in the locus where the divisor is composed by $d$ smooth distinct points (notice this locus is smooth over $\mathfrak M_{1,n}$ by the deformation theory of smooth subschemes). A morphism to $\PP^r$ shall now be thought of as a curve-divisor pair $(C,D)$ together with $r$ global sections of $\mathcal O_C(D)$: the morphism can be written as $[1:u_1:\ldots:u_r]$, where $1$ is the image of the constant global section along the given map $\mathcal O_C\to\mathcal O_C(D)$ (i.e. we have taken dishomogenised local coordinates on $\PP^r$).
+Let $[f\colon C\to \PP^r]$ be a point of $\M{1}{n}{\PP^r}{d}$: we may fix homogeneous coordinates on $\PP^r$ in such a way that $D_0=f^{-1}\{x_0=0\}$ is a simple smooth divisor on $C$ (i.e. a $d$-uple of smooth points); this property will then hold in a neighbourhood of $[f]$. This gives a map from an \'{e}tale chart $\pazocal U$ of $\M{1}{n}{\PP^r}{d}$ to an \'{e}tale chart $\pazocal V$ of $\mathfrak M_{1,n}^{\rm{div}}$, that we may assume to land in the locus where the divisor is made of $d$ distinct smooth points. Notice that this locus is smooth over $\mathfrak M_{1,n}$ by the deformation theory of smooth subschemes. A morphism to $\PP^r$ shall now be thought of as a curve-divisor pair $(C,D)$ together with $r$ sections of $\mathcal O_C(D)$: the morphism can be written as $[1:u_1:\ldots:u_r]$, where $1$ means the given section of $\mathcal O_C\to\mathcal O_C(D)$.
 
-Furthermore, \'{e}tale locally on $\M{1}{n}{\PP^r}{d}$, we may pick extra sections $\mathcal A$ and $\mathcal B$ of $\mathcal C_{1,n}(\PP^r,d)$ such that (i) they pass through the core elliptic curve, and (ii) they are disjoint smooth points away from $\mathcal D_0$. Then $\pi_*\mathcal L(\mathcal A)$ \emph{is} a vector bundle on $\mathfrak P_{1,n}$ and $\pi_*\mathcal L$ is carved inside it by requiring that the restriction (residue) map $\pi_*\mathcal L(\mathcal A)\to\pi_*\mathcal L(\mathcal A)_{|\mathcal A}$ is zero.
+%is the image of the constant global section along the given map $\mathcal O_C\to\mathcal O_C(D)$ (i.e. we have taken dishomogenised local coordinates on $\PP^r$).
 
-\begin{prop}
-\emph{(1)} \'{E}tale locally, there is a locally closed embedding of $\M{1}{n}{\PP^r}{d}$ inside the vector bundle $V_1:=\Spec(\pi_*\mathcal L(\A)^{\oplus r})$ over $\mathfrak M_{1,n}^{\operatorname{div}=d}$. It is obtained by imposing the nondegeneracy and stability conditions \emph{(open)} on the vanishing locus of the restriction of the universal section of $\pi_*\mathcal L(\A)^{\oplus r}$ to $\A$ \emph{(closed)}.
-
-\emph{(2)} Let $\mathcal V$ be an (affine local) \'{e}tale chart around a smooth point of $\mathfrak M_{1,n}^{\operatorname{div}=d}$. Then $\pi_*\mathcal L(\A)\cong \pi_*\mathcal L(\A-\B)\oplus \pi_*\mathcal \mathcal L(\A)_{|\B}$ (trivially, $\mathcal O_{\mathcal V}^{\oplus d+1}\cong\mathcal O_{\mathcal V}^{\oplus d}\oplus\mathcal O_{\mathcal V}$) and the restriction-to-$\A$ map is zero on the second factor. Call $\varphi\colon \pi_*\mathcal L(\A-\B)\to\pi_*\mathcal L(\A)_{|\A}$ the induced  restriction to $\A$.
-
-\emph{(3)} If we choose a suitable basis of $\pi_*\mathcal L(\A-\B)$, the restriction-to-$\A$ map can be written in a very explicit form: let $D=\sum_{i=1}^d\delta_i$, then $\pi_*\mathcal O_{\mathfrak C}(\delta_i+\A-\B)$ is a sub-line bundle of $\pi_*\mathcal L(\A-\B)$ and $\varphi=\oplus\varphi_i\colon\oplus_{i=1}^d \pi_*\mathcal O_{\mathfrak C}(\delta_i+\A-\B)\to \pi_*\mathcal L(\A)_{|\A}.$ Furthermore $\varphi_i\colon\mathcal O_\mathcal V\to\mathcal O_\mathcal V$ is given (up to invertibles) by multiplication by $\prod_{q\in[\A,\delta_i]}\zeta_q$, where $\zeta_q$ is the smoothening variable on $\mathfrak M_1$ corresponding to the node $q$, and $q\in[a,\delta_i]$ stands for all the nodes separating $\A$ (i.e. the core elliptic curve) from the point $\delta_i$.
-\end{prop}
-
-Given these explicit equations and by carefully examining the proof of \cite[Prop. 4.13]{HL}, we can look back at the problem of determining the boundary of the main component of the space of stable maps. The following characterisation of smoothability was already known to (and partly proven in) \cite[Lem. 5.9]{Vre}.
-
-\begin{prop}\label{smoothability_with_eqn}
-Let $[f\colon C\to \PP^r]$ be a degenerate stable map from a ($n$-marked) genus one curve of the form $(E {}_{p_1,\ldots,p_m}\sqcup_{q_1,\ldots,q_m}\bigsqcup_{i=1}^m R_i,f)$, where $E$ is the maximal connected contracted arithmetic genus one subcurve, and $R_i$ are the rational tails (chains of $\PP^1$ along which $f$ has positive degree). The following are equivalent:
+Furthermore, \'{e}tale locally on $\M{1}{n}{\PP^r}{d}$, we may pick extra sections $\mathcal A$ and $\mathcal B$ of $\mathcal C_{1,n}(\PP^r,d)$ such that 
 \begin{enumerate}
-\item $[f]$ is smoothable;
-\item $\operatorname{d}\!f(T_{q_i}R_i)$ are linearly dependent in $T_{f(E)}\PP^r$;
+\item they pass through the core elliptic curve;
+\item they are distinct smooth points disjoint from the support of $\pazocal D_0$. 
 \end{enumerate}
+On  $\pazocal V$ we have that  $\pi_*\OO_{\cC}(\pazocal D+\mathcal A)$ is a vector bundle and $\pi_*\OO_{\cC}(\pazocal D)$ is carved inside it by requiring that the restriction map $\pi_*\OO_{\cC}(\pazocal D+\mathcal A)\to\pi_*\OO_{\cC}(\pazocal D+\mathcal A)\rvert_{\mathcal A}$ is zero.
+
+\begin{prop}\label{prop:smoothability}
+\emph{(1)} \'{E}tale locally on $\M{1}{n}{\PP^r}{d}$, there is a locally closed embedding of $\M{1}{n}{\PP^r}{d}$ inside the vector bundle $V:=\Spec(\pi_*\OO_{\cC}(\pazocal D+\A)^{\oplus r})$ over $\pazocal V$:
+\bcd
+\M{1}{n}{\PP^r}{d} & \pazocal U\ar[l,"\acute{e}t"]\ar[r,hook]\ar[d] & V\ar[dl] \\
+\MM_{1,n}^{\rm{div}} & \pazocal V\ar[l,"\acute{e}t"] &
+\ecd
+Notice that $V$ is smooth.
+%It is obtained by imposing the nondegeneracy and stability conditions \emph{(open)} on the vanishing locus of the restriction of the universal section of $\pi_*\mathcal L(\A)^{\oplus r}$ to $\A$ \emph{(closed)}.
+
+\emph{(2)} Assume furthermore that $\pazocal V$ is affine; then on $\pazocal V$ we have 
+\[\pi_*\OO_{\cC}(\pazocal D+\A)\cong \pi_*\OO_{\cC}(\pazocal D+\A-\B)\oplus \pi_*\OO_{\cC}(\pazocal D+\A)_{|\B}\] %(trivially, $\mathcal O_{\mathcal V}^{\oplus d+1}\cong\mathcal O_{\mathcal V}^{\oplus d}\oplus\mathcal O_{\mathcal V}$)
+and the restriction-to-$\A$ map is zero on the second factor. 
+
+\emph{(3)} Call $\varphi\colon \pi_*\OO_{\cC}(\pazocal D+\A-\B)\to\pi_*\OO_{\cC}(\pazocal D+\A)_{|\A}$ the map induced by restricting to $\A$.
+
+ If we choose a suitable basis of $\pi_*\OO_{\cC}(\pazocal D+\A-\B)$, $\varphi$ can be written in a very explicit form: let $D=\sum_{i=1}^d\delta_i$, then  
+ \[\varphi=\oplus\varphi_i\colon\oplus_{i=1}^d \pi_*\mathcal O_{\cC}(\delta_i+\A-\B)\to \pi_*\OO_{\cC}(\pazocal D+\A)_{|\A}.\] 
+  Furthermore, after choosing trivializations for the line bundles above,  $\varphi_i\colon\mathcal O_\pazocal V\to\mathcal O_\pazocal V$ is given by multiplication by \[\prod_{q\in[\A,\delta_i]}\zeta_q,\]
+   where $\zeta_q$ is the smoothing variable on $\mathfrak M_1$ corresponding to the node $q$, and $[\A,\delta_i]$ are all the nodes separating $\A$ (i.e. the core) from the point $\delta_i$.
 \end{prop}
+We refer the reader to \cite[Lemma~4.10, Proposition~4.13]{HL} for full details; we are going to review the key ideas in \S\ref{sec:equations}, where we adapt the theory to $\Mone{1}{\PP^r}{d}$. We include here a proof of Proposition~\ref{prop:smoothability}-(2) based on the local equations.
+
+%Given these explicit equations and by carefully examining the proof of \cite[Prop. 4.13]{HL}, we can look back at the problem of determining the boundary of the main component of the space of stable maps. The following characterisation of smoothability was already known to (and partly proven in) \cite[Lem. 5.9]{Vre}.
+
+%\begin{prop}\label{smoothability_with_eqn}
+%Let $[f\colon C\to \PP^r]$ be a degenerate stable map from a ($n$-marked) genus one curve of the form $(E {}_{p_1,\ldots,p_m}\sqcup_{q_1,\ldots,q_m}\bigsqcup_{i=1}^m R_i,f)$, where $E$ is the maximal connected contracted arithmetic genus one subcurve, and $R_i$ are the rational tails (chains of $\PP^1$ along which $f$ has positive degree). The following are equivalent:
+%\begin{enumerate}
+%\item $[f]$ is smoothable;
+%\item $\operatorname{d}\!f(T_{q_i}R_i)$ are linearly dependent in $T_{f(E)}\PP^r$;
+%\end{enumerate}
+%\end{prop}
+
 \begin{proof}
- Let us start with the easiest degenerate situation: a contracted elliptic curve joined with a rational tail of degree $d$ at a single node $q$. Equations for the moduli space of maps around such a point look like $\zeta_q\sum_{i=1}^d w_i^j=0$, for $j=1,\ldots,r$, the $w_i$'s being coordinates for $\pi_*\mathcal O_{\mathfrak C}(D+\A-\B)$ in the basis given by $\pi_*\mathcal O_{\mathfrak C}(\delta_i+\A-\B),\ i=1,\ldots,d$. Our point corresponds to a smoothable map if and only if the equations admit a solution with $\zeta_q\neq 0$, hence it must be $\sum_{i=1}^d w_i^j=0$ for every $j$. Taking a coordinate $z$ on the rational tail around the node $q$ (i.e. $\{z=0\}$ corresponds to the node), we see that the $i$-th vector in the chosen basis corresponds to a polynomial vanishing at the node and at every other point $\delta_j,\ j\neq i$; hence that can be written as $e_i(z)=z\prod_{j\neq i}\frac{(z-\delta_j)}{-\delta_j}$ (we chose a convenient normalisation). So the map corresponding to the point of coordinates $(w_i^j)_{i=1,\ldots,d;j=1,\ldots,r}$ can be represented as $[1:\sum_{i=1}^d w_i^1e_i(z):\ldots,\sum_{i=1}^d w_i^re_i(z)]$ on the rational tail; differentiating we see that the tangent vector at the node is sent to $(\sum_{i=1}^d w_i^1,\ldots,\sum_{i=1}^d w_i^r)$ (in affine coordinates), hence smoothability is equivalent to the image of the tangent vector being zero.
+ Let us start with the easiest degenerate situation: a contracted elliptic curve attached to a $\PP^1$ of degree $d$ at a single node $q$. Equations for the moduli space of maps around such a point look like 
+ \[\zeta_q\sum_{i=1}^d w_i^j=0,\;\;\;\text{for} \;\;\;j=1,\ldots,r\]
+ where the $w_i$ are coordinates on the fibers of $\pi_*\mathcal O_{\cC}(D+\A-\B)$ in the basis given by $\pi_*\mathcal O_{\cC}(\delta_i+\A-\B),\ i=1,\ldots,d$.
  
- More generally, we may assume the dual graph is terminally weighted. Let us say there are $m$ positive-weight rational tails and denote by $D(k),\ k=1,\ldots,m,$ the set of indices $j$ s.t. $\delta_j$ belongs to the $k$-th rational tail, by $E(k)$ the set of nodes separating the core genus one curve from the $k$-th rational tail. The equations have then the following form
- $$\sum_{k=1}^m(\prod_{q\in E(k)}\zeta_q)(\sum_{i\in D(k)}w_i^j)=0,\ j=1,\ldots,r$$
+  Our point corresponds to a smoothable map if and only if the equations admit a solution with $\zeta_q\neq 0$, hence it must be $\sum_{i=1}^d w_i^j=0$ for every $j$. Taking a coordinate $z$ on  $\PP^1$ centred at the node $q$, we see that the $i$-th basis vector corresponds to a polynomial vanishing at $q$ and at $\delta_j,\;\forall j\neq i$. This can be written as 
+  \[e_i(z)=z\prod_{j\neq i}\frac{(z-\delta_j)}{-\delta_j},\] 
+  where we have chosen a convenient normalisation. So the restriction to the rational tail of the map corresponding to the point of coordinates $(w_i^j)_{i=1,\ldots,d}^{j=1,\ldots,r}$ can be written as 
+  \[[1:\sum_{i=1}^d w_i^1e_i(z):\ldots,\sum_{i=1}^d w_i^re_i(z)].\] 
+  Differentiating with respect to $z$ we see that the image of the tangent vector at $q$ is given in affine coordinates around $f(E)$ by:
+  \[(\sum_{i=1}^d w_i^1,\ldots,\sum_{i=1}^d w_i^r).\] 
+  Hence smoothability is equivalent to the image of the tangent vector being zero.
+ 
+ More generally we may assume that the dual graph is terminally weighted \cite[\S 3.1]{HL}. Assume there are $k$ positive-weighted rational tails and denote by $D(h),\ h=1,\ldots,k,$ the set of indices $i$ s.t. $\delta_i$ belongs to the $h$-th rational tail, by $E(h)$ the set of nodes separating the core from the $h$-th rational tail. The equations take then the following form
+ $$\sum_{h=1}^k(\prod_{q\in E(h)}\zeta_q)(\sum_{i\in D(h)}w_i^j)=0,\ j=1,\ldots,r$$
  which can be assembled in matrix form
- $$W\cdot\underline\zeta:=(\sum_{i\in D(k)}w_i^j)_{j,k}\cdot(\prod_{q\in E(k)}\zeta_q)_k=0.$$
- We see that smoothability is equivalent to linear dependence of the rows of the above matrix $W$. On the other hand, on every positive-weight rational tail $R_k$, we can choose a suitable coordinate $z_k$ around the node and write the map as $[1:p_k^1(z_k):\ldots:p_k^r(z_k)]$, where $p_k^j(z_k)=\sum_{i\in D(k)}w_i^je_i^k(z_k)$ and $e_i^k(z_k)=z_k\prod_{h\in D(k)\setminus\{i\}}\frac{(z_k-\delta_h)}{-\delta_h}$. The elliptic curve is contracted to the point $[1:0:\ldots:0]$ and the tangent vector to $R_k$ at the node is mapped to the $k$-th row of $W$ (in affine coordinates around that point). Again we see that the map is smoothable if and only if the image of the tangent vectors to the rational tails at the nodes are linearly dependent in $T_{f(E)}\PP^r$.
+ $$W\cdot\underline\zeta:=(\sum_{i\in D(h)}w_i^j)_{j,h}\cdot(\prod_{q\in E(h)}\zeta_q)_h=0.$$
+ We see that smoothability is equivalent to the linear dependence of the rows of the above matrix $W$. On the other hand, on every positive-weighted rational tail $R_h$, we can choose a suitable coordinate $z_h$ around the node $q_h$ and write the map as $$[1:p_h^1(z_h):\ldots:p_h^r(z_h)],$$ where: \[p_h^j(z_h)=\sum_{i\in D(h)}w_i^je_i^h(z_h) \quad \text{and} \quad e_i^h(z_h)=z_h\prod_{l\in D(h)\setminus\{i\}}\frac{(z_h-\delta_l)}{-\delta_l}.\] The elliptic curve is contracted to the point $[1:0:\ldots:0]$ and the tangent vector to $R_h$ at $q_h$ is mapped to the $h$-th row of $W$ (in affine coordinates around $f(E)$). Again we see that the map is smoothable if and only if the image of the tangent vectors to the rational tails at the nodes are linearly dependent in $T_{f(E)}\PP^r$.
  \begin{comment}{
  Let us now address the equivalence of (1) and (3). Assume that we have a smoothing of a degenerate map $f_0\colon C_0\to\PP^r$
  \bcd
@@ -217,7 +322,7 @@ Expressed in terms of $(2)$, we are saying that having dependent tangent vectors
  \end{proof}
 
 \subsection{Viscardi's compactifications}
-For any homology class $\beta\in H_2(X,\mathbb Z)$, let $\mathcal M_{1,n}(X,\beta)$ be the stack of maps $f\colon C\to X$ from a smooth genus one curve with $n$ marked points, satisfying  $f_{*}\left [C\right ]=\beta$. The $m$-stable maps give compactifications of such a moduli space.
+For any homology class $\beta\in H_2(X,\mathbb Z)$, let $\pazocal M_{1,n}(X,\beta)$ be the stack of maps $f\colon C\to X$ from a \emph{smooth} elliptic curve with $n$ marked points, satisfying  $f_{*}\left [C\right ]=\beta$. The moduli spaces of $m$-stable maps give alternate compactifications of $\pazocal M_{1,n}(X,\beta)$.
   \begin{dfn} Let $C$ be a reduced, connected, proper curve of arithmetic genus one, and let $p_1,\dots,p_n\in C$ be smooth, distinct points. A map $f\colon C\to X$ is said to be \emph{$m$-stable} if the following conditions hold:
 \begin{enumerate}
  \item $C$ has only nodes and elliptic $l$-fold points, $l\leq m$, as singularities.
@@ -237,47 +342,50 @@ k[[x,y]]/ I_m & \textit{if } m\geq 3
 \] 
 where $I_m=(x_hx_i-x_hx_j : i,j,h\in\left\{1,\dots,m-1\right\})$ and $i,j,h$ are distinct.
 
-The definition of a family of $m$-stable maps is then the natural one and Viscardi's main result \cite[Thm. 3.6]{VISC} is that the associated moduli functor gives a compactification of $\mathcal M_{1,n}(X,\beta)$ (alternative to Kontsevich' moduli space).
+ Viscardi's main result \cite[Thm. 3.6]{VISC} is:
+% that the associated moduli functor gives a compactification of $\mathcal M_{1,n}(X,\beta)$ (alternative to Kontsevich' moduli space).
 \begin{thm}
-The moduli functor of $m$-stable maps in a fixed homology class $\overline{\mathcal{M}}^m_{1,n}(X,\beta)$ is represented by a proper DM stack of finite type.
+The moduli functor of $m$-stable maps in a fixed homology class $\overline{\pazocal{M}}^{(m)}_{1,n}(X,\beta)$ is represented by a proper DM stack of finite type.
 \end{thm}
 \begin{remark}\label{remark:sprouting}
-It seems to us that the algorithm presented by Viscardi to prove properness of the moduli space oversees a case. The problem is that, given a map $f\colon C\to\PP^r$ with $f$ constant on a genus one connected sub-curve $E\subseteq C$, it is not always true that $f$ descends to a map $f'\colon C'\to\PP^r$, where $C'$ is the singularity obtained from $C$ by contracting $E$. Indeed, it is likely that descending to $C'$ imposes differential conditions on $f$ that go beyond just order zero. A counterexample is the following.
+We think that the algorithm presented by Viscardi to prove properness of the moduli space oversees a case. The issue is that, given a map $f\colon \cC_T\to\PP^r_T$ over a DVR scheme $T$ such that $\cC_\eta$ is smooth and $f_0$ constant on a genus one connected sub-curve $E\subseteq \cC_0$, it is not always true that $f$ descends to a map $f'\colon \cC'_T\to\PP^r_T$, where $\cC'_0$ has a genus $1$ Gorenstein singularity.% Indeed, it is likely that descending to $C'$ imposes differential conditions on $f$ that go beyond just order zero. A counterexample is the following.
 
-Consider the stable map $[f]$ in $\overline{\mathcal M}_{1,0}(\PP^3,4)$ from an elliptic bridge $R_1\sqcup_{q_1}E\sqcup_{q_2} R_2$ to $\PP^3$ that maps $R_1$ to the $z$-axis, contracts $E$ to the origin, and makes $(R_2,q_2)$ into the normalisation of a cusp in the $(x,y)$-plane, i.e. its image is the non-Gorenstein singularity $C:=\mathbb C[x,y,z]/(x,y)\cap (z,y^2-x^3)$. 
+Consider the stable map $[f]$ in $\overline{\mathcal M}_{1,0}(\PP^3,4)$ from an elliptic bridge $R_1\sqcup_{q_1}E\sqcup_{q_2} R_2$ to $\PP^3$ that maps $R_1$ to the $z$-axis, contracts $E$ to the origin, and makes $(R_2,q_2)$ into the normalisation of a cusp in the $(x,y)$-plane, i.e. its image is the non-Gorenstein singularity: \[D:=\Spec\left(\mathbb C[x,y,z]/(x,y)\right)\cup \Spec\left(\mathbb C[x,y,z]/(z,y^2-x^3)\right).\] 
 Notice that $\operatorname{d}\!f(T_{q_2}R_2)=0$, so there is a non-trivial linear relation
-\[0\cdot\operatorname{d}\!f(T_{q_1}R_1+1\cdot\operatorname{d}\!f(T_{q_2}R_2)=0\] and the map is smoothable; however, it is impossible to make the first coefficient non-zero and the map \emph{does not factorise} through an elliptic $m$-fold singularity. Indeed, the only chance would be to factorise through a birational map $f'\colon C'\to C$ from a tacnodal singularity $C'$. This is impossible since $C$ and $C'$ have the same $\delta$ invariant and so $f'$ would actually be an isomorphism. 
-Observe that Viscardi suggests that the map should extend to the contraction, in a way that the image should still be $C$, since there is only one indeterminacy point (the singularity). We suggest that in this case the correct procedure would be to sprout $(R_1,q_1)$, but then there is actually no factorisation.
-
+\[0\cdot\operatorname{d}\!f(T_{q_1}R_1)+1\cdot\operatorname{d}\!f(T_{q_2}R_2)=0\] and the map is smoothable. Viscardi claims that the map factors through the family $\cC'_T$, obtained by contracting $E$ to a tacnode. Notice that the image of $f'$ would still need to be $D$, since there is at most one indeterminacy point of $\cC'\dashrightarrow\PP^r_T$ at the singularity. However our $f$ \emph{does not factorise} through the tacnode. Indeed we would have a birational morphism between two singular curves with the same $\delta$ invariant and common normalisation, so $f'\colon C'\to D$ would need to be an isomorphism, which is a contradiction.
+ We suggest that in this case the correct procedure would be to sprout $(R_1,q_1).$
 \begin{center}
 \includegraphics[width=10cm,height=5cm]{cusp_line_transv.png}
 \end{center}
 
-However, the argument can easily be fixed. Let $(\mathcal{C}_\eta,F_{\eta})$ be a stable map to $\PP^r$, defined on the generic point of a DVR scheme $S$; we may assume that $\mathcal C_{\eta}$ is smooth \cite[Section~3.2.1]{VISC}. 
-As described in \cite[Step~1, Theorem~3.6]{VISC}, after applying nodal reduction we get a map $F\colon\mathcal C_S\to\PP^r_{S}$, for which we may suppose that $C_0$ is nodal and $f:=F_0$ is stable.
+However Viscardi's argument can be fixed. Let $(\mathcal{C}_\eta,F_{\eta})$ be a stable map to $\PP^r$, defined on the generic point of a DVR scheme $T$; we may assume that $\mathcal C_{\eta}$ is smooth \cite[Section~3.2.1]{VISC}. 
+As described in \cite[Theorem~3.6, Step~1]{VISC}, after applying nodal reduction we get a map $F\colon\mathcal C_T\to\PP^r_{T}$, for which we may suppose that $C_0$ is nodal and $f:=F_0$ is stable.
 
-If $f$ is not constant on the minimal genus one sub-curve \cite{SMY1}, then it is also $m$-stable and there is nothing to say. Otherwise, let $E\subset C$ be the maximal connected genus one sub-curve where $f$ is constant and let $R_1\sqcup\dots\sqcup R_m=\overline{C/E}$.
- By Proposition~\ref{prop:components}(2) we know there is a non-trivial linear relation among the $\operatorname{d}\!f(T_{q_i}R_i)$'s.
+If $f$ is not constant on the minimal genus $1$ subcurve \cite{SMY1}, then it is already $m$-stable and there is nothing to say. Otherwise let $E\subset C$ be the maximal connected genus $1$ subcurve where $f$ is constant and let $R_1\sqcup\dots\sqcup R_m=\overline{C/E}$.
+
+ By Proposition~\ref{prop:components}~(2) we know there is a non-trivial linear relation among the $\operatorname{d}\!f(T_{q_i}R_i)$'s.
  %In other words, the first derivatives of the sections $s_0,\dots,s_r$ defining $f$, satisfy a non trivial linear relation around $q_1,\dots,q_m =E\cup\bar{C/E}$.
- There are two possible situations:
- \begin{enumerate}
- \item $\operatorname{d}\!f(T_{q_i}R_i)\neq 0$ for every $i=1,\ldots,m$. Possibly after relabelling, this non-trivial relation looks like
- \[\alpha_1\operatorname{d}\!f(T_{q_{1}}R_{1})+\ldots +\alpha_j \operatorname{d}\!f(T_{q_{j}}R_{j})=0\]
-  with all the coefficients being non-zero. Then, we may blow-up $\mathcal{C}$ in $q_{j+1},\ldots, q_m$. The induced map $\tilde{F_0}$ is constant on the exceptional divisors $E_{j+1},\ldots, E_m$, so we can complete the above linear relation to 
+ Consider a maximal one with all non-zero coefficients.  Possibly after relabelling this relation looks like
+ \begin{equation*}\label{eq:linrelation}
+ \alpha_1\operatorname{d}\!f(T_{q_{1}}R_{1})+\ldots +\alpha_j \operatorname{d}\!f(T_{q_{j}}R_{j})=0
+ \end{equation*}
+ In this case we blow-up $\mathcal{C}$ in $q_{j+1},\ldots, q_m$. The induced map $\tilde{F_0}$ is constant on the exceptional divisors $G_{j+1},\ldots, G_m$ and we can complete the above linear relation to 
  \[\alpha_1\operatorname{d}\!\tilde f(T_{q_{1}}\tilde R_{1})+\ldots +\alpha_j \operatorname{d}\!\tilde f(T_{q_{j}}\tilde R_{j})+\beta_{j+1}\operatorname{d}\!\tilde f(T_{q_{j+1}}E_{j+1})+\ldots+\beta_m\operatorname{d}\!\tilde f(T_{q_{m}}E_m)=0\]
-  with any choice of non-zero coefficients $\beta$. Now this \emph{sprouting} \cite[Section 2.3]{SMY2} ensures that the sections descend to the corresponding elliptic $m$-fold singularity. At this point, go to Step~2 of Viscardi's algorithm and follow it.
-\item  
-$\operatorname{d}\!f(T_{q_i}R_i)=0$ for some $i$, say for $i\in\left\{1,\dots,j\right\}$. 
- Then blow-up $\mathcal{C}$ at $q_{j+1},\ldots, q_m$. Observe that all $\operatorname{d}\!\tilde f(T_{q_i}R_i),\ i=1,\ldots,j$ and $\operatorname{d}\!\tilde f(T_{q_i}E_i),\ i=j+1,\ldots,m$ vanish, hence they satisfy any linear relation with non-zero coefficients, and they factorise through the corresponding singularity. The map has positive degree on the first $i=1,\ldots,j$ branches.
- \end{enumerate}
+  with any choice of non-zero coefficients $\beta$. Now this \emph{sprouting} \cite[Section 2.3]{SMY2} ensures that the sections descend to the corresponding elliptic $m$-fold singularity. At this point proceed with Step~2 of Viscardi's algorithm.
+  
+%$\operatorname{d}\!f(T_{q_i}R_i)=0$ for some $i$, say for $i\in\left\{1,\dots,j\right\}$. 
+% Then blow-up $\mathcal{C}$ at $q_{j+1},\ldots, q_m$. Observe that all $\operatorname{d}\!\tilde f(T_{q_i}R_i),\ i=1,\ldots,j$ and $\operatorname{d}\!\tilde f(T_{q_i}E_i),\ i=j+1,\ldots,m$ vanish, hence they satisfy any linear relation with non-zero coefficients, and they factorise through the corresponding singularity. The map has positive degree on the first $i=1,\ldots,j$ branches.
+
 \end{remark}
 
-The irreducible components of Viscardi's moduli space $\overline{\mathcal{M}}^m_{1,n}(\PP^r,\beta)$ are well understood too \cite[Thm.~5.9]{VISC}; indeed they have a similar description to the ones of Kontsevich' space. The main advantage of the $m$-stable compactification is that the number of components drops as $m$ increases.
- \begin{cor}\cite[Cor.~5.10]{VISC}
- For $m\geq\operatorname{min}(r,d)+n$, $\overline{\mathcal{M}}^m_{1,n}(\PP^r,\beta)$ is irreducible.
- \end{cor}
+The irreducible components of Viscardi's moduli space $\overline{\pazocal{M}}^{(m)}_{1,n}(\PP^r,d)$ are well understood too \cite[Thm.~5.9]{VISC}; indeed they have a similar description to the ones of Kontsevich's space. The main advantage of the $m$-stable compactification is that the number of components drops as $m$ increases.
 
+In particular the space $\overline{\pazocal{M}}^{(1)}_{1,n}(\PP^r,d)$ we will be interested in the next sections does not have the boundary divisor $D_{d,n}(\PP^r,d).$
+% \begin{cor}\cite[Cor.~5.10]{VISC}
+% For $m\geq\operatorname{min}(r,d)+n$, $\overline{\mathcal{M}}^m_{1,n}(\PP^r,\beta)$ is irreducible.
+ %\end{cor}
 
+\begin{comment}
  Moreover, inspired by Viscardi's alternate compactification, we express a sufficient condition for smoothability in yet another way.
  \begin{prop}
 Let $[f\colon C\to \PP^r]$ be a degenerate stable map from a ($n$-marked) genus one curve of the form $(E {}_{p_1,\ldots,p_m}\sqcup_{q_1,\ldots,q_m}\bigsqcup_{i=1}^m R_i,f)$, where $E$ is the maximal connected contracted arithmetic genus one subcurve, and $R_i$ are the rational tails (chains of $\PP^1$ along which $f$ has positive degree). 
@@ -299,20 +407,12 @@ By Smyth's characterisation of elliptic $k$-fold singularities, \cite[Lem.~2.2]{
 The viceversa is not true, as Remark \ref{remark:sprouting} shows.
 \end{rem}
 
-In order to achieve the original goal of Gromov-Witten theory, i.e. the enumeration of smooth curves of genus $g$ in a target variety, mathematicians have been trying either to eliminate the unwanted components of Kontsevich's space (e.g. degenerate contributions from lower genus curves and multiple covers of lower degree curves) by defining alternate compactifications, or to concentrate the attention on the main component (i.e. find a suitable fundamental class supported on it). In genus one, Vakil and Zinger managed to do so by performing a sequence of blow-ups on an underlying space of weighted curves \cite{VZpreview} \cite{VZ} (see also \cite{HL}). The idea is that blowing up successively the locus of degree zero elliptic curve with one rational tail (\emph{elliptic tails}), then with two (\emph{elliptic bridges}), etc. and taking the fiber product
-\bcd
-\widetilde{\mathcal M}_{1,n}(\PP^r,d)\ar[r]\ar[d] & \M{1}{n}{\PP^r}{d}\ar[d] \\
-\widetilde {\mathfrak M}_{1,n}^{\operatorname{wt}=d} \ar[r] & \mathfrak M_{1,n}^{\operatorname{wt}=d}
-\ecd
-the strict transform of the main component becomes smooth and meets the rest of the components in normal crossing fashion (the \'{e}tale local model being the union of two linear subspaces of different dimensions in affine space). Furthermore, the sheaves $\tilde\pi_*\tilde f^*\mathcal O_{\PP^r}(l)$ contain a vector subbundle of rank $dl$ supported on the strict transform of the main component. This paved the way to the definition of reduced invariants.
-\begin{dfn}
-Let $X$ be a complete intersection of degree $(l_1,\ldots,l_k)$ in $\PP^r$. The genus one \emph{reduced} Gromov-Witten invariants of $X$ are defined by integration on $$[\widetilde{\mathcal M}_{1,n}(\PP^r,d)^\circ]\cap c_{\operatorname{top}}(\tilde\pi_*\tilde f^*(\oplus_{i=1}^k\mathcal O_{\PP^r}(l_i))^\circ).$$
-\end{dfn}
+In order to achieve the original goal of Gromov-Witten theory, i.e. the enumeration of smooth curves of genus $g$ in a target variety, mathematicians have been trying either to eliminate the unwanted components of Kontsevich's space (e.g. degenerate contributions from lower genus curves and multiple covers of lower degree curves) by defining alternate compactifications, or to concentrate the attention on the main component (i.e. find a suitable fundamental class supported on it). 
 
 It is a matter of fact that the virtual dimension of the moduli space of maps to a three-fold $X$ is independent of the genus. In this context it was plausible to test the better enumerative properties of reduced invariants; in fact, Li-Zinger \cite{LZ} in the symplectic category and, later on, Chang-Li \cite{CL} in the algebraic one, proved a comparison formula for the quintic three-fold $X_5\subseteq\PP^4$ (or, more generally, for a complete intersection three-fold $X$ of degree $(l_1,\ldots,l_k)$ in $\PP^r$ with $\sum l_i\leq r+1$) of the form
 $$GW_1(X)=\widetilde{GW}_1(X)+c\cdot GW_0(X).$$
 We notice that the genus zero contribution to this formula comes from the boundary component with a single rational tail of degree $d$, while elliptic bridges and degenerate contributions with more rational tails do not matter to the genus one Gromov-Witten count. This suggests that removing the component with elliptic tails would provide a more direct and efficient definition of reduced invariants. We plan to do so by comparing the ordinary space of stable maps with Viscardi's space of 1-stable maps.
-
+\end{comment}
 \section{Cuspidal curves and maps}
 
 In this section we start investigating the Gromov- Witten type invariant obtained from Viscardi compactification studying the case $m=1$: the source curve is at worst cuspidal. We will see how in this case we can give a comparison with the GW-invariant and explain why the same technique does not work for higher $m$.
@@ -776,7 +876,7 @@ Finally they notice that the fibers of $v$ are vector spaces and the obstruction
 Hopefully we have managed to convince the reader that the subtle intersection theory perpetuated in \cite{CLpfields} does not rely at all on working with families of \emph{nodal} curves.
 
 
-\section{Local equations and desingularisation}
+\section{Local equations and desingularisation}\label{sec:equations}
 \subsection{Notation}
 Let $\Z$ be defined by the pullback diagram:
 \bcd
