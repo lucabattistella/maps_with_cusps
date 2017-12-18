@@ -1048,58 +1048,71 @@ From the above description of arrows in $\Z$, $i$ is  representable (i.e. faithf
 
 We can check properness using the valuative criterion. We argue as in \cite[Theorem 4.3]{RSPW}. Let $T$ be a DVR scheme with generic point $\eta;$ consider a diagram:
 \bcd
-\cC_{\eta}\ar[r]\ar[d,"\phi_{\eta}"]  & \cC_T\ar[d,"\phi_T"]\ar[r,"f"] &\PP^4\\
-\hat{\cC}_{\eta}\ar[r,"j"]\ar[urr] & \hat{\cC_T}\ar[ur,dashed ,"g"] &
+\cC_{\eta}\ar[r]\ar[d,"\phi_{\eta}" left]  & \cC_T\ar[d,"\phi_T" left]\ar[r,"f"] & \PP^4 \\
+\hat{\cC}_{\eta}\ar[r,"j" below]\ar[urr] & \hat{\cC_T}\ar[ur,dashed ,"g" below right] &
  \ecd 
 Notice that there is an open dense substack of $\Z$ where $\phi$ is an isomorphism. Indeed the generic point of either the main component or any boundary component is already $1$-stable. Thus we can assume that $\phi_{\eta}$ in the above diagram is an isomorphism.
 
-Observe that $f$ is constant on the fibers of $\phi$ so it factors topologically through $\hat{\cC}.$
-We can conclude as in \cite{RSPW} or show that $\phi_*\OO_{\cC_T}\cong\OO_{\hat{\cC}_T}$ and appeal to \cite[Lemma~1.15]{debarre}. To do that, consider the exact sequence:
+Observe that $f$ is constant on the fibers of $\phi_T$, so it factors topologically through $\hat{\cC}.$
+We can conclude as in \cite{RSPW} or appeal to \cite[Lemma~1.15]{debarre} using $\phi_*\OO_{\cC_T}\cong\OO_{\hat{\cC}_T}$. To see this consider the exact sequence:
 \[0\to \OO_{\hat{\cC}_T}\to\phi_*\OO_{\cC_T}\to \phi_*\OO_{\cC_T}/\OO_{\hat{\cC}_T}\to 0\]
-Since $\phi$ is an isomorphism away from the cuspidal point, the cokernel is supported in dimension $0$. However $\chi (\OO_{\hat{\cC}_T})=\chi(\phi_*\OO_{\cC_T})$ as we can check on $\eta$ since the Euler characteristic is constant in flat families. So   $\phi_*\OO_{\cC_T}/\OO_{\hat{\cC}_T}=0.$
+Since $\phi$ is an isomorphism away from the cuspidal point, the cokernel is supported in dimension $0$. However $\chi (\OO_{\hat{\cC}_\eta})=\chi(\phi_*\OO_{\cC_\eta})$ implies the same equality holds on the whole of $T$, since the Euler characteristic is constant in flat families. So $\chi(\phi_*\OO_{\cC_T}/\OO_{\hat{\cC}_T})=\operatorname{length}(\phi_*\OO_{\cC_T}/\OO_{\hat{\cC}_T})=0.$
 \end{proof}
 
 
 So we may add the commutative diagram to the left:
 \bcd
-\oM_1(\PP^4,d)\ar[d] & \mathcal Z \ar[l,swap,hook,"i"]\ar[r]\ar[d]\ar[rd,phantom,"\Box"] & \overline{\mathcal M}_1^{(1)}(\PP^4,d) \ar[d] \\
-\MM^{\rm{wt}}_1 & \mathcal \MM^{\rm{wt}}_1\ar[l,swap,"\sim"]\ar[r] & \mathfrak M_1^{\rm{wt},(1)}
+\oM_1(\PP^4,d)\ar[d] & \pazocal Z \ar[l,hook,swap,"i"]\ar[r]\ar[d]\ar[rd,phantom,"\Box"] & \overline{\mathcal M}_1^{(1)}(\PP^4,d) \ar[d] \\
+\MM^{\rm{wt}}_1 & \X\ar[l,swap,"\sim"]\ar[r] & \mathfrak M_1^{\rm{wt}}(1)
 \ecd
 
 
-From the inclusion we inherit a description of the irreducible components of $\Z$: there is a main component $\Z^\text{main}$ which is the closure of the locus of maps from a smooth elliptic curve, and for every $k\geq 2$ a boundary component $D^k\Z$, whose general point represents a contracted elliptic curve with $k$-many rational tails of positive degree. 
+From the inclusion $i$ we easily obtain a description of the irreducible components of $\Z$: there is a main component $\Z^\text{main}$ which is the closure of the locus of maps from a smooth elliptic curve, and for every $k\geq 2$ a boundary component $D^k\Z$, whose general point represents a contracted elliptic curve with $k$-many rational tails of positive degree. 
 
-Notice that the above lemma signifies that each and every component of $\Z$ is isomorphic to the corresponding one in $\oM_1(\PP^4,d)$. The point is that given any stable map there is at most one factorisation through the weighted $1$-stabilisation of the curve: objects of $\oM_1(\PP^4,d)\setminus D^1$ are $1$-stable already; objects of $D^1\cap \oM_1(\PP^4,d)^\text{main}$ do factor thanks to Vakil's criterion and objects of $D^1\cap D^k$ ($k\geq 2$) do factor through a map which is constant on the cusp.\marginpar{insert figure of a typical element of $D^1\cap D^2$.} On the other hand, objects of $D^{1,\circ}=D^1\setminus(\oM_1(\PP^4,d)^\text{main}\cup\bigcup_{k\geq 2}D^k)$ do not admit any factorisation, so that $\Z$ has no corresponding component.
+Notice that the above lemma means that each and every component of $\Z$ is isomorphic to the corresponding one in $\oM_1(\PP^4,d)$. Indeed given any stable map there is at most one factorisation through the weighted $1$-stabilisation of the curve: objects of $\oM_1(\PP^4,d)\setminus D^1$ are $1$-stable already; objects of $D^1\cap \oM_1(\PP^4,d)^\text{main}$ do factor through the cusp thanks to Vakil's criterion, which implies the node joining the elliptic tail to the rational tail of positive degree is a ramification point of the map; and objects of $D^1\cap D^k$ ($k\geq 2$) do factor through a map which is constant on the cusp.\marginpar{insert figure of a typical element of $D^1\cap D^2$.} On the other hand, objects of $D^{1,\circ}=D^1\setminus(\oM_1(\PP^4,d)^\text{main}\cup\bigcup_{k\geq 2}D^k)$ do not admit any factorisation, so $\Z$ has no corresponding component.
 
-We introduce some more spaces: let $\XP$ and $\Z^p$ be the algebraic stacks defined by the following cartesian diagram:
+We introduce two more relevant spaces: let $\XP$ and $\Z^p$ be the algebraic stacks defined by the following cartesian diagram:
 \bcd
-\mathcal Z^p \ar[r,"\alpha"]\ar[d]\ar[rd,phantom,"\Box"] & \overline{\mathcal M}_1^{(1)}(\PP^4,d)^p \ar[d] \\
-\XP \ar[r]\ar[d]\ar[rd,phantom,"\Box"] & \mathfrak{Pic}_1^{(1)} \ar[d] \\
-\X\ar[r] & \mathfrak M_1^{(1),\rm{wt}}
+\Z^p \ar[r,"\alpha"]\ar[d]\ar[rd,phantom,"\Box"] & \overline{\mathcal M}_1^{(1)}(\PP^4,d)^p \ar[d] \\
+\XP \ar[r]\ar[d]\ar[rd,phantom,"\Box"] & \mathfrak{Pic}_1{(1)} \ar[d] \\
+\X\ar[r] & \mathfrak M_1^{\rm{wt}}(1)
 \ecd
 
-We are going to use the obstruction theory $\R^\bullet\hat{\pi}_*(\mathcal L^{\oplus 5}\oplus\mathcal P)$ for the morphism $\overline{\mathcal M}_1^{(1)}(\PP^4,d)^p\to\mathfrak{Pic}_1^{(1)}$ to induce a virtual class on $\Z^p$ which we would like to compare with ordinary $p$-fields.
+The obstruction theory $\R^\bullet\hat{\pi}_*(\hat{\mathcal L}^{\oplus 5}\oplus\hat{\mathcal P})$ for the morphism $\overline{\mathcal M}_1^{(1)}(\PP^4,d)^p\to\mathfrak{Pic}_1{(1)}$ together with its cosection induce a localised virtual class on $\Z^p$ by virtual pullback of $[\XP]$. In Section \ref{section:main_proof} we shall conduct on this a similar analysis to that in \cite{CL} and compare the contribution of the main component to Vakil-Zinger's reduced invariants.
 
-Remark that $\XP$ parametrises
+\begin{remark}
+The stack $\XP$ parametrises
 \bcd
-\cC\ar[rr,"\phi"]\ar[dr] & & \hat\cC\ar[ld] \\
+C\ar[rr,"\phi"]\ar[dr] & & \hat C\ar[ld] \\
 & S &
 \ecd
-with a line bundle $\hat{\mathcal L}$ on $\hat{\cC}$. Notice that by pulling back $\hat{\mathcal L}$ via $\phi$ we obtain a line bundle on $\cC$, hence a morphism $\XP\to \mathfrak{Pic}_1$. This is generically an isomorphism, but has $1$-dimensional fibers over the locus of elliptic tails, due to the fact that $\Pic(\hat C)\to\Pic(C)$ has kernel $\mathbb G_{\rm a}$ when $\hat C$ has a cusp.
+with a line bundle $\hat{\mathcal L}$ on $\hat{C}$. Notice that by pulling back $\hat{\mathcal L}$ via $\phi$ we obtain a line bundle on $C$, hence a morphism $\XP\to \mathfrak{Pic}_1$. This is generically an isomorphism, but has $1$-dimensional fibers over the locus of elliptic tails, due to the fact that $\Pic(\hat C)\to\Pic(C)$ has kernel $\mathbb G_{\rm a}$ when $\hat C$ has a cusp.
 
-Similarly $\Z^p$ parametrises
-\bcd
-\cC\ar[rr,"\phi"]\ar[dr,"\pi"] & & \hat\cC\ar[ld,"\hat\pi"] \ar[r,"f"] & \PP^4\\
-& S & &
-\ecd
-with a $p$-field $\psi\in H^0(\hat\cC,f^*\OO_{\PP^4}(-5)\otimes\omega_{\hat\pi}$.
-\begin{remark}
-why we cannot include $\Z^p$ into $p$-fields
+On the other hand notice that
+\[ \X\times_{\mathfrak M_1^{\rm{wt}}(1)} \mathfrak M_1^{\rm{div}}(1) \to \mathfrak M_1^{\rm{div}} \]
+is an isomorphism.\marginpar{FIX ME: when the divisor contains the node} Indeed given a line bundle $\mathcal L$ on $C$ and a section $s_0\in\Gamma(C,\mathcal L)$ which does not vanish on any irreducible component, there is exactly one line bundle $\hat{\mathcal L}$ on the $1$-stabilisation of $C$ and one section $\hat s_0\in\Gamma(\hat C,\hat{\mathcal L})$ that pull back to $(\mathcal L,s_0)$, due to the following:
 \end{remark}
 
-As anticipated, we may endow $\Z^p$ with a virtual class by ``localised virtual pullback'': indeed $\XP$ is a smooth Artin stack, and:
+\begin{lem}\marginpar{CHECK ME}
+Let $\nu\colon(\PP^1,p)\to \hat C$ be the pointed normalisation of the cusp. Then $0\neq s\in\Gamma(\PP^1,\OO_{\PP^1}(d))$ with $s(p)=0$ only if $s'(p)=0$ determines a unique line bundle $\hat{\mathcal L}$ on $\hat C$ to which $s$ descends.
+\end{lem}
+\begin{proof}
+The key point is that the sections of $\hat{\mathcal L}$ pull back to a $d$-dimensional subspace of $\Gamma(\PP^1,\OO_{\PP^1}(d))$ that can be identified as follows: they are those sections $\sigma$ such that $s(p)\sigma'(p)=s'(p)\sigma(p)$ in any trivialisation of $\OO_{\PP^1}(d)$ near $p$ if $s(p)\neq 0$, and those constant to second order at $p$ otherwise.
+\end{proof}
+\begin{remark}
+Similarly the stack $\Z^p$ parametrises
+\bcd
+C\ar[rr,"\phi"]\ar[dr,"\pi" below left] & & \hat C\ar[ld,"\hat\pi"] \ar[r,"f"] & \PP^4\\
+& S & &
+\ecd
+with a $p$-field $\psi\in H^0(\hat C,f^*\OO_{\PP^4}(-5)\otimes\omega_{\hat\pi})$.
+
+We were not able to compare $\Z^p$ with $\oM_1(\PP^4,d)^p$ directly, since denoting by $\hat{\mathcal L}=f^*\OO_{\PP^4}(1)$ and by $\mathcal L=\phi^*\hat{\mathcal L}$ we only have a map $\R^1\hat\pi_*\hat{\mathcal L}\to\R^1\pi_*\mathcal L$ on $\Zp$ which is not an isomorphism (dually, since $\phi^*\omega_{\hat\pi}=\omega_{\pi}(E)$, the $p$-fields on $C$ that we get by pulling back from $\hat C$ vanish on elliptic tails).
+\end{remark}
+
+As anticipated we may endow $\Z^p$ with a localised virtual cycle by ``localised virtual pullback'': indeed $\XP$ is a smooth Artin stack, and:
 \[
-\mathfrak C_{\Z^p/\XP} \subseteq \alpha^*\mathfrak C_{\Mone{1}{\PP^4}{d}^p/\mathfrak{Pic_1^{(1)}}} \subseteq \alpha^* h^1/h^0(\mathbb E_{\Mone{1}{\PP^4}{d}^p/\mathfrak{Pic_1^{(1)}}})_\sigma
+\mathfrak C_{\Z^p/\XP} \subseteq \alpha^*\mathfrak C_{\Mone{1}{\PP^4}{d}^p/\mathfrak{Pic_1{(1)}}} \subseteq \alpha^* h^1/h^0\left(\mathbb E_{\Mone{1}{\PP^4}{d}^p/\mathfrak{Pic_1{(1)}}}\right)_\sigma
 \]
 
 \begin{lem}
@@ -1236,7 +1249,8 @@ We have the identity:
 \[\deg\virloc{\tZp}=\deg\virloc{\Zp}\]
 \end{lem}
 Compare with \cite[Proposition~2.5]{CL}.
-\section{Splitting the cone and proof of the Main Theorem}
+
+\section{Splitting the cone and proof of the Main Theorem}\label{section:main_proof}
 We are finally in a position to study the cone $\mathfrak{C}_{\tZp/\tXP}.$ This is essentially going to be a word-by-word repetition of the arguments in \cite{CLpfields}.
 \begin{lem}\label{lem:open_cones}
 Let $\tilde{\rho}\colon \tZp\to\tXP$ be the natural map and $\mathbb {E}_{\tZp/\tXP}=\R\hat\pi_*(\mathcal L^{\oplus 5}\oplus\mathcal P)$  the relative perfect obstruction theory for $\tilde{\rho},$ then $\mathfrak{C}_{\tZp/\tXP}$ has the following properties:
