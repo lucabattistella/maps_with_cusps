@@ -384,10 +384,11 @@ In particular the space $\overline{\pazocal{M}}^{(1)}_{1,n}(\PP^r,d)$ we will co
 % \begin{cor}\cite[Cor.~5.10]{VISC}
 % For $m\geq\operatorname{min}(r,d)+n$, $\overline{\mathcal{M}}^m_{1,n}(\PP^r,\beta)$ is irreducible.
  %\end{cor}
+ 
  \subsection{A different characterization of smoothability}
  Inspired by Viscardi's alternate compactification, we give yet another characterisation of smoothable maps in genus $1.$
  \begin{dfn}
- Let $C$ a reduced curve and $p\in C$ a singular point, we define the genus of the singularity in $p$ to be the quantity: $g(p)=\delta(p)-b(p)+1.$  We are using the following notation: $\delta(p)=\dim_k\OO_{\overline C}/\OO_C,$ $\overline{C}$ being the normalization of $C$; $b(p)$ is the number of branches at $p.$
+ Let $C$ be a reduced curve over a field $k$ and $p\in C$ a singular point. We define the \emph{genus of the singularity} in $p$ to be the quantity: $$g(p)=\delta(p)-b(p)+1,$$ where $\delta(p)=\dim_k\OO_{\overline C}/\OO_C,$ $\overline{C}$ is the normalisation of $C$, and $b(p)$ is the number of branches at $p.$
  \end{dfn}
  \begin{prop}\label{prop:smoothability2}
  Let $[f\colon C\to \PP^r]$ be a degenerate stable map from a $n$-marked genus $1$ curve $(E {}_{\mathbf p}\!\sqcup_{\mathbf q}\bigsqcup_{i=1}^m R_i,f)$, where $E$ is the maximal connected contracted arithmetic genus $1$ subcurve, and $R_i$ are rational tails. 
@@ -395,8 +396,8 @@ In particular the space $\overline{\pazocal{M}}^{(1)}_{1,n}(\PP^r,d)$ we will co
   Then $f$ is smoothable if and only if it factors through a Cohen-Macaulay genus $1$ singularity with positive degree on at least one of its branches.
 \end{prop}
 
-\begin{lem}(Classification of CM genus $1$ singularities)
-The  Cohen-Macaulay genus $1$ singularities with $m$ branches are all and only obtained by gluing a genus $0$ singularity with $k$ branches with a Smyth's $m-k$-elliptic fold.
+\begin{lem}\label{lem:classificationsing}(Classification of CM genus $1$ singularities)
+The Cohen-Macaulay genus $1$ singularities with $m$ branches are all and only obtained by gluing a genus $0$ singularity with $k$ branches with a Smyth's $m-k$-elliptic fold. We call such a singularity a \textbf{(k,m)-type} genus $1$ singularity.
 Notice that $k$ may be $0$ (i.e. a point) or $1$ (i.e. a smooth rational curve).
 \end{lem}
 \begin{proof}
@@ -427,17 +428,17 @@ Otherwise we have:
 \item Only one of the $a_i$ is non zero
 \item All the $a_i$ are zero
 \end{enumerate}
-\noindent{For $m=23$} two possibilities
+\noindent{For $m=2$} two possibilities
 \item $a_1$ is non zero, then we have the tacnode;
 \item  $a_1$ is zero
 \noindent{For $m= 1$} As in Smyth's we prove that in this  case $\mathfrak{m}^2_{\widetilde{R}}=\mathfrak{m}_{R}$ which means the singularity is a cusp. 
 \end{proof}
 \begin{lem}
-All of the Cohen-Macaulay genus ~$1$ singularities are smoothable.
+Every Cohen-Macaulay genus $1$ singularity is smoothable.
 \end{lem}
 \begin{proof}
-We prove this statement by exhibiting an explicit smoothing for this singularities.
-Start considering two families $\cC^0\to T$ and $\cC^1\to T$ respectively of smooth rational curves and smooth elliptic curves, with $T$ a DVR scheme, e.g. consider two trivial families.
+We exhibit explicit smoothings for the above singularities.
+Start with two families $\cC^0\to T$ and $\cC^1\to T$ over a DVR scheme, respectively of smooth rational curves and smooth elliptic curves, with $T$ a DVR scheme, e.g. consider two trivial families.
 
  Then blow up respectively $k$ smooth points $p_1,\dots p_k$ and  $m-k$ smooth points $q_{k+1},\dots q_{m-k}$ on the central fibers  $(\cC^0)_0$ and $(\cC^1)_0.$
  
@@ -461,10 +462,29 @@ Choose now a simultaneous smoothing of the generic fiber, e.g. if the families w
 \begin{proof}\ref{prop:smoothability2}
  The argument to prove that if $f$ is smoothable then it has to factors through a genus $1$ singularity is exactly the same used by Vakil to show that the tangent vectors have to be linearly dependent in the image and thus we do not repeat it but we refer the reader to \cite{Vre}.
  
-Viceversa, let us suppose that $f\colon C\to \PP^r$ factors through $\hat{f}\colon \hat{C}\to\PP^r$  with $\hat{C} $a genus $1$ singularity. Let $\hat{\cC}$ be a smoothing of $\hat{C}$ and $\hat{\mathcal L}$ an extension of $\hat{L}:=\hat{f}^*\OO_{\PP^r}(1)$ on the smoothing, which exists because deforming line bundles on curves is unobstructed. Then all we have to show is that the $r+1$ sections $\hat{s}_0,\dots, \hat{s}_{r+1}$ representing the map $\hat{f}$ extend to sections of $\hat{\mathcal{L}}.$
+Viceversa, let us suppose that $f\colon C\to \PP^r$ factors through $\hat{f}\colon \hat{C}\to\PP^r$  with $\hat{C} $ a genus $1$ singularity. 
+
+Let $\hat{\cC}$ be a smoothing of $\hat{C}$ and $\hat{\mathcal L}$ an extension of $\hat{L}:=\hat{f}^*\OO_{\PP^r}(1)$ on the smoothing, which exists because deforming line bundles on curves is unobstructed.
+We are first going to show that we can extend $\hat{f}$ to $\hat{F}\colon \hat{\cC}\to\PP^r$ and then argue how to get a smoothing of $f$ from $\hat{F}.$
+
+For the first part, all we have to show is that the $r+1$ sections $\hat{s}_0,\dots, \hat{s}_{r+1}$ representing the map $\hat{f}$ extend to sections of $\hat{\mathcal{L}}.$
 Thus it is enough to verify that $H^1(\hat{C},\hat{L})=0.$ 
 
-Since all the curve we are considering are Cohen-Maculay, they have a dualising pure sheaf $\omega_{\hat{C}}.$
+Since all the curve we are considering are Cohen-Maculay, they have a dualising pure sheaf $\omega_{\hat{C}}$ such that for any line bundle $\hat{L}$
+\[H^1(\hat{C},\hat{L})=(H^0(\hat{C},\hat{L}^{-1}\otimes\omega_{\hat{C}}))^{\vee}.\]
+It is well know \cite[IV, \S~3]{serre} that  $\omega_{\hat{C}}$ can be described as the subsheaf of $\nu_* \omega_{\overline{C}}\otimes K(\overline{C})$ locally satisfying:
+\[\omega\in \nu_* \omega_{\overline{C}}\otimes K(\overline{C})(U)\;\;\;\text{s.t.}\;\;\sum_{q\in \nu^{-1}(0)}\rm{Res}(\nu^*f\omega) =0\;\;\;\forall \,f\in\,\OO_C(U).\]
+Let $\hat{C}$ be a genus $1$ curve with only one singularity which is a genus $1$ singularity of $(k,m)$-type
+ Using the explicit local description of genus $1$ singularities that we worked out in Lemma~\ref{lem:classificationsing}, we see that 
+\[\omega_C\hookrightarrow \nu_*\omega_{\overline{C}}(p_1+\dots p_k+2 p_{k+1}\dots+2p_m)=\nu_*\left(\OO_{\PP^1}(-1)\oplus\dots\oplus\OO_{\PP^1}\oplus\dots \OO_{\PP^1}\right)\]
+and the kernel of the inclusion is supported on the singular point. We then have an inclusion
+\[H^0(\hat{C},\hat{L}^{-1}\otimes\omega_{\hat{C}})\hookrightarrow H^0(\nu_*\left(\OO_{\PP^1}(-1)\oplus\dots\oplus\OO_{\PP^1}\oplus\dots \OO_{\PP^1}\right)\otimes\hat{L})^{-1})=0;\]
+where the last equality follows from the fact that $\hat{L}){-1}$ has degree less or equal to $0$ on every irreducible component of $\hat{C}.$
+
+We conclude showing how to smooth $f\colon C\to \PP^r$ given $\hat{F}\colon\hat{C}\to\PP^r.$
+
+
+
  
   
   \end{proof}
@@ -513,7 +533,8 @@ We notice that the genus zero contribution to this formula comes from the bounda
 \end{comment}
 
 
-\section{From $p$-fields to the quintic three-fold}
+\section{From $p$-fields to the quintic three-fold}\label{section:p-fields}
+
 We shall introduce the moduli space $\Mone{1}{\PP^4}{d}^p$ of $1$-stable curves with $p$-fields, endow it with a $0$-dimensional virtual class, and show that its degree coincides with the genus $1$ cuspidal invariants of the quintic three-fold $X$ up to a sign. This is a word-by-word repetition of the arguments in \cite{CLpfields}, once noticed that they carry over to the situation where we work over a family of Gorenstein (not necessarily nodal) curves. Our aim in this section is to improve the legibility of our paper by providing the non-expert reader with a r\'{e}sum\'{e} of some of the key ideas contained in \cite{CLpfields}; it should otherwise be skipped.
 
 First we introduce the notion of the \emph{cone of sections} of a smooth object $\pazocal Z$ over a family of curves $\cC$: let $B$ be any base (algebraic stack) and let $\pi\colon \cC\to B$ be a flat proper morphism of finite presentation which is representable by algebraic spaces and whose geometric fibers are reduced l.c.i. curves; let $\mathcal L$ be a line bundle on $\cC$. Then there is an algebraic stack over $B$ representing sections of $\mathcal L$, and it can be defined as $C(\pi_*\mathcal L)=\Spec_B(\R^1\pi_*\mathcal L)$; this is because $\R^1\pi_*\mathcal L$ commutes with pullback, and it has the desired modular interpretation by Serre duality. More generally, the cone of section $\mathfrak S$ of $\pazocal Z$ is defined by the universal diagram:
@@ -687,32 +708,48 @@ Hopefully we have managed to convince the reader that the subtle intersection th
 
 
 \section{The comparison morphism}
-
 %In this section we start investigating the Gromov- Witten type invariant obtained from Viscardi compactification studying the case $m=1$: the source curve is at worst cuspidal. We will see how in this case we can give a comparison with the GW-invariant and explain why the same technique does not work for higher $m$.
 %The first thing we do is the following:
 %we introduce a moduli space of stably-weighted, prestable, at worst cuspidal, marked curves. We show that there is a birational morphism from a correspondingly decorated moduli space of prestable nodal curves. Taking the fiber product with Viscardi's moduli space of stable cuspidal maps, we show that the resulting space includes in the usual Kontsevich's moduli space, precisely avoiding the component with elliptic tails $D_{\{d\},\{n\}}(X,d)$.
 
 %Why should such a morphism on decorated prestable curves exist? 
 %Consider an elliptic tail $C$; a one-dimensional family $\mathcal C$  with central fiber $\mathcal C_0\cong C$ will either be locally constant or smoothen the node. In the first case we can associate to this the locally constant family of cusps obtained by forgetting the elliptic tail and contracting a length-two infinitesimal neighborhood of the node in the rational component; in the second case, we claim that the line bundle $\mathcal O_\mathcal C(3q)$ gives a morphism to a smoothing of the cuspidal $\PP^1$. This heuristics (i.e. being able to substitute an elliptic tail with a cusp over points or DVR schemes) motivates us to believe we can define a morphism from suitably defined moduli spaces of nodal genus one curves to cuspidal curves (cfr. \cite[Lemma 4.2]{SMY2}). In fact we shall extend \cite[Corollary 4.5]{SMY2} to an appropriate setup of moduli stacks of weighted prestable curves. Assume $d>0$ throughout the following.
-In this section: we show in two different ways that there exists a morphism at the level of weighted prestable curves $\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}\to\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}(1);$ introduce the spaces 
-\[\Z:= \mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}\times{\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}(1)} \pazocal M_{1,n}(\PP^4,d)(1),\qquad \Zp:=\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}\times{\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}(1)} \pazocal M^p_{1,n}(\PP^4,d)(1) \]
- and  and see their relation, respectively, with the moduli space of stable maps, stable maps with fields; use the morphism at the level of prestable curves to induce obstruction theories on $\Z$ and $\Zp.$
+In this section we shall:
+\begin{itemize}
+ \item argue in two different ways that there is a natural fashion to associate a weighted $1$-stable curve to a weighted-stable nodal curve of genus $1$, essentially by replacing elliptic tails of weight $0$ by cusps, which results in a morphism:
+ \[\mathfrak M_{1,n}^{\operatorname{wt},\text{st}}\to\mathfrak M_{1,n}^{\operatorname{wt},\text{st}}(1)\]
+extending the identity on the locus of smooth elliptic curves;
+ \item introduce the fiber product 
+ \[\Z:= \mathfrak M_{1,n}^{\operatorname{wt},\text{st}}\times_{\mathfrak M_{1,n}^{\operatorname{wt},\text{st}}(1)} \oM^{(1)}_{1,n}(\PP^4,d)\]
+ and show that it is a closed substack of $\oM_1(\PP^4,d)$, isomorphic to it outside the boundary divisor $D^1$;
+ \item introduce the fiber product \[\Zp:=\mathfrak M_{1,n}^{\operatorname{wt},\text{st}}\times_{\mathfrak M_{1,n}^{\operatorname{wt},\text{st}}(1)} \oM^{(1)}_{1,n}(\PP^4,d)^p \]
+ and endow it with an obstruction theory and a cosection thereof, which are pulled back from  $\pazocal M^{(1)}_{1,n}(\PP^4,d)^p$; unfortunately we will not be able to compare them directly with $\oM_1(\PP^4,d)^p$;
+ \item explain along the way all the notation one needs in order to understand the previous sentences.
+\end{itemize}
+%in two different ways that there exists a morphism at the level of weighted prestable curves $\mathfrak M_{1,n}^{\operatorname{wt},\text{st}}\to\mathfrak M_{1,n}^{\operatorname{wt},\text{st}}(1);$ introduce the spaces 
+%\[\Z:= \mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}\times{\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}(1)} \pazocal M_{1,n}(\PP^4,d)(1),\qquad \Zp:=\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}\times{\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}(1)} \pazocal M^p_{1,n}(\PP^4,d)(1) \]
+%and  and see their relation, respectively, with the moduli space of stable maps, stable maps with fields; use the morphism at the level of prestable curves to induce obstruction theories on $\Z$ and $\Zp.$
+
+Let us start with some notation. In the following by \emph{special point} we mean the preimage of a node or a marking on the normalisation.
+\begin{dfn}
+Let $\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}$ be the stack of \emph{prestable} (nodal and reduced), projective, connected, arithmetic genus one, $n$-marked curves that are \emph{stably weighted} with total weight $d$, i.e. for every geometric point of $\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}$ there is an integer-valued function on the set of irreducible components of the corresponding curve, such that it is compatible with specialisation maps and the sum of the integers is $d$; furthermore we require that it takes nonnegative values, and every $p_a=0$ component of weight $0$ has at least three special points (every $p_a=1$ component of weight $0$ has at least one special point).
+\end{dfn}
+Remark that there is an \'{e}tale, non-separated morphism $\mathfrak M_{1,n}^{\operatorname{wt}}\to\mathfrak M_{1,n}$ and the stability condition is such that the forgetful map $\M{1}{n}{\PP^r}{d}\to\mathfrak M_{1,n}$ factors through $\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}$, the weight assignment coming from the degree of the map to $\PP^r$.
 
 \begin{dfn}
-Let $\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}$ be the stack of \emph{prestable} (projective, nodal and reduced), connected, arithmetic genus one, $n$-marked curves that are \emph{stably weighted} with total weight $d$, i.e. for every geometric point there is an integer-valued function on the set of irreducible components of the corresponding curve, such that it is compatible with specialisation maps and the sum of the integers is $d$; furthermore we require that all integers are nonnegative and every $p_a=0$ weight-0 component has at least three special points (every $p_a=1$ weight-0 component has at least one special point).
-\end{dfn}
-Remark that there is an \'{e}tale, non-separated morphism $\mathfrak M_{1,n}^{\operatorname{wt}}\to\mathfrak M_{1,n}$ and the weight stability condition is such that the forgetful map $\M{1}{n}{\PP^r}{d}\to\mathfrak M_{1,n}$ factorises through $\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}$, the weight assignment coming from the degree of the map to $\PP^r$.
-
-\begin{dfn}
-Let $\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}(1)$ be the stack of \emph{at worst cuspidal} projective, reduced, connected, arithmetic genus one, $n$-marked curves that are stably weighted with total weight $d$, i.e. as above with (stricter) stability condition: every $p_a=0$ weight-0 component has at least three special points (every $p_a=1$ weight-0 component has at least \emph{two} special point) \emph{and} every weight-0 cusp has at least two further special points.
+Let $\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}(1)$ be the stack of \emph{at worst cuspidal} projective, reduced, connected, arithmetic genus one, $n$-marked curves that are stably weighted with total weight $d$, i.e. the weight is nonnegative, and every $p_a=0$ component of weight $0$ has at least three special points (every $p_a=1$ component  of weight $0$ has at least \emph{two} special points).
 \end{dfn}
 
-Note that the only type of nodal curves that we are getting rid of is the one with an elliptic tail of weight zero.
+Note that the only type of nodal curves that we are getting rid of are the ones with an elliptic tail of weight zero.
 
 \begin{thm}
 There exists a morphism $\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}\to\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}(1)$ which extends the identity on the smooth locus.
 \end{thm} 
-We approach the proof in two different manners: first we adopt the strategy of constructing the graph of such morphism and prove that projection on the source is an isomorphism; second we construct the $1$-stabilisation at the level of curves with divisors with an argument \'{a} la Hassett \cite{HassettHyeon}, then argue that it descends to a morphism between moduli spaces of weighted curves.
+As anticipated we explain two different approaches to the proof:
+\begin{enumerate}
+ \item we adopt the strategy of constructing the graph of such a morphism within the product $\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}\times\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}(1)$ and prove that the projection onto the first factor is an isomorphism;
+\item we prove that the $1$-stabilisation exists at the level of curves with a divisor constructing the contraction directly, then argue that it descends to a morphism between moduli spaces of weighted curves.
+\end{enumerate}
 
 \subsection{First approach: the graph}
 
@@ -847,31 +884,33 @@ Finally, observe that the map is bijective by construction and $\mathfrak M$ is 
  
 \subsection{Second approach: constructing the contraction}
 
-The idea of this construction is essentially due to Hassett \cite[\S2]{HassettHyeon} and it has recently been reviewed and simplified in \cite[\S3.7]{RSPW}.
+The idea behind this construction is essentially due to Hassett \cite[\S2]{HassettHyeon} and it has recently been reviewed and simplified in \cite[\S3.7]{RSPW}.
 
-Let $\mathfrak{P}=\mathfrak{Pic}^d_{\cC/\MM_1}$ with the stability condition that 
-\[\omega_\pi\otimes \mathcal L^{\otimes 3}\]
- is $\pi$-ample. We work over $\MM_1^{\rm{div}}$, parametrising families of nodal curves with a relative Cartier divisor. More precisely, this can be thought of as the open inside $C(\pi_*\mathcal L)=\Spec_\pP(\R^1\pi_*\mathcal L)$ (see \cite{CLpfields}), where the section is not $0$ on any irreducible component of the curve. Alternatively one can think of the moduli functor of a line bundle with a section up to scalar as the hom-stack $\Hom_{\MM_1}(\C,[\Aaff^1/\Gm])$, again requiring the section not to be $0$ and the total degree of the line bundle to be $d$.
+Let $\mathfrak{P}=\mathfrak{Pic}^{d,rm{st}}_{\cC/\MM_1}$ with the stability condition that the line bundle $\omega_\pi\otimes \mathcal L^{\otimes 3}$ on the universal curve is $\pi$-relatively ample. 
 
-We shall first construct the contraction over $\MM^{\rm{div}}$ and then show that it descends to $\MM^{\rm{wt}}$.
+We work over $\MM_1^{\rm{div}}$, parametrising families of nodal curves with a relative Cartier divisor. More precisely, this can be thought of as the open inside $C(\pi_*\mathcal L)=\Spec_\pP(\R^1\pi_*\mathcal L)$ (see \cite{CLpfields} and Section \ref{section:p-fields} above), where the section of $\mathcal L$ is not $0$ on any irreducible component of the curve. Alternatively this is the moduli functor of a prestable curve with a line bundle and a section up to scalar, which can be thought of as the hom-stack $\Hom_{\MM_1}(\mathcal C,[\Aaff^1/\Gm])$; then again one picks the connected component where the line bundle has total degree $d$, and the open substack obtained by requiring weighted stability and the section not to vanish on any irreducible component of the curve.
 
-Let $E$ be the locus inside the universal curve spanned by elliptic tails; this is a Cartier divisor in the universal curve over $\MM^{\rm{wt}}_1$, which we shall freely pullback and keep denoting by $E$. We shall also denote by $\mathfrak D^1$ its image in $\MM^{\rm{wt}}_1$ (and its various pullbacks), which is a Cartier divisor as well.
+We shall construct the contraction over $\MM_1^{\rm{div}}$ first, and then show that it descends to $\MM_1^{\rm{wt}}$.
 
-We write 
+Let $E$ be the locus inside the universal curve spanned by elliptic tails of weight $0$; this is a Cartier divisor in the universal curve over $\MM^{\rm{wt}}_1$, which we shall freely pullback and keep denoting by $E$. We shall also denote by $\mathfrak D^1$ its image in $\MM^{\rm{wt}}_1$ (and its various pullbacks), which is a Cartier divisor as well.
+
+Consider the following line bundle on the universal curve over $\MM_1^{\rm{div}}$: 
 \begin{equation}\label{eq:linebundlecontraction}
 \mathcal N:=\omega_{\pi}(E)\otimes\mathcal O_{\cC}(3D),
 \end{equation} where $D$ is the universal Cartier divisor over $\MM_1^{\rm{div}}$ (so $\mathcal O_{\cC}(D)$ is the pullback of the universal line bundle on $\pP$).
-Notice that $\mathcal N$ is trivial on the locus of elliptic tails, so if the contraction morphism is well defined it will contract this locus.
+Notice that $\mathcal N$ is trivial on the locus of elliptic tails, so the Proj construction applied to it will contract this locus.
 
 \begin{prop}\label{1-stabilization-div}
- The $1$-stabilisation $\MM_1^{\rm{div}}\to\MM_1^{(1),\rm{div}}$ is defined by the line bundle $\mathcal N$:
+In the following diagram $\hat\cC$ is a family of weighted $1$-stable curves and $\phi$ is a regular morphism:
+ 
  \bcd
  (\cC,D)\ar[rr,"\phi"]\ar[dr,"\pi"] & & (\hat\cC=\operatorname{Proj}_{\MM_1^{\rm{div}}}(\bigoplus_{n\geq 0}\pi_*\mathcal N^{\otimes n}),\phi(D))\ar[ld,"\hat\pi"] \\
  & \MM_1^{\rm{div}} &
  \ecd
+This defines the $1$-stabilisation morphism $\MM_1^{\rm{div}}\to\MM_1^{(1),\rm{div}}$.
 \end{prop}
 
-We shall prove this proposition through a series of lemmas. The first one is a technical tool drawn from \cite{RSPW}: it implies that the $\Proj$ construction we perform commutes with base change to generically chosen curves inside $\MM_1^{\rm{div}}$. In the following it will allow us to check that $\mathcal N$ is semi-ample and that $\pi_*\mathcal N$ is locally free assuming that $\cC\to T$ is a smoothing over the spectrum of a discrete valuation ring.
+We need to check that $\mathcal N$ is $\pi$-semi-ample (regularity of $\phi$) and that $\pi_*\mathcal N$ is locally free (flatness of $\hat\pi$). Both these facts are clear generically, but less so on points of $E$ and $\mathfrak D^1$. We shall check this by exploiting the next lemma, which is a nice technical gadget drawn from \cite{RSPW}: it implies that the $\Proj$ construction we perform commutes with base-change to generic curves inside $\MM_1^{\rm{div}}$, allowing us to work with a smoothing of the elliptic tail over a DVR scheme $T$.
 
 \begin{lem}[pullback with a boundary]\label{DVR}
 Let $\pi\colon\cC\to S$ be a proper family of curves over a smooth basis, and let $\mathcal N$ be a line bundle on $\cC$ such that $\R^1\pi_*\mathcal N$ is a line bundle supported on a Cartier divisor $\mathfrak D\subseteq S$. Then for every $T$ the spectrum of a DVR with closed point $0$ and generic point $\eta$, and for every morphism $f\colon T\to S$ such that $f(0)\in\mathfrak D$ and $f(\eta)\in S\setminus\mathfrak D$ we have
