@@ -910,10 +910,10 @@ In the following diagram $\hat\cC$ is a family of weighted $1$-stable curves and
 This defines the $1$-stabilisation morphism $\MM_1^{\rm{div}}\to\MM_1^{(1),\rm{div}}$.
 \end{prop}
 
-We need to check that $\mathcal N$ is $\pi$-semi-ample (regularity of $\phi$) and that $\pi_*\mathcal N$ is locally free (flatness of $\hat\pi$). Both these facts are clear generically, but less so on points of $E$ and $\mathfrak D^1$. We shall check this by exploiting the next lemma, which is a nice technical gadget drawn from \cite{RSPW}: it implies that the $\Proj$ construction we perform commutes with base-change to generic curves inside $\MM_1^{\rm{div}}$, allowing us to work with a smoothing of the elliptic tail over a DVR scheme $T$.
+We need to prove that $\mathcal N$ is $\pi$-semi-ample (regularity of $\phi$) and that $\pi_*\mathcal N$ is locally free (flatness of $\hat\pi$). Both these facts are clear generically, but less so on points of $E$ and $\mathfrak D^1$. We shall check this by exploiting the next lemma, which is a nice technical gadget drawn from \cite{RSPW}: it implies that the $\Proj$ construction we perform commutes with base-change to generic curves inside $\MM_1^{\rm{div}}$, allowing us to work with a smoothing of the elliptic tail over a DVR scheme $T$.
 
 \begin{lem}[pullback with a boundary]\label{DVR}
-Let $\pi\colon\cC\to S$ be a proper family of curves over a smooth basis, and let $\mathcal N$ be a line bundle on $\cC$ such that $\R^1\pi_*\mathcal N$ is a line bundle supported on a Cartier divisor $\mathfrak D\subseteq S$. Then for every $T$ the spectrum of a DVR with closed point $0$ and generic point $\eta$, and for every morphism $f\colon T\to S$ such that $f(0)\in\mathfrak D$ and $f(\eta)\in S\setminus\mathfrak D$ we have
+Let $\pi\colon\cC\to S$ be a proper family of curves over a smooth basis, and let $\mathcal N$ be a line bundle on $\cC$ such that $\R^1\pi_*\mathcal N$ is a line bundle supported on a Cartier divisor $\mathfrak D\subseteq S$. Then for every spectrum of a DVR $T$ with closed point $0$ and generic point $\eta$, and for every morphism $f\colon T\to S$ such that $f(0)\in\mathfrak D$ and $f(\eta)\in S\setminus\mathfrak D$ we have
 \[f^*\pi_*\mathcal N\cong \pi_*f^*\mathcal N.\]
 %We have denoted with $\mathfrak{D}^1$ the Cartier divisor image of the locus spanned by elliptic tails.
 \end{lem}
@@ -940,15 +940,15 @@ and thus pulling back along $f$
 \[0\rightarrow  \rm{L}_1f^*\R^1\pi_*\mathcal M \to \OO_T\xrightarrow{f^*g}\OO_T\rightarrow f^*\R^1\pi_*\mathcal M\rightarrow 0.\] 
 It immediately follows that $ \rm{L}_2f^*\R^1\pi_*\mathcal M=0.$ Finally notice that since the image of $f$ is not contained in the boundary divisor $f^*g\neq 0$ and thus injective of sheaves as $T$ is a DVR. We can then conclude $ \rm{L}_1f^*\R^1\pi_*\mathcal M=0$ as well which implies the Lemma.}\end{color}
 \end{proof}
-Now recall that $\mathcal N$ is trivial on elliptic tails and of positive degree everywhere else. The rank of $\R^1\pi_*\mathcal N$ can be checked on the fibers \cite[Theorem III.12.11]{HAR}, so we see that it is $0$ outside $\mathfrak D^1$ and $1$ on it.
+Now recall that in our case $\mathcal N$ is trivial on elliptic tails and of positive degree everywhere else. The rank of $\R^1\pi_*\mathcal N$ can be checked on the fibers \cite[Theorem III.12.11]{HAR}, so we see that it is $0$ outside $\mathfrak D^1$ and $1$ on it.
 
 \begin{lem}\label{lemma:semiample}
-The line bundle $\mathcal N$ is $\pi$ semi-ample, i.e. the natural map
+The line bundle $\mathcal N$ is $\pi$-semi-ample, i.e. the natural map
 \[\pi^*\pi_*\mathcal N^{\otimes n}\to \mathcal N^{\otimes n}\]
-is surjective.
+is surjective for $n\gg 0$ (in fact $n=1$ suffices).
 \end{lem}
 \begin{proof}
-Outside the locus of elliptic tails $\mathcal N$ is $\pi$-ample. We are left to check on points belonging to an elliptic tail; thanks to the above Lemma we can reduce to the case that $C$ is the central fiber of a one-parameter smoothing of the elliptic tail. This has been proved by Smyth~\cite[Lemma~2.12]{SMY1}.
+Outside the locus of elliptic tails $\mathcal N$ is $\pi$-ample. We are left to check on points belonging to an elliptic tail; thanks to the above Lemma we can reduce to the case that $C$ is the central fiber of a one-parameter smoothing of the elliptic tail. This has been dealt with by Smyth~\cite[Lemma~2.12]{SMY1}.
 \end{proof}
 
 \begin{lem}
@@ -957,29 +957,29 @@ $\pi_*\mathcal N$ is locally free on $\MM_1^{\rm{div}}.$
 \begin{proof}\cite[Proposition~3.7.2.1]{RSPW}
 We have to check that $\pi_*\mathcal N$ has constant rank.
 On $\MM_1^{\rm{div}}\setminus \mathfrak{D}^1$ we see that $\R^1\pi_*\mathcal N=0$, so $\pi_*\mathcal N$ satisfies Cohomology and Base Change and its rank is determined by Riemann-Roch.
-Given a point $x$ on the boundary $\mathfrak{D}^1$, we can always find a DVR $T$ whose closed point maps to $x$ and whose generic point maps to $\MM_1^{\rm{div}}\setminus \mathfrak{D}^1.$ Then we are in the hypotheses of Lemma~\ref{DVR} and we can check the rank looking at $\pi_*f^*\mathcal N$ over the DVR scheme $T.$ But now $f^*\mathcal N$ is flat over $T$, so $\pi_*f^*\mathcal N$ is as well, which implies torsion-free over $T$.
+Given a point $x$ on the boundary $\mathfrak{D}^1$, we can pick a DVR scheme $T$ whose closed point maps to $x$ and whose generic point maps to $\MM_1^{\rm{div}}\setminus \mathfrak{D}^1.$ Then we are in the hypotheses of Lemma~\ref{DVR} and we can check the rank at $x$ by looking at $\pi_*f^*\mathcal N$ over $T.$ Now $f^*\mathcal N$ is flat over $T$, so $\pi_*f^*\mathcal N$ is as well, which implies torsion-free (constant rank).
 \end{proof}
 
 \begin{proof}\ref{1-stabilization-div}
 Let $S\to \MM_1^{\rm{div}}$ be a smooth atlas, then we have:
  \bcd
- (C,D)\ar[rr,"\phi"]\ar[dr,"\pi"] & & (\hat C=\operatorname{Proj}_{S}(\bigoplus_{n\geq 0}\pi_{S,*}\mathcal N^{\otimes n}),\phi(D))\ar[ld,"\hat\pi"] \\
+ (\cC_S,D_S)\ar[rr,"\phi"]\ar[dr,"\pi"] & & (\hat \cC_S=\operatorname{Proj}_{S}(\bigoplus_{n\geq 0}\pi_{S,*}\mathcal N^{\otimes n}),\phi(D_S))\ar[ld,"\hat\pi"] \\
  & S &
  \ecd
-where $\phi$ is proper and birational morphism since $\mathcal N$ is $\pi$-semi-ample and $\hat{\pi}$ is flat since $\pi_*\mathcal N$ is locally free. 
-To verify that this define a morphism $S\to \MM_1^{\rm{div}}(1)$ we have to argue that $\hat{C}$ has reduced fibers and only nodes and cusps as singularities.
+where $\phi$ is a proper and birational morphism since $\mathcal N$ is $\pi$-semi-ample and $\hat{\pi}$ is flat since $\pi_*\mathcal N$ is locally free. 
+To verify that this defines a morphism $S\to \MM_1^{\rm{div}}(1)$ we have to argue that $\hat{\cC}_S$ has reduced fibers and only nodes and cusps as singularities.
 
-Since these properties only concern the fibers of $\hat{\pi}$ we can verify them after base change to a DVR scheme $T$ chosen as in Lemma~\ref{DVR} so that the construction commutes with base change. Furthermore we can pick $f\colon T\to \MM_1$ so that the total space $\cC_T$ is regular, so we are in the hypotheses of Smyth's contraction Lemma~\cite[Lemma~2.13]{SMY1}
+Since these properties only concern the fibers of $\hat{\pi}$ we can verify them after base change to a DVR scheme $T$ chosen as in Lemma~\ref{DVR}, so that the construction commutes with base change. Furthermore we can pick $f\colon T\to S$ such that the total space $\cC_T$ is regular, so we may just apply Smyth's Contraction Lemma~\cite[Lemma~2.13]{SMY1}.
 
 Finally to conclude that this defines a morphism 
 \[\MM_1^{\rm{div}}\to \MM_1^{\rm{div}}(1)\]
 it is enough to verify that there is an isomorphism
- $\rm{pr}_1^*\hat\cC\cong\rm{pr}_2^*\hat\cC$ satisfying the cocycle condition, where $\rm{pr}_i\colon S'= S\times_{\MM_1^{\rm{div}}} S\rightrightarrows S$.%and that $\rm{pr}_{ij}\colon S\times_{\MM_1^{\rm{div}}} S\times_{\MM_1^{\rm{div}}} S\to  S\times_{\MM_1^{\rm{div}}} S $ satisfy the cocycle condition.
+ $\rm{pr}_1^*\hat \cC_S\cong\rm{pr}_2^*\hat \cC_S$ satisfying the cocycle condition, where $\rm{pr}_i\colon S'= S\times_{\MM_1^{\rm{div}}} S\rightrightarrows S$.%and that $\rm{pr}_{ij}\colon S\times_{\MM_1^{\rm{div}}} S\times_{\MM_1^{\rm{div}}} S\to  S\times_{\MM_1^{\rm{div}}} S $ satisfy the cocycle condition.
 
- This follows from the fact that $\pr_i^*\hat\cC$ are obtained from applying the Proj construction to 
+ This follows from the fact that $\pr_i^*\hat \cC_S$ are obtained from applying the Proj construction to 
  $\rm{pr}_i^*\pi_{S,*}\mathcal{N}\cong\pi_ {S',*} \rm{pr}_i^*\mathcal N$, by flatness of $S'\to S$. Thus it is enough to show that 
  \[\rm{pr}_1^*\mathcal N\cong \rm{pr}_2^*\mathcal N.\]
-  But $\mathcal N$ is the pullback of a line bundle on $\MM_1^{\rm{div}}$, thus the desired isomorphism follows from the commutativity of the following diagram
+  But $\mathcal N$ is the pullback of a line bundle on $\MM_1^{\rm{div}}$, thus the desired isomorphism follows from the commutativity of the diagram
  
  \bcd
 S\times_{\MM_1^{\rm{div}}} S\ar[r,"\rm{pr_1}"]\ar[d, "\rm{pr_2}"] & S\ar[d] \\
@@ -991,54 +991,54 @@ The cocycle condition is derived similarly.
 
 
 \begin{prop}
-The $1$-stabilisation with divisors descends to the level of weighted curves:
+The $1$-stabilisation just defined for curves with a divisor induces an analogue morphism on weighted curves:
 \bcd
-\MM_1^{\rm{div}}\ar[r]\ar[d] & \MM_1^{(1),\rm{div}}\ar[d] \\
-\MM_1^{\rm{wt}}\ar[r] & \MM_1^{(1),\rm{wt}}
+\MM_1^{\rm{div}}\ar[r]\ar[d]\ar[dr,phantom,"\curvearrowright"] & \MM_1^{\rm{div}}(1)\ar[d] \\
+\MM_1^{\rm{wt}}\ar[r,"\exists"] & \MM_1^{\rm{wt}}(1)
 \ecd
 \end{prop}
 \begin{proof}
-{\'E}tale locally on $\MM_1^{\rm{wt}}$ we can choose sections $s_i$ such that their sum as a relative Cartier divisor $D$ has degree compatible with the weight function, so in particular it makes $\omega_{\pi}(E)\otimes\mathcal O_{\cC}(3D)$ trivial on the elliptic tails and $\pi$-ample elsewhere.
-If $S\to \MM_1^{\rm{wt}}$ is a smooth atlas, up to taking an {\'e}tale cover we can assume there are sections $s_i$ of $\cC_S\xrightarrow{\pi_S} S$ that define a lifting $S\to \MM_1^{\rm{div}}$ and thus through the above construction a morphism $\xi\colon S\to  \MM_1^{(1),\rm{wt}}.$
+{\'E}tale locally on $\MM_1^{\rm{wt}}$ we can choose smooth sections $s_i$ of the universal curve in a way that their sum as a relative Cartier divisor $D$ has degree compatible with the weight function, so in particular it makes $\omega_{\pi}(E)\otimes\mathcal O_{\cC}(3D)$ trivial on the elliptic tails and $\pi$-ample elsewhere.
+If $S\to \MM_1^{\rm{wt}}$ is a smooth atlas, up to taking an {\'e}tale cover we can assume there are sections $s_i$ of $\cC_S\to S$ that define a lifting $S\to \MM_1^{\rm{div}}$, and thus a morphism $\xi\colon S\to  \MM_1^{\rm{wt}}(1)$ through the above construction.
 
-In order to show that this descends to a morphism $\MM_1^{\rm{wt}}\rightarrow \MM_1^{(1),\rm{wt}}$ we need to verify that  $\rm{pr}_1(\xi)\cong\rm{pr}_2(\xi)$ and the cocycle condition is satisfied, where $\rm{pr}_i\colon S'= S\times_{\MM_1^{\rm{wt}}} S\rightrightarrows S$.
+In order to show that this descends to a morphism $\MM_1^{\rm{wt}}\rightarrow \MM_1^{\rm{wt}}(1)$ we need to verify that  $\rm{pr}_1^*(\xi)\cong\rm{pr}_2^*(\xi)$ and the cocycle condition is satisfied, where $\rm{pr}_i\colon S'= S\times_{\MM_1^{\rm{wt}}} S\rightrightarrows S$.
 
-This boils down to checking that for two different choices of a lifting $S\xrightarrow{s_i,\;s'_i}\MM_1^{\rm{div}}$ we have a unique isomorphism 
-\[\hat{\mathcal C}_1=\operatorname{Proj}_S\left((\omega_{\pi}(E)\otimes\mathcal O_{\cC}(3D))^{\otimes n}\right)\cong \operatorname{Proj}_S\left((\omega_{\pi}(E)\otimes\mathcal O_{\cC}(3D'))^{\otimes n}\right)=\hat{\mathcal C}_2. \]
-By construction we have a birational map 
+This boils down to checking that for two different choices of a lifting $D_1,D_2\colon S\to\MM_1^{\rm{div}}$ there exists a unique isomorphism 
+\[\hat{\mathcal C}_1=\operatorname{Proj}_S\left((\omega_{\pi}(E)\otimes\mathcal O_{\cC}(3D_1))^{\otimes n}\right)\cong \operatorname{Proj}_S\left((\omega_{\pi}(E)\otimes\mathcal O_{\cC}(3D_2))^{\otimes n}\right)=\hat{\mathcal C}_2. \]
+By construction there is a birational map $\psi$
  \bcd
-&\mathcal C \ar[dl,"\phi_1"]\ar[dr,"\phi_2"]  \\
+&\cC_S \ar[dl,"\phi_1" above left]\ar[dr,"\phi_2"]  \\
  \hat{\mathcal C}_1\ar[rr,dashed, "\psi"] & &\hat{\mathcal C}_2.
  \ecd
 
-We want to show that it extends to a regular morphism. 
-First of all notice that $ \hat{\mathcal C}_i$ is normal, $i=1,2$. Indeed, since $S$ is smooth and the singularities of the fibers are in co-dimension 1, $ \hat{\mathcal C}_i$ is regular in codimension 1. Moreover since both $S$ (smooth) and the fibers (Cohen-Macaulay) satisfy the ($S_2$) condition of Serre, also the total space does \cite[Thorem~23.9]{MAT}. Then, since the fibers are geometrically connected, Zariski's connectedness theorem implies that
-\[\phi_{i,*}\OO_{\mathcal C}\cong \OO_{\hat{\mathcal C}_i} \]
- Moreover notice that by construction $\operatorname{Ex}(\phi_1)\cong \operatorname{Ex}(\phi_2),$ so in particular $\phi_2$ contracts all fibers of $\phi_1.$ Then a standard argument \cite[Lemma 1.15]{debarre}
-shows that $\phi_2$ factors through $\phi_1$ and vice versa. This proves the regularity of $\psi$ and its inverse. Notice that $\psi$ is unique as it is the only extension of $\phi_2\circ\phi_1^{-1}$.
+We want to show that $\psi$ extends to a regular morphism. 
+Notice that $ \hat{\mathcal C}_i$ is normal, $i=1,2$. Indeed since $S$ is smooth and the singularities of the fibers are in codimension $1$, $ \hat{\mathcal C}_i$ is regular in codimension $1$. Moreover since both $S$ (smooth) and the fibers (Cohen-Macaulay) satisfy Serre's condition $S_2$, so does the total space of $\hat\cC_i$ by \cite[Thorem~23.9]{MAT}. Then, since the geometric fibers of $\phi_i$ are either points or $p_a=1$ subcurves, and in either case connected, Zariski's connectedness theorem implies that
+\[\phi_{i,*}\OO_{\cC_S}\cong \OO_{\hat{\mathcal C}_i}. \]
+ Moreover by construction $\operatorname{Exc}(\phi_1)=\operatorname{Exc}(\phi_2)$ is the locus of elliptic tails of weight $0$, so in particular $\phi_2$ contracts all fibers of $\phi_1.$ Then \cite[Lemma 1.15]{debarre}
+implies that $\phi_2$ factors through $\phi_1$, and viceversa. This proves the regularity of $\psi$ and its inverse. Notice that $\psi$ is unique as it is the only extension of $\phi_2\circ\phi_1^{-1}$.
 \end{proof} 
 
 \subsection{Fiber products and induced obstruction theories}
 Let $\Z$ be defined by the pullback diagram:
 \bcd
-\mathcal Z \ar[r]\ar[d]\ar[rd,phantom,"\Box"] & \overline{\mathcal M}_1^{(1)}(\PP^4,d) \ar[d] \\
-\mathfrak M_1^{\rm{wt}}\ar[r] & \mathfrak M_1^{(1),\rm{wt}}
+\Z \ar[r]\ar[d]\ar[rd,phantom,"\Box"] & \overline{\mathcal M}_1^{(1)}(\PP^4,d) \ar[d] \\
+\mathfrak M_1^{\rm{wt}}\ar[r] & \mathfrak M_1^{\rm{wt}}(1)
 \ecd
 
 Objects of $\Z$ over $S$ consist of diagrams
 \bcd
-\cC\ar[rr,"\phi"]\ar[dr,"\pi"] & & \hat\cC\ar[rr,"f"]\ar[dl,"\hat\pi"] & & \PP^4 \\
+C \ar[rr,"\phi"]\ar[dr,"\pi" below left] & & \hat C\ar[rr,"f"]\ar[dl,"\hat\pi"] & & \PP^4 \\
 & S & & &
 \ecd
-where $f$ is a $1$-stable map and $\phi$ is the weighted $1$-stabilisation (i.e. contraction of elliptic tails of weight $0$); arrows over $\id_S$ are commutative diagrams
+where $f$ is a $1$-stable map and $\phi$ is the weighted $1$-stabilisationdefined above (i.e. contraction of elliptic tails of weight $0$); arrows over $\id_S$ are commutative diagrams
 \bcd
-\cC\ar[r,"\phi"]\ar[d,"\psi"] &  \hat\cC\ar[r,"f"]\ar[d,"\hat\psi"] & \PP^4 \ar[d,"\id_\PP"]\\
-\cC'\ar[r,"\phi'"] &  \hat\cC'\ar[r,"f'"] & \PP^4
+C\ar[r,"\phi"]\ar[d,"\psi"] &  \hat C\ar[r,"f"]\ar[d,"\hat\psi"] & \PP^4 \ar[d,"\id_\PP"]\\
+C'\ar[r,"\phi'"] &  \hat C'\ar[r,"f'"] & \PP^4
 
 \ecd
 where $\psi$ and $\hat\psi$ are isomorphisms.  Recall that $\hat \psi$ is determined by $\psi$. %due to the required commutativity with the dominant ``birational'' morphism $\phi$.
 
-Forgetting $\hat \cC$ and keeping $f\circ\phi\colon \cC\to\PP^4$, we obtain a morphism $i\colon\Z\to\oM_1(\PP^4,d).$ 
+Forgetting $\hat C$ and keeping $f\circ\phi\colon C\to\PP^4$, we obtain a morphism $i\colon\Z\to\oM_1(\PP^4,d).$ 
 
 \begin{lem}
 The morphism $i\colon\Z\hookrightarrow\oM_1(\PP^4,d)$ is a closed immersion. In particular $\Z$ is a proper DM stack.
