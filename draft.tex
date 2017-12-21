@@ -396,8 +396,8 @@ In particular the space $\overline{\pazocal{M}}^{(1)}_{1,n}(\PP^r,d)$ we will co
   Then $f$ is smoothable if and only if it factors through a Cohen-Macaulay genus $1$ singularity with positive degree on at least one of its branches.
 \end{prop}
 
-\begin{lem}\label{lem:classificationsing}(Classification of CM genus $1$ singularities)
-The Cohen-Macaulay genus $1$ singularities with $m$ branches are all and only obtained by gluing a genus $0$ singularity with $k$ branches with a Smyth's $m-k$-elliptic fold. We call such a singularity a \textbf{(k,m)-type} genus $1$ singularity.
+\begin{lem}(Classification of CM genus $1$ singularities)
+The Cohen-Macaulay genus $1$ singularities with $m$ branches are all and only obtained by gluing a genus $0$ singularity with $k$ branches with a Smyth's $m-k$-elliptic fold.
 Notice that $k$ may be $0$ (i.e. a point) or $1$ (i.e. a smooth rational curve).
 \end{lem}
 \begin{proof}
@@ -428,7 +428,7 @@ Otherwise we have:
 \item Only one of the $a_i$ is non zero
 \item All the $a_i$ are zero
 \end{enumerate}
-\noindent{For $m=2$} two possibilities
+\noindent{For $m=23$} two possibilities
 \item $a_1$ is non zero, then we have the tacnode;
 \item  $a_1$ is zero
 \noindent{For $m= 1$} As in Smyth's we prove that in this  case $\mathfrak{m}^2_{\widetilde{R}}=\mathfrak{m}_{R}$ which means the singularity is a cusp. 
@@ -462,7 +462,7 @@ Choose now a simultaneous smoothing of the generic fiber, e.g. if the families w
 \begin{proof}\ref{prop:smoothability2}
  The argument to prove that if $f$ is smoothable then it has to factors through a genus $1$ singularity is exactly the same used by Vakil to show that the tangent vectors have to be linearly dependent in the image and thus we do not repeat it but we refer the reader to \cite{Vre}.
  
-Viceversa, let us suppose that $f\colon C\to \PP^r$ factors through $\hat{f}\colon \hat{C}\to\PP^r$  with $\hat{C} $ a genus $1$ singularity. 
+Viceversa, let us suppose that $f\colon C\to \PP^r$ factors through $\hat{f}\colon \hat{C}\to\PP^r$  with $\hat{C} $a genus $1$ singularity. 
 
 Let $\hat{\cC}$ be a smoothing of $\hat{C}$ and $\hat{\mathcal L}$ an extension of $\hat{L}:=\hat{f}^*\OO_{\PP^r}(1)$ on the smoothing, which exists because deforming line bundles on curves is unobstructed.
 We are first going to show that we can extend $\hat{f}$ to $\hat{F}\colon \hat{\cC}\to\PP^r$ and then argue how to get a smoothing of $f$ from $\hat{F}.$
@@ -473,17 +473,7 @@ Thus it is enough to verify that $H^1(\hat{C},\hat{L})=0.$
 Since all the curve we are considering are Cohen-Maculay, they have a dualising pure sheaf $\omega_{\hat{C}}$ such that for any line bundle $\hat{L}$
 \[H^1(\hat{C},\hat{L})=(H^0(\hat{C},\hat{L}^{-1}\otimes\omega_{\hat{C}}))^{\vee}.\]
 It is well know \cite[IV, \S~3]{serre} that  $\omega_{\hat{C}}$ can be described as the subsheaf of $\nu_* \omega_{\overline{C}}\otimes K(\overline{C})$ locally satisfying:
-\[\omega\in \nu_* \omega_{\overline{C}}\otimes K(\overline{C})(U)\;\;\;\text{s.t.}\;\;\sum_{q\in \nu^{-1}(0)}\rm{Res}(\nu^*f\omega) =0\;\;\;\forall \,f\in\,\OO_C(U).\]
-Let $\hat{C}$ be a genus $1$ curve with only one singularity which is a genus $1$ singularity of $(k,m)$-type
- Using the explicit local description of genus $1$ singularities that we worked out in Lemma~\ref{lem:classificationsing}, we see that 
-\[\omega_C\hookrightarrow \nu_*\omega_{\overline{C}}(p_1+\dots p_k+2 p_{k+1}\dots+2p_m)=\nu_*\left(\OO_{\PP^1}(-1)\oplus\dots\oplus\OO_{\PP^1}\oplus\dots \OO_{\PP^1}\right)\]
-and the kernel of the inclusion is supported on the singular point. We then have an inclusion
-\[H^0(\hat{C},\hat{L}^{-1}\otimes\omega_{\hat{C}})\hookrightarrow H^0(\nu_*\left(\OO_{\PP^1}(-1)\oplus\dots\oplus\OO_{\PP^1}\oplus\dots \OO_{\PP^1}\right)\otimes\hat{L})^{-1})=0;\]
-where the last equality follows from the fact that $\hat{L}){-1}$ has degree less or equal to $0$ on every irreducible component of $\hat{C}.$
-
-We conclude showing how to smooth $f\colon C\to \PP^r$ given $\hat{F}\colon\hat{C}\to\PP^r.$
-
-
+\[\omega\in \nu_* \omega_{\overline{C}}\otimes K(\overline{C})(U)\;\;\;\text{s.t.}\;\;\sum_{q\in \nu^{-1}(0)}\rm{Res}(\nu^*f\omega) =0\;\;\;\forall \,f\in\,\OO_C(U)\]
 
  
   
@@ -534,7 +524,6 @@ We notice that the genus zero contribution to this formula comes from the bounda
 
 
 \section{From $p$-fields to the quintic three-fold}\label{section:p-fields}
-
 We shall introduce the moduli space $\Mone{1}{\PP^4}{d}^p$ of $1$-stable curves with $p$-fields, endow it with a $0$-dimensional virtual class, and show that its degree coincides with the genus $1$ cuspidal invariants of the quintic three-fold $X$ up to a sign. This is a word-by-word repetition of the arguments in \cite{CLpfields}, once noticed that they carry over to the situation where we work over a family of Gorenstein (not necessarily nodal) curves. Our aim in this section is to improve the legibility of our paper by providing the non-expert reader with a r\'{e}sum\'{e} of some of the key ideas contained in \cite{CLpfields}; it should otherwise be skipped.
 
 First we introduce the notion of the \emph{cone of sections} of a smooth object $\pazocal Z$ over a family of curves $\cC$: let $B$ be any base (algebraic stack) and let $\pi\colon \cC\to B$ be a flat proper morphism of finite presentation which is representable by algebraic spaces and whose geometric fibers are reduced l.c.i. curves; let $\mathcal L$ be a line bundle on $\cC$. Then there is an algebraic stack over $B$ representing sections of $\mathcal L$, and it can be defined as $C(\pi_*\mathcal L)=\Spec_B(\R^1\pi_*\mathcal L)$; this is because $\R^1\pi_*\mathcal L$ commutes with pullback, and it has the desired modular interpretation by Serre duality. More generally, the cone of section $\mathfrak S$ of $\pazocal Z$ is defined by the universal diagram:
@@ -704,6 +693,7 @@ so that they may combine the techniques of virtual pullback \cite{Manolache-pull
 Finally they notice that the fibers of $v$ are vector spaces and the obstruction theory $\mathbb E_{\pazocal N/\pazocal Q}$ is symmetric, so it can be represented as $[T_{v^{-1}(\xi)}\xrightarrow{0}T^*_{v^{-1}(\xi)}]$ along the fibers, and this is enough since we are only interested in the action of $v^!_{\mathbb E_{\pazocal N/\pazocal Q},\rm{loc}}$ on $A_0(\pazocal Q)$ \cite[Theorem 5.7]{CLpfields}.
 
 Hopefully we have managed to convince the reader that the subtle intersection theory perpetuated in \cite{CLpfields} does not rely at all on working with families of \emph{nodal} curves.
+
 
 
 
@@ -1129,6 +1119,8 @@ $\deg[\Z^p]^{\rm{vir}}_{\rm{loc}}=\deg[\Mone{1}{\PP^4}{d}^p]^{\rm{vir}}_{\rm{loc
 
 
 
+
+
 \section{Local equations and desingularisation}\label{sec:equations}
 \subsection{Equations for $\Z^p$ relative to $\XP$}
 We are going to need a description of the normal cone $\mathfrak C_{\Z^p/\XP}$ in order to perform a splitting.
@@ -1249,7 +1241,6 @@ We have the identity:
 \[\deg\virloc{\tZp}=\deg\virloc{\Zp}\]
 \end{lem}
 Compare with \cite[Proposition~2.5]{CL}.
-
 \section{Splitting the cone and proof of the Main Theorem}\label{section:main_proof}
 We are finally in a position to study the cone $\mathfrak{C}_{\tZp/\tXP}.$ This is essentially going to be a word-by-word repetition of the arguments in \cite{CLpfields}.
 \begin{lem}\label{lem:open_cones}
