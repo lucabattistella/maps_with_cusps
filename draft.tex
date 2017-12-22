@@ -442,6 +442,12 @@ Removing the Gorenstein restriction we have three possibilities for $m\geq 3$:
 \noindent For $m= 1$ the only possible singularity is the cusp: indeed it can be proven that $\mathfrak{m}^2_{\widetilde{R}}=\mathfrak{m}_{R}$. 
 \end{proof}
 
+\begin{remark}
+ The genus and number of branches are not sufficient to tell these singularities apart anymore, neither is the embedding dimension. A numerical invariant that distinguishes them is:
+\[ \dim_k R/I_p \]
+where $I_p=\operatorname{Ann}_R(\widetilde R/R)$ is the conductor ideal at the singular point. \marginpar{prove it or at least say what numbers it gives}
+\end{remark}
+
 \begin{lem}
 Every Cohen-Macaulay genus $1$ singularity is smoothable.
 \end{lem}
@@ -471,17 +477,18 @@ Observe now that $\sigma_0$ and $\sigma_1$ induce sections of the contracted cur
 Viceversa, let us suppose that $f\colon C\to \PP^r$ factors through $\hat{f}\colon \hat{C}\to\PP^r$  with $\hat{C}$ a genus $1$ singularity in a way that at least one branch is not contracted.
 
 We show that we can produce smoothings $\cC$ of $C$ and $\hat\cC$ of $\hat C$ with a contraction map $\cC\to\hat\cC$ compatible with the given $C\to\hat C$.\footnote{This is in general not possible: pick any genus $2$ curve with a rational tail and map it to the ramphoid cusp, a planar non-Gorenstein singularity with local equation $y^2-x^5=0$. Then a compatible smoothing can be found only if the rational tail is attached to a Weierstrass point of the genus $2$ curve, as can be seen by computing the stable model of the ramphoid cusp. This example was kindly suggested to us by Prof. D.I. Smyth.}
-Assume that $\hat C$ has a $(k,m-k)$-singularity. Then we can pick a smoothing $\cC$ of $C$ such that, when resolving the $A_n$ singularities at the nodes, i.e. when looking at the semistable model with regular total space $\cC^{\rm{ss}}$, the following holds: call $E$ the maximal balanced genus one subcurve contracted by $f^{\rm{ss}}$; then there are $m-k$ rational tails of positive degree directly adjacent to $E$, and the other $k$ rational tails are further away. Moreover the rational tails can be made to agree in length with the corresponding ones in $\hat C$. We may then perform a two-step contraction: by the work of Smyth we can find a line bundle contracting $E$, resulting in an $(m-k+h)$-fold point with $h\leq k$; at this point use $f^*\OO_{\PP}(1)$ (add markings away from the genus $1$ singularity as necessary) to further contract the branches of degree $0$. Notice that $f^*\OO_{\PP}(1)$ has no $H^1$ because at least one branch is of positive degree, so it satisfies cohomology and base change, making it possible to verify that the result of this second contraction is a $(k,m-k)$-singularity.\marginpar{check: maybe need positive degree on one of the $m-k$ branches?} So the central fiber of $\hat \cC$ is isomorphic to $\hat C$.
+Assume that $\hat C$ has a $(k,m-k)$-singularity. Then we can pick a smoothing $\cC$ of $C$ such that, when resolving the $A_n$ singularities at the nodes, i.e. when looking at the semistable model with regular total space $\cC^{\rm{ss}}$, the following holds: call $E$ the maximal balanced genus one subcurve contracted by $f^{\rm{ss}}$; then there are $m-k$ rational tails of positive degree directly adjacent to $E$, and the other $k$ rational tails are further away. Moreover the rational tails can be made to agree in length with the corresponding ones in $\hat C$. We may then perform a two-step contraction: by the work of Smyth we can find a line bundle contracting $E$, resulting in an $(m-k+h)$-fold point with $h\leq k$; at this point use $f^*\OO_{\PP^r}(1)$ (add markings away from the genus $1$ singularity as necessary) to further contract the branches of degree $0$. Notice that $f^*\OO_{\PP^r}(1)$ has no $H^1$ because at least one branch is of positive degree, so it satisfies cohomology and base change, making it possible to verify that the result of this second contraction is a $(k,m-k)$-singularity.\marginpar{check: maybe need positive degree on one of the $m-k$ branches?} So the central fiber of $\hat \cC$ is isomorphic to $\hat C$.
 
 Let $\hat{\mathcal L}$ an extension of $\hat{L}:=\hat{f}^*\OO_{\PP^r}(1)$ on $\hat{\cC}$, which exists because deforming line bundles on curves is unobstructed.
 In order to extend $\hat{f}$ to $\hat{F}\colon \hat{\cC}\to\PP^r$ all we have to show is that the $r+1$ sections $\hat{s}_0,\dots, \hat{s}_{r+1}$ representing the map $\hat{f}$ extend to sections of $\hat{\mathcal{L}}.$
-Thus it is enough to verify that $H^1(\hat{C},\hat{L})=0$ \cite{Wang}.
+Thus it is enough to verify that $H^1(\hat{C},\hat{L})=0$ \cite{Wang}. Once done this we are going to obtain the smoothing of the original map by precomposing with the contraction $F\colon\cC\to\hat{\cC}\xrightarrow{\hat F}\PP^r$.
 
 Since all the curve we are considering are Cohen-Maculay, they have a dualising sheaf $\omega_{\hat{C}}$ such that for any line bundle $\hat{L}$
 \[H^1(\hat{C},\hat{L})=(H^0(\hat{C},\hat{L}^{-1}\otimes\omega_{\hat{C}}))^{\vee}.\]
 It is known \cite[IV, \S~3]{serre} that  $\omega_{\hat{C}}$ can be described as the subsheaf of $\nu_* \omega_{\overline{C}}\otimes K(\overline{C})$ (where $\nu\colon\bar C\to\hat C$ is the normalisation) satisfying: for every open $U\subseteq\hat C$ a rational $1$-form $\omega\in \nu_*\left( \omega_{\overline{C}}\otimes K(\overline{C})\right)(U)$ is a section of $\omega_{\hat C}(U)$ iff
 \[\sum_{q\in \nu^{-1}(0)}\rm{Res}(\nu^*(f)\omega) =0 \quad \quad \forall f\in\OO_C(U)\]
 
+From this description it is patent that the pullback of $\omega_{\hat C}$ to the normalisation restricts to a line bundle of degree $-1$ or $0$ on every branch, according to it being one of the $k$ or $m-k$ components. Hence it can be seen from the normalisation exact sequence and Serre duality that $H^1(\hat{C},\hat{L})=0$ as soon as $\hat L$ has positive degree on one of the branches.
  
   
   \end{proof}
@@ -1115,7 +1122,7 @@ As anticipated we may endow $\Z^p$ with a localised virtual cycle by ``localised
 \begin{lem}
 localised virtual pullback commutes with pushforward
 \end{lem}
-\marginpar{check \cite{KLcosection}}
+\marginpar{check \cite{KLcosection}, probably needs the proper morphism to be surjective}
 
 \begin{cor}
 $\deg[\Z^p]^{\rm{vir}}_{\rm{loc}}=\deg[\Mone{1}{\PP^4}{d}^p]^{\rm{vir}}_{\rm{loc}}$
