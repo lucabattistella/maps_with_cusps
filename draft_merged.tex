@@ -385,13 +385,13 @@ where $I_m=\left(x_hx_i-x_hx_j : i,j,h\in\left\{1,\dots,m-1\right\}\right)$ and 
 The moduli functor of $m$-stable maps  $\overline{\pazocal{M}}^{(m)}_{1,n}(X,\beta)$ is represented by a proper Deligne-Mumford stack of finite type over $\k$.
 \end{thm}
 \begin{remark}\label{remark:sprouting}
-We think that the algorithm proposed by Viscardi to prove the properness of his moduli spaces oversees a case. The issue is that, given a map $f\colon \cC_T\to\PP^r_T$ over a DVR scheme $T$ such that $\cC_\eta$ is smooth and $f_0$ is constant on a genus $1$ connected subcurve $E\subseteq \cC_0$, it is not always true that $f$ descends to a map $f'\colon \cC'_T\to\PP^r_T$, where $\cC'_0$ has a genus $1$ \emph{Gorenstein} singularity.% Indeed, it is likely that descending to $C'$ imposes differential conditions on $f$ that go beyond just order zero. A counterexample is the following.
+We think that the algorithm proposed by Viscardi to prove the properness of his moduli spaces oversees a case. The issue is that, given a map $f\colon \cC_T\to\PP^r_T$ over a DVR scheme $T$ such that $\cC_\eta$ is smooth and $f_0$ is constant on a genus $1$ connected subcurve $E\subseteq \cC_0$, it is not always true that $f$ descends to a map $\hat f\colon \hat \cC_T\to\PP^r_T$, where $\hat \cC_0$ has a genus $1$ \emph{Gorenstein} singularity.% Indeed, it is likely that descending to $C'$ imposes differential conditions on $f$ that go beyond just order zero. A counterexample is the following.
 
 Consider the stable map $[f]$ in $\oM_{1}(\PP^3,4)$ from an elliptic bridge $C:=R_1{}_{q_1}\!\sqcup E\sqcup_{q_2} R_2$ to $\PP^3$ that maps $R_1$ to the $z$-axis, contracts $E$ to the origin, and makes $(R_2,q_2)$ into the normalisation of a cusp in the $(x,y)$-plane, i.e. its image is the non-Gorenstein singularity:
 \[D:=\Spec\left(\k[x,y,z]/(x,y)\right)\cup \Spec\left(\k[x,y,z]/(z,y^2-x^3)\right).\] 
 Notice that $\operatorname{d}\!f(T_{q_2}R_2)=0$, so there is a non-trivial linear relation:
 \[0\cdot\operatorname{d}\!f(T_{q_1}R_1)+1\cdot\operatorname{d}\!f(T_{q_2}R_2)=0,\]
-and hence the map is smoothable. Viscardi claims that the map factors through the family $\cC'_T$, obtained by contracting $E$ to a tacnode. Notice that the image of $f'$ would still be $D$, since there is at most one indeterminacy point of $\cC'_T\dashrightarrow\PP^r_T$, located at the singularity. However in our example $f$ cannot factor through the tacnode. Indeed in that case we would have a birational morphism between two singular curves with the same $\delta$ invariant and the same normalisation, so $f'\colon C'\to D$ would be an isomorphism, which is a contradiction.
+and hence the map is smoothable. Viscardi claims that the map factors through the family $\hat\cC_T$, obtained by contracting $E$ to a tacnode. Notice that the image of $\hat f$ would still be $D$, since there is at most one indeterminacy point of $\hat\cC_T\dashrightarrow\PP^r_T$, located at the singularity. However in our example $f$ cannot factor through the tacnode. Indeed in that case we would have a birational morphism between two singular curves with the same $\delta$ invariant and the same normalisation, so $\hat f\colon \hat C\to D$ would be an isomorphism, which is a contradiction.
  We suggest that in this case the correct procedure would be to sprout $(R_1,q_1)$.
 \begin{center}
 \includegraphics[width=10cm,height=5cm]{cusp_line_transv.png}
@@ -427,68 +427,68 @@ In particular the space $\Mone{1}{\PP^r}{d}$ we will consider in the next sectio
  \subsection{A different characterisation of smoothability}
  Inspired by Viscardi's alternate compactification, we give yet another characterisation of smoothable maps in genus $1.$
  \begin{dfn}
- Let $C$ be a reduced curve over a field $k=\bar k$ and $p\in C$ a singular point. We define the \emph{genus of the singularity} in $p$ to be the quantity: \[g(p)=\delta(p)-b(p)+1,\] where $\delta(p)=\dim_k(\nu_*\OO_{\overline C}/\OO_C)\otimes k(p),$ $\nu\colon\overline{C}\to C$ is the normalisation of $C$ at $p$, and $b(p)$ is the number of branches of $C$ at $p.$
+ Let $C$ be a reduced curve over $\k$ and $p\in C$ a singular point. We define the \emph{genus of the singularity} in $p$ to be the quantity: \[g(p)=\delta(p)-b(p)+1,\] where $\delta(p)=\dim_{\k}(\nu_*\OO_{\overline C}/\OO_C)\otimes k(p),$ $\nu\colon\overline{C}\to C$ is the normalisation of $C$ at $p$, and $b(p)$ is the number of branches of $C$ at $p.$
  \end{dfn}
 
  \begin{prop}\label{prop:smoothability2}
- Let $[f\colon C\to \PP^r]$ be a degenerate stable map from a genus $1$ curve $C=E {}_{\mathbf p}\!\sqcup_{\mathbf q}\bigsqcup_{i=1}^m R_i$, where $E$ is the maximal connected arithmetic genus $1$ subcurve contracted by $f$, and $R_i$ are rational tails of positive degree. 
+ Let $[f\colon C\to \PP^r]$ be a stable map from a genus $1$ curve $C=E {}_{\mathbf p}\!\sqcup_{\mathbf q}\bigsqcup_{i=1}^m R_i$, where $E$ is the maximal genus $1$ subcurve contracted by $f$, and the $R_i$'s are rational tails on which $f$ has positive degree. 
   
   Then $f$ is smoothable if and only if it factors through a Cohen-Macaulay genus $1$ singularity with positive degree on at least one of its branches.
 \end{prop}
 
-\begin{lem}(Classification of CM genus $1$ singularities)
-The Cohen-Macaulay (i.e. reduced) genus $1$ singularities with $m$ branches are obtained by gluing a genus $0$ singularity with $k$ branches together with a Smyth's $(m-k)$-elliptic fold.
+\begin{lem}(Classification of Cohen-Macaulay genus $1$ singularities)
+The CM (i.e. reduced) genus $1$ singularities with $m$ branches are obtained by gluing a genus $0$ singularity with $k$ branches together with a Smyth's $(m-k)$-elliptic fold.
 Notice that $k$ may be $0$ (i.e. a point) or $1$ (i.e. a smooth rational curve).
 \end{lem}
 \begin{proof}
-We extend the argument given by Smyth \cite[Appendix~A]{SMY1} to classify the Goreinstein genus $1$ singularities. We study the analytic germ of the singularity, so we adopt Smyth's notation: $R$ denotes the completion of the local ring of $C$ at the singularity; 
-$\widetilde{R}=k[[t_1]]\oplus\dots\oplus k[[t_m]]$ its integral closure; $\mathfrak{m}_R$ is the maximal ideal of $R$  and $\mathfrak{m}_{\widetilde{R}}$ the one in $\widetilde{R}.$
+We extend the argument given by Smyth \cite[Appendix~A]{SMY1} to classify the Goreinstein genus $1$ singularities. We study the analytic germ of the singularity and we adopt Smyth's notation: $R$ denotes the completion of the local ring of $C$ at the singularity; 
+$\widetilde{R}=\k[[t_1]]\oplus\ldots\oplus \k[[t_m]]$ its integral closure; $\mathfrak{m}_R$ the maximal ideal of $R$  and $\mathfrak{m}_{\widetilde{R}}$ that of $\widetilde{R}.$
 
-Let us recall that to describe $R$ as a quotient polynomial ring, it is enough to find a$k$-basis for $\mathfrak{m}_R/\mathfrak{m}^2_R=(e_1,\ldots, e_s)$ where the $e_i$ are some elements in $\widetilde{R}.$ Indeed, once given such a basis, it is a consequence of completeness that $R$ can be recognized as $k[[x_1,\ldots, x_s]]/I$, where $I$ is the kernel of the ring homomorphism
+Let us recall that to describe $R$ as a quotient polynomial ring, it is enough to find a $\k$-basis for $\mathfrak{m}_R/\mathfrak{m}^2_R=\langle e_1,\ldots, e_s\rangle_{\k}$ where the $e_i$'s are some elements in $\widetilde{R}.$ Indeed, once given such a basis, it is a consequence of completeness that $R$ can be recognized as $\k[[x_1,\ldots, x_s]]/I$, where $I$ is the kernel of the ring homomorphism
 \begin{align*}\label{eq:singularity}
-k[[x_1,\ldots, x_s]]&\rightarrow R\subset k[[t_1]]\oplus\dots\oplus k[[t_m]]\\
+\k[[x_1,\ldots, x_s]]&\rightarrow R\subset \k[[t_1]]\oplus\ldots\oplus \k[[t_m]]\\
 \;\;x_i\;\; &\mapsto \;\; e_i\;\;
 \end{align*}
 Smyth observes that $\widetilde R/R$ is graded by:
 \[ (\widetilde R/R)_i:=\mathfrak m_{\widetilde R}^i/(\mathfrak m_{\widetilde R}^i\cap R)+\mathfrak m_{\widetilde R}^{i+1}\]
 Furthermore:
 \begin{enumerate}
-\item $m=\delta(p)=\sum_{i\geq 0}\dim_k(\widetilde R/R)_i;$
-\item $1=g(p)=\sum_{i\geq 1}\dim_k(\widetilde R/R)_i;$
+\item $m=\delta(p)=\sum_{i\geq 0}\dim_\k(\widetilde R/R)_i;$
+\item $1=g(p)=\sum_{i\geq 1}\dim_\k(\widetilde R/R)_i;$
 \item if $(\widetilde R/R)_i=(\widetilde R/R)_j=0$ then $(\widetilde R/R)_{i+j}=0$.
 \end{enumerate}
-From (3) and (2) it follows that $\dim_k(\widetilde R/R)_1=1$ and $\dim_k(\widetilde R/R)_i=0$ for $i\geq 2$. Then the exact sequence:
+From (3) and (2) it follows that $\dim_\k(\widetilde R/R)_1=1$ and $\dim_\k(\widetilde R/R)_i=0$ for $i\geq 2$. Then the exact sequence:
 \[ 0\to \frac{\mathfrak m_{\widetilde R}^2}{\mathfrak m_{\widetilde R}^2\cap R}\to\frac{\mathfrak m_{\widetilde R}}{\mathfrak m_{\widetilde R}\cap R}\to (\widetilde R/R)_1\to 0\]
 entails that:
-\[\mathfrak{m}^2_{\widetilde{R}}\subseteq \mathfrak m_R,\qquad \mathfrak{m}_R/\mathfrak{m}^2_{\widetilde{R}}\subseteq \mathfrak{m}_{\widetilde{R}}/\mathfrak{m}^2_{\widetilde{R}}\;\;\text{is a codimension $1$ $k$-subspace},\]
-After Gaussian elimination, the generators $e_1,\dots e_{m-1}$ of $\mathfrak{m}_R/\mathfrak{m}^2_{\widetilde{R}}$ assume the following form:
+\[\mathfrak{m}^2_{\widetilde{R}}\subseteq \mathfrak m_R,\qquad \mathfrak{m}_R/\mathfrak{m}^2_{\widetilde{R}}\subseteq \mathfrak{m}_{\widetilde{R}}/\mathfrak{m}^2_{\widetilde{R}}\;\;\text{is a codimension $1$ $\k$-subspace}.\]
+Obviously $\mathfrak{m}^2_{R}\subseteq\mathfrak{m}^2_{\widetilde{R}}$. Hence $s$ is at least $m-1$. After relabelling we may assume $e_1,\dots e_{m-1}$ generate $\mathfrak{m}_R/\mathfrak{m}^2_{\widetilde{R}}$, and after Gaussian elimination they take the following form:
 \begin{align*}
 e_1&= (t_1, 0, \ldots, 0, a_1 t_m) \\
 e_2&= (0, t_2, \ldots, 0, a_2 t_m) \\
  & \ldots \\
-e_{m-1} &= (0, 0,\ldots, t_{m-1}, a_{m-1}t_m).
+e_{m-1} &= (0, 0,\ldots, t_{m-1}, a_{m-1}t_m)
 \end{align*}
-with $a_{1}, \ldots, a_{m-1}\in k.$ At this point Smyth restricts his attention to Gorenstein singularities and shows that under this assumption he can choose all the $a_i$ to be $1$; furthermore if $m\geq 3$ it holds $\mathfrak{m}^2_{\widetilde{R}}=\mathfrak{m}^2_{R}$, thus the above are generators for $\mathfrak{m}_R/\mathfrak{m}^2_R$ and the goal is reached. For $m=1,2$ he finds extra generators and show they satisfy the equation of a cusp (resp. a tacnode).
+with $a_{1}, \ldots, a_{m-1}\in \k.$ At this point Smyth restricts his attention to Gorenstein singularities and shows that under this assumption he can choose all the $a_i$ to be $1$; furthermore $\mathfrak{m}^2_{\widetilde{R}}=\mathfrak{m}^2_{R}$ holds if $m\geq 3$, thus the above are generators for $\mathfrak{m}_R/\mathfrak{m}^2_R$ and the goal is reached. For $m=1$ (resp. $2$) he finds extra generators and shows they satisfy the equation of a cusp (resp. a tacnode).
 
 Removing the Gorenstein restriction we have three possibilities for $m\geq 3$:
 \begin{enumerate}
-\item At least two of the $a_i$'s are non-zero, say $i=1,2$: then $a_1a_2t_m^2=e_1\cdot e_2$ so $\mathfrak{m}^2_{\widetilde{R}}=\mathfrak{m}^2_{R}$ and we are done as above. It is easily seen that  $e_1,\dots e_{m-1}$ satisfy the equations of a $(k,m-k)$ singularity where $k$ is the number of $a_i$'s that are $0$.
-\item Only one of the $a_i$ is non-zero, say $a_1=1$: then $\mathfrak{m}^2_{\widetilde{R}}=\mathfrak{m}^2_{R}+(t_m^2)$ and by adjoining $e_m=t_m^2$ to the $e_i$'s we see that they generate $\mathfrak{m}_R/\mathfrak{m}^2_R$ and they satisfy the equation of a tacnode $(e_1^2-e_m)e_m=0$ and $e_ie_j=0$ for $i\neq j$ and $(i,j)\neq(1,m)$, so this is an $(m-2,2)$ singularity.
-\item Finally all the $a_i$ are zero: then we have to add $t_m^2,\ t_m^3$ to generate $\mathfrak{m}_R/\mathfrak{m}^2_R$ and we obviously find an $(m-1,1)$ singularity.
+\item At least two of the $a_i$'s are non-zero, say $i=1,2$: then $a_1a_2t_m^2=e_1\cdot e_2$ so $\mathfrak{m}^2_{\widetilde{R}}=\mathfrak{m}^2_{R}$ and we are done as above. It is easily seen that  $e_1,\ldots, e_{m-1}$ satisfy the equations of a $(k,m-k)$ singularity where $k$ is the number of $a_i$'s that are zero.
+\item Only one of the $a_i$'s is non-zero, say $a_1=1$: then $\mathfrak{m}^2_{\widetilde{R}}=\mathfrak{m}^2_{R}+(t_m^2)$ and by adjoining $e_m=t_m^2$ to the $e_i$'s we see that they generate $\mathfrak{m}_R/\mathfrak{m}^2_R$ and they satisfy the equation of a tacnode $(e_1^2-e_m)e_m=0$ and $e_ie_j=0$ for $i\neq j$ and $(i,j)\neq(1,m)$, so this is an $(m-2,2)$ singularity.
+\item Finally all the $a_i$'s are zero: then we have to add $t_m^2,\ t_m^3$ to generate $\mathfrak{m}_R/\mathfrak{m}^2_R$ and we obviously find an $(m-1,1)$ singularity.
 \end{enumerate}
 \noindent Similarly for $m=2$ there are two possibilities: the tacnode (corresponding to $a_1\neq 0$) and the union of a cusp with a non-coplanar line (for $a_1=0$), with equations:
-\[ k[[x,y,z]]/(xz,yz,y^2-x^3)\]
+\[ \k[[x,y,z]]/(xz,yz,y^2-x^3)\]
 \noindent For $m= 1$ the only possible singularity is the cusp: indeed it can be proven that $\mathfrak{m}^2_{\widetilde{R}}=\mathfrak{m}_{R}$. 
 \end{proof}
 
 \begin{remark}
  The genus and number of branches are not sufficient to tell these singularities apart anymore, neither is the embedding dimension. A numerical invariant that distinguishes them is:
-\[ \dim_k R/I_p \]
+\[ \dim_\k R/I_p \]
 where 
 \[I_p=\operatorname{Ann}_R(\widetilde R/R)=\left\{f\in\, R\;\rvert\; f\cdot\widetilde{R}\subseteq R\right\}\]
  is the conductor ideal at the singular point. 
- Using the explicit description of $\mathfrak{m}_R$ we gave in the classification Lemma we can easily understand the generators of $I_p$ and check that for a $(k,m-k)$ singularity  we have 
- \[ \dim_k R/I_p=m-k.\]
+ Using the explicit description of $R$ given in the lemma above, we can easily find generators of $I_p$ and check that for a $(k,m-k)$ singularity we have:
+ \[ \dim_\k R/I_p=m-k.\]
 \end{remark}
 
 \begin{lem}
@@ -498,7 +498,7 @@ Every Cohen-Macaulay genus $1$ singularity is smoothable.
 We exhibit explicit smoothings for the above singularities.
 Start with two families $(\cC^0;\sigma_0,p_1,\ldots,p_k)\to T$ and $(\cC^1;\sigma_1,q_{k+1},\ldots,q_m)\to T$ respectively of smooth $(k+1)$-pointed rational curves and smooth $(m-k+1)$-pointed elliptic curves over a DVR scheme $T$, e.g. consider two trivial families.
 
- Then blow up the trace of $p_1,\dots p_k$ and $q_{k+1},\dots q_{m}$ on the central fibers  $(\cC^0)_0$ and $(\cC^1)_0$ to get families $\widetilde{\cC}^0\xrightarrow{\pi_0} {\cC}^0$ and $\widetilde{\cC}^1\xrightarrow{\pi_1} {\cC}^1$ respectively.
+ Then perform a blow-up along the trace of $p_1,\dots p_k$ and $q_{k+1},\dots q_{m}$ on the central fibers  $(\cC^0)_0$ and $(\cC^1)_0$ to get families $\widetilde{\cC}^0\xrightarrow{\pi_0} {\cC}^0$ and $\widetilde{\cC}^1\xrightarrow{\pi_1} {\cC}^1$ respectively.
  
 We can now find semi-ample line bundles which are trivial on the strict transform of the central fiber and ample everywhere else, namely
 \begin{align*}
@@ -509,10 +509,8 @@ where we denoted by $F_j$ the exceptional divisors of the blow-ups.
 
 We can then use them to give contraction maps. The contracted families   $\;\hat{\cC}^0\to T\;$ and $\;\hat{\cC}^1\to T\;$ still have smooth generic fibers of genus $0$ and $1$ respectively and, by construction, $(\hat{\cC}^0)_0$ has a genus $0$ singularity with $k$ branches and $(\hat{\cC}^1)_0$ has a Smyth's $(m-k)$-elliptic point \cite[Lemma~2.12]{SMY1}.
 
-Observe now that $\sigma_0$ and $\sigma_1$ induce sections of the contracted curves $\hat{\cC}^0\to T$ and $\hat{\cC}^1\to T$ passing through the singular points of the central fiber. Let $\hat{\cC}\to T$ the family of curves obtained by gluing $\hat{\cC}^0\to T$ and $\hat{\cC}^1\to T$ along $\sigma_0$ and $\sigma_1$ (pushout). Then $\hat{\cC}$ has a nodal generic fiber which can clearly be further smoothed.
-
+Observe now that $\sigma_0$ and $\sigma_1$ induce sections of the contracted curves $\hat{\cC}^0\to T$ and $\hat{\cC}^1\to T$ passing through the singular points of the central fiber. Let $\hat{\cC}\to T$ the family of curves obtained by gluing $\hat{\cC}^0\to T$ and $\hat{\cC}^1\to T$ along $\sigma_0$ and $\sigma_1$ (pushout). Then $\hat{\cC}$ has a nodal generic fiber which clearly can be further smoothed.
 \end{proof}
-
 
 \begin{proof}\ref{prop:smoothability2}
  The argument that if $f$ is smoothable then it has to factor through a genus $1$ singularity was given by Vakil when he showed that the tangent vectors have to be linearly dependent in the image \cite[Lemma 5.9]{Vre}.
@@ -521,30 +519,29 @@ Viceversa, let us suppose that $f\colon C\to \PP^r$ factors through $\hat{f}\col
 
 We first show that:
 \begin{claim}
- We can produce smoothings $\cC$ of $C$ and $\hat\cC$ of $\hat C$ with a contraction map $\cC\to\hat\cC$ compatible with the given $C\to\hat C$~\ref{rem:compatible_smoothing}.
+ We can produce smoothings $\cC$ of $C$ and $\hat\cC$ of $\hat C$ with a contraction map $\cC\to\hat\cC$ compatible with the given $C\to\hat C$. See Remark \ref{rem:compatible_smoothing} below
  \end{claim}
 \begin{proof}
  Assume that $\hat C$ has a $(k,m-k)$-singularity. 
-Pick a smoothing $\cC$ of $C$ such that after resolving the $A_n$ singularities at the nodes, i.e. when looking at the semistable model with regular total space $\cC^{\rm{ss}}$, the following holds: call $E$ the maximal balanced genus one subcurve \cite[Proposition~2.11]{SMY1} contracted by $f^{\rm{ss}}$,
+Pick a smoothing $\cC$ of $C$ such that after resolving the $A_n$ singularities at the nodes, i.e. when looking at the semistable model with regular total space $\cC^{\rm{ss}}$, the following holds: call $E$ the maximal \emph{balanced} genus $1$ subcurve \cite[Proposition~2.11]{SMY1} contracted by $f^{\rm{ss}}$,
  then there are $m-k$ rational tails of positive degree directly adjacent to $E$ and the other $k$ rational tails are further away, possibly at different distances.
- Notice that $f^{\rm{ss}}$ is defined since $C^{\rm{ss}}$ differs from $C$ only for $-2$ curves.
+ %Notice that $f^{\rm{ss}}$ is defined since $C^{\rm{ss}}$ differs from $C$ only for $-2$ curves.
 
- We may then perform a two-step contraction: by the work of Smyth we can find a line bundle contracting $E$, namely
-\[\mathcal L=\omega_{\cC^{\rm{ss}}/T}\left( \sum_{F\subseteq E}(l+1-l(F,Z)F\right),\] 
-whose 
-  resulting contraction $\bar{C}$ gives a $(m-k+h)$-fold point with $h\leq k$. Notice that $\bar{C}$ comes with a map $\rho$ to $\hat{C}$ and at this point use $\rho^*\hat{f}^*\OO_{\PP^r}(1)$ to perform the second contraction.  If necessary, we add markings $p_1+\dots p_N=\Sigma$ on the degree $0$ rational components away from the genus $1$ singularity and on the degree $0$ branches of the $(m-k+h)$-fold which are not contracted by $\rho.$ 
- 
-Since $\rho^*\hat{f}^*\OO_{\PP^r}(1)(\Sigma)$ has no $H^1$ it satisfies cohomology and base change. Then we can check  that the result of this second contraction is a $(k,m-k)$-singularity just looking at the vanishing orders of the sections of $\rho^*\hat{f}^*\OO_{\PP^r}(1)(\Sigma)$ on the central fiber $\bar{C}$ of the first contraction. These sections are constant on the degree 0 branches we did not mark and so  we conclude that the dependence relation among  the tangent vectors of the branches at the singular point of the second contraction only involve the $m-k$ rational tail image of the ones adjacent to $E$.
+ We may then perform a two-step contraction: by the work of Smyth we can find a line bundle contracting $E$, namely:
+\[\mathcal L=\omega_{\cC^{\rm{ss}}/T}\left( \sum_{F\subseteq E}(l+1-l(F,Z)F\right),\]
+where $Z$ is the core, $l(\cdot,\cdot)$ is the distance function on the dual graph and $l$ is the maximum value attained by $l(\cdot,Z)$ on $E$. Let us call $\bar\cC$ the family of curves obtained from this contraction; notice that $f^{\rm{ss}}$ descends to a $\bar f\colon\bar\cC\to PP^r$. The central fiber $\bar{C}$ has an $(m-k+h)$-fold elliptic point with $h\leq k$, and it still has a contraction map $\rho$ to $\hat{C}$.
 
-Since $\hat{C}$ with the added markings $\Sigma$ is stable, the morphism $\cC^{\rm{ss}}\to\cC$ we just constructed factors through a morphism
-$\cC\to\hat{\cC}$ whose central fibers are $C$ and $\hat{C}$ and compatible with $f$ and $\hat{f}.$
+If necessary we may add markings $p_1+\ldots+ p_N=\Sigma$ on all the $f$-contracted rational components away from the genus $1$ singularity, and on the branches of the $(m-k+h)$-fold that are not contracted by $\rho$. Now use $\hat{f}^*\OO_{\PP^r}(1)(\Sigma)$ to perform a second contraction. Since it has no $H^1$, it satisfies cohomology and base change, and we can check that the result of this second contraction is a $(k,m-k)$-singularity simply by looking at the vanishing orders of the sections on $\bar{C}$. %These sections are constant on the branches of the singularity to which we have not added any marking, so we conclude that the dependence relation among  the tangent vectors of the branches at the singular point of the second contraction only involve the $m-k$ rational tail image of the ones adjacent to $E$.
+
+%Since $\hat{C}$ with the added markings $\Sigma$ is stable, the morphism $\cC^{\rm{ss}}\to\cC$ we just constructed factors through a morphism
+%$\cC\to\hat{\cC}$ whose central fibers are $C$ and $\hat{C}$ and compatible with $f$ and $\hat{f}.$
 \end{proof}
 
 Let $\hat{\mathcal L}$ an extension of $\hat{L}:=\hat{f}^*\OO_{\PP^r}(1)$ on $\hat{\cC}$, which exists because deforming line bundles on curves is unobstructed.
 In order to extend $\hat{f}$ to $\hat{F}\colon \hat{\cC}\to\PP^r$ all we have to show is that the $r+1$ sections $\hat{s}_0,\dots, \hat{s}_{r+1}$ representing the map $\hat{f}$ extend to sections of $\hat{\mathcal{L}}.$
-Thus it is enough to verify that $H^1(\hat{C},\hat{L})=0$ . Once done this we are going to obtain the smoothing of the original map by precomposing with the contraction $F\colon\cC\to\hat{\cC}\xrightarrow{\hat F}\PP^r$.
+Thus it is enough to verify that $H^1(\hat{C},\hat{L})=0$ \cite{Wang}. Once this is done we are going to obtain the smoothing of the original map by precomposing with the contraction $F\colon\cC\to\hat{\cC}\xrightarrow{\hat F}\PP^r$.
 
-Since all the curve we are considering are Cohen-Maculay, they have a dualising sheaf $\omega_{\hat{C}}$ such that for any line bundle $\hat{L}$
+Since all the curves we are considering are Cohen-Maculay, they have a dualising sheaf $\omega_{\hat{C}}$ such that for any line bundle $\hat{L}$
 \[H^1(\hat{C},\hat{L})=(H^0(\hat{C},\hat{L}^{-1}\otimes\omega_{\hat{C}}))^{\vee}.\]
 It is known \cite[IV, \S~3]{serre} that  $\omega_{\hat{C}}$ can be described as the subsheaf of $\nu_* \omega_{\overline{C}}\otimes K(\overline{C})$ (where $\nu\colon\bar C\to\hat C$ is the normalisation) satisfying: for every open $U\subseteq\hat C$ a rational $1$-form $\omega\in \nu_*\left( \omega_{\overline{C}}\otimes K(\overline{C})\right)(U)$ is a section of $\omega_{\hat C}(U)$ iff
 \[\sum_{q\in \nu^{-1}(0)}\rm{Res}(\nu^*(f)\omega) =0 \quad \quad \forall f\in\OO_C(U)\]
@@ -552,7 +549,7 @@ It is known \cite[IV, \S~3]{serre} that  $\omega_{\hat{C}}$ can be described as 
 From this description it is patent that the pullback of $\omega_{\hat C}$ to the normalisation restricts to a line bundle of degree $-1$ or $0$ on every branch, according to it being one of the $k$ or $m-k$ components. Hence it can be seen from the normalisation exact sequence and Serre duality that $H^1(\hat{C},\hat{L})=0$ as soon as $\hat L$ has positive degree on one of the branches.
  \end{proof}
 \begin{remark}\label{rem:compatible_smoothing}
-In general is not possible to find compatible smoothings: pick any genus $2$ curve with a rational tail and map it to the ramphoid cusp, a planar singularity with local equation $y^2-x^5=0$. Then a compatible smoothing can be found only if the rational tail is attached to a Weierstrass point of the genus $2$ curve, as can be seen by computing the semi-stable model of the ramphoid cusp. This example was kindly suggested to us by Prof. D.I. Smyth.
+In general is not possible to find compatible smoothings as above: pick any genus $2$ curve with a rational tail and map it to the ramphoid cusp, a planar singularity with local equation $y^2-x^5=0$. Then a compatible smoothing can be found only if the rational tail is attached to a Weierstrass point of the genus $2$ curve, as can be seen by computing the semi-stable model of the ramphoid cusp. This example was kindly suggested to us by Prof. D.I. Smyth.
 
 \end{remark}
 
@@ -563,7 +560,7 @@ In general is not possible to find compatible smoothings: pick any genus $2$ cur
 It is not hard to adapt Vakil's argument \cite{Vre} to show that factoring through a genus $1$ singularity is equivalent to the tangent vectors being linearly dependent in the image.
 \end{remark}
 \begin{remark}
-The ideas above are similar to those employed in \cite[Theorem 4.5.1]{RSPW} to show that $\pazocal{VZ}_{1,n}(\PP^r,d)$ is smooth, where the latter is defined by requiring the factorisation property for the map through a Smyth's singularity after sprouting.
+The ideas above are similar to those employed in \cite[Theorem 4.5.1]{RSPW} to show that $\pazocal{V\!Z}_{1,n}(\PP^r,d)$ is smooth, where the latter is defined by requiring the factorisation property for the map through a Smyth's singularity after sprouting.
 \end{remark}
 
 
