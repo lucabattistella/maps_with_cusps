@@ -236,9 +236,26 @@ with $\oM_1(\PP^4,d)^p$. Yet $\Zp$ is endowed with a cosection-localised virtual
 
 \subsection*{Outline of the paper}
 
-\subsection*{Table of notations} We work over an algebraically closed field $\k$ of characteristic $0$.
+\subsection*{Notations and conventions} We work over an algebraically closed field $\k$ of characteristic $0$.
 
-$T$ is the spectrum of a discrete valuation ring (DVR) with closed point $0$ and generic point $\eta$.
+Throughout the paper we shall have fixed a homogeneous polynomial $\mathbf w\in\k[x_0,\ldots,x_4]_5$ of degree $5$ such that $X=V(\mathbf w)\subseteq\PP^4$ is a generic quintic threefold. Furthermore let us consider a fixed positive integer $d$ determining all the homology classes $d[\ell]\in A_1(\PP^4)$, line bundle weights, etc. that we shall take into account.
+
+Let $\MM_{1,n}$ denote the algebraic stack of prestable $n$-marked curves of arithmetic genus $1$. In the following definitions, by \emph{special point} we mean the preimage of a node or a marking in the normalisation.
+\begin{dfn}
+Let $\mathfrak M_{1,n}^{\rm{wt}=d,\rm{st}}$ be the stack of \emph{weighted-stable} curves of genus $1$ with $n$ markings and total weight $d$: every geometric point of $\mathfrak M_{1,n}^{\rm{wt}=d,\rm{st}}$ represents a connected reduced nodal projective curve of arithmetic genus $1$ with $n$ distinct smooth markings and an integer-valued function on the dual graph, such that it is compatible with specialisation maps and the sum of the values on all the vertices is $d$; furthermore we require that it takes nonnegative values, and every $p_a=0$ component of weight $0$ has at least three special points (every $p_a=1$ component of weight $0$ has at least one special point).
+\end{dfn}
+There is an \'{e}tale non-separated morphism $\mathfrak M_{1,n}^{\rm{wt}=d,\rm{st}}\to\mathfrak M_{1,n}$ and the stability condition is such that the forgetful map $\M{1}{n}{\PP^r}{d}\to\mathfrak M_{1,n}$ factors through $\mathfrak M_{1,n}^{\rm{wt}=d,\rm{st}}$, the weight assignment coming from the degree of the map to $\PP^r$.
+
+We shall denote by $\pi\colon \cC\to \MM_{1,n}$ the universal curve (and use similar notation for all its pullbacks). We shall also consider the universal Picard stack $\mathfrak{Pic}^{\rm{tot deg}=d,\rm{st}}_{1,n}$ of $\cC\to \mathfrak M_{1,n}^{\rm{wt}=d,\rm{st}}$ with universal line bundle $\mathcal{L}$. We shall often use shorthand notation $\MM$ for $\mathfrak M_{1,n}^{\rm{wt}=d,\rm{st}}$ and $\mathfrak P$ for $\mathfrak{Pic}^{\rm{tot deg}=d,\rm{st}}_{1,n}$. Let $\lambda$ denote the projection $\mathfrak P\to \MM$.
+
+\begin{dfn}
+Let $\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}(1)$ be the stack of \emph{at worst cuspidal} projective reduced connected $n$-marked curves of arithmetic genus $1$ that are weighted-stable with total weight $d$, i.e. the weight is nonnegative, and every $p_a=0$ component of weight $0$ has at least three special points (every $p_a=1$ component  of weight $0$ has at least \emph{two} special points).
+\end{dfn}
+
+We shall denote by $\hat\pi\colon \hat\cC\to \MM_{1,n}(1)$ the universal curve (and use similar notation for all its pullbacks). We shall also consider the universal Picard stack $\mathfrak{Pic}^{\rm{tot deg}=d,\rm{st}}_{1,n}(1)$ of $\hat\cC\to \mathfrak M_{1,n}^{\rm{wt}=d,\rm{st}}(1)$ with universal line bundle $\hat{\mathcal{L}}$. We shall often use shorthand notation $\hat\MM$ for $\mathfrak M_{1,n}^{\rm{wt}=d,\rm{st}}(1)$ and $\hat{\mathfrak P}$ for $\mathfrak{Pic}^{\rm{tot deg}=d,\rm{st}}_{1,n}(1)$. Let $\hat\lambda$ denote the projection $\hat{\mathfrak P}\to \hat\MM$.
+
+
+$T$ shall often the spectrum of a discrete valuation ring (DVR) with closed point $0$ and generic point $\eta$.
 
 Subcurves are always connected.
 
@@ -571,10 +588,10 @@ The ideas above are similar to those employed in \cite[Theorem 4.5.1]{RSPW} to s
 We introduce the moduli space $\Mone{1}{\PP^4}{d}^p$ of $1$-stable curves with $p$-fields, we endow it with a $0$-dimensional virtual class and show that its degree coincides with the genus $1$ cuspidal invariants of the quintic three-fold $X$ up to a sign. This is a word-by-word repetition of the arguments in \cite{CLpfields} once noticed that they carry over to the situation where we work over a family of Gorenstein (not necessarily nodal) curves. Our aim in this section is to improve the legibility of our paper by providing the non-expert reader with a r\'{e}sum\'{e} of some of the key ideas contained in \cite{CLpfields}; it could otherwise be skipped.
 \subsection{Moduli of sections}
 \begin{dfn}
- Let $B$ be an algebraic stack and let $\pi\colon \cC\to B$ be a flat proper morphism of finite presentation which is representable by algebraic spaces and whose geometric fibers are reduced l.c.i. curves. Let $\mathcal Z$ be an  Artin stack smooth over  $\cC$ such that the morphism to $\cC$ is representable and quasi- projective. For any $ S\to B$  the \emph{cone of section} of $\mathcal Z$ over $S$ is defined by:
- \[\mathfrak{S}(S)=\left\{\cC_S\;\text{morphisms}\; s\colon \cC_S\to\mathcal Z_S\right\};\]
- the arrow in $\mathfrak{S}(S)$ are defined in the obvious way.
- The groupoid $\mathfrak{S}$ is an algebraic stack \cite[Proposition~2.3]{CL}.
+ Let $B$ be an algebraic stack and let $\pi\colon \cC\to B$ be a flat proper morphism of finite presentation which is representable by algebraic spaces and whose geometric fibers are reduced l.c.i. curves. Let $\mathcal Z$ be an algebraic stack smooth representable and quasi-projective over $\cC$. The \emph{cone of sections} of $\mathcal Z$ over $\cC$ is a $B$-stack $\mathfrak S$ defined by:
+ \[\mathfrak{S}(S\to B)=\left\{\text{sections of}\ \mathcal Z_S\to\cC_S\right\};\]
+
+ The groupoid $\mathfrak{S}$ is an algebraic stack representable and quasi-projective over $B$ \cite[Proposition~2.3]{CL}.
  
 \end{dfn}
  To fix notation, let us write down the following diagram
@@ -583,20 +600,18 @@ We introduce the moduli space $\Mone{1}{\PP^4}{d}^p$ of $1$-stable curves with $
 \cC_{\mathfrak S}\ar[r]\ar[ur,bend left,"\mathfrak e"]\ar[d,"\pi_{\mathfrak S}"] & \cC\ar[d,"\pi"] \\
 \mathfrak S \ar[r] & B
 \ecd
-where $\mathfrak e$ denotes the tautological evaluation map. 
+where $\mathfrak e$ denotes the universal section. 
 Let us see some examples of the above construction we will be interested in. 
 
- In the rest of the section we use the following notations:
-$\hM$ for $\MM_1^{(1)}$, $\hP$ for $\mathfrak{Pic}_{\hat\cC\to\hM}$ and $\lambda\colon\hM\to\hP$ for the canonical forgetful map.
-\subsubsection*{Sections of line bundles}
+\subsubsection*{Direct image cones}
 When $\mathcal Z=\rm{Vb}(\mathcal L),$ then the algebraic stack  $\mathfrak{G}\to B$ representing sections of $\mathcal L$,  can be described as   
 \[C(\pi_*\mathcal L)=\Spec_B(\R^1\pi_*\mathcal L).\]
  This is essentially because $\R^1\pi_*\mathcal L$ commutes with pullback, and it has the desired modular interpretation by Serre duality. 
-\subsubsection*{Moduli of stable maps and 1-stable maps} 
-Let $X\hookrightarrow \PP^n$ be a projective variety and 
-\[\mathcal Z_X=(\operatorname{Tot}(\mathcal{L}^{\oplus n+1}_{\pP})-0_{\cC_{\pP}})\times_{\PP^n} X\]
-where $\mathcal L_{\pP}$ is the universal line bundle on $\pP,$ induced from $f_{\oM_{1,n}(X,\beta)}^*\OO_{X}(1)$ via the natural map from the space of maps to the Picard.
-Then the moduli space of stable maps $\oM_{1,n}(X,\beta)$ is an open inside the moduli space $\mathfrak{S}_X$ of sections of $\mathcal Z_X\to\cC_{\pP}.$ This is the point of view we already took for $X=\PP^n$ in  \S~\ref{sec:equations} to describe the equations of the moduli space of maps relative to $\MM^{\rm{div}}.$
+
+\subsubsection*{Moduli of stable maps and $1$-stable maps} 
+Let $X\hookrightarrow \PP^r$ be a projective variety and 
+\[\mathcal Z_X=(\operatorname{Tot}(\mathcal{L}^{\oplus r+1}_{\pP})-0_{\cC_{\pP}})\times_{\PP^r} X.\]
+Then the moduli space of stable maps $\oM_{1,n}(X,\beta)$ is an open substack of the moduli space $\mathfrak{S}_X$ of sections of $\mathcal Z_X\to\cC_{\pP}$: the morphism $\oM_{1,n}(X,\beta)\to \pP$ is given by the line bundle $f^*\OO_{\PP^r}(1)$ on the universal curve, that to $\mathfrak{S}_X$ by its sections $[s_0:\ldots:s_r]$, and the stability condition is open. This is the point of view we have already taken for $X=\PP^n$ in  \S~\ref{sec:equations}Proposition \ref{prop:smoothability} to describe the local equations of the moduli space of maps relative to $\MM^{\rm{div}}$.
 
 Analogously, the moduli space of 1-stable maps, e.g. $\oM_1^{(1)}(\PP^n,d)$, can be thought as an open inside the moduli of sections of 
 \[\hat{\mathcal Z}=(\operatorname{Tot}(\hat{\mathcal{L}}^{\oplus n+1}_{\hP})-0_{\cC_{\hP}})\]
@@ -859,15 +874,6 @@ extending the identity on the locus of smooth elliptic curves;
 %\[\Z:= \mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}\times{\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}(1)} \pazocal M_{1,n}(\PP^4,d)(1),\qquad \Zp:=\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}\times{\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}(1)} \pazocal M^p_{1,n}(\PP^4,d)(1) \]
 %and  and see their relation, respectively, with the moduli space of stable maps, stable maps with fields; use the morphism at the level of prestable curves to induce obstruction theories on $\Z$ and $\Zp.$
 
-Let us start with some notation. In the following by \emph{special point} we mean the preimage of a node or a marking on the normalisation.
-\begin{dfn}
-Let $\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}$ be the stack of \emph{prestable} (nodal and reduced), projective, connected, arithmetic genus one, $n$-marked curves that are \emph{stably weighted} with total weight $d$, i.e. for every geometric point of $\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}$ there is an integer-valued function on the set of irreducible components of the corresponding curve, such that it is compatible with specialisation maps and the sum of the integers is $d$; furthermore we require that it takes nonnegative values, and every $p_a=0$ component of weight $0$ has at least three special points (every $p_a=1$ component of weight $0$ has at least one special point).
-\end{dfn}
-Remark that there is an \'{e}tale, non-separated morphism $\mathfrak M_{1,n}^{\operatorname{wt}}\to\mathfrak M_{1,n}$ and the stability condition is such that the forgetful map $\M{1}{n}{\PP^r}{d}\to\mathfrak M_{1,n}$ factors through $\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}$, the weight assignment coming from the degree of the map to $\PP^r$.
-
-\begin{dfn}
-Let $\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}(1)$ be the stack of \emph{at worst cuspidal} projective, reduced, connected, arithmetic genus one, $n$-marked curves that are stably weighted with total weight $d$, i.e. the weight is nonnegative, and every $p_a=0$ component of weight $0$ has at least three special points (every $p_a=1$ component  of weight $0$ has at least \emph{two} special points).
-\end{dfn}
 
 Note that the only type of nodal curves that we are getting rid of are the ones with an elliptic tail of weight zero.
 
