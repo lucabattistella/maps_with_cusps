@@ -40,17 +40,18 @@
 \newcommand{\XP}{\pazocal{X\!P}}
 \newcommand{\tXP}{\widetilde{\pazocal{X\!P}}}
 \renewcommand{\L}{\mathcal L}
-\newcommand{\hL}{\hat{\mathcal L}}
+\newcommand{\hL}{\widehat{\mathcal L}}
 \newcommand{\C}{\mathfrak C}
 \newcommand{\cC}{\mathcal C}
+\newcommand{\hC}{\widehat{\mathcal C}}
 \newcommand{\Z}{\pazocal Z}
 \newcommand{\Zp}{\pazocal Z^p}
 \newcommand{\tZ}{\widetilde{\pazocal Z}}
 \newcommand{\tZp}{\widetilde{\pazocal Z}^p}
 \newcommand{\MM}{\mathfrak M}
 \newcommand{\pP}{\mathfrak P}
-\newcommand{\hP}{\hat{\mathfrak P}}
-\newcommand{\hM}{\hat{\mathfrak M}}
+\newcommand{\hP}{\widehat{\mathfrak P}}
+\newcommand{\hM}{\widehat{\mathfrak M}}
 \newcommand{\oM}{\overline{\pazocal M}}
 \newcommand{\tM}{\widetilde{\pazocal M}}
 \newcommand{\R}{\operatorname{R}}
@@ -252,7 +253,7 @@ We shall denote by $\pi\colon \cC\to \MM_{1,n}$ the universal curve (and use sim
 Let $\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}(1)$ be the stack of \emph{at worst cuspidal} projective reduced connected $n$-marked curves of arithmetic genus $1$ that are weighted-stable with total weight $d$, i.e. the weight is nonnegative, and every $p_a=0$ component of weight $0$ has at least three special points (every $p_a=1$ component  of weight $0$ has at least \emph{two} special points).
 \end{dfn}
 
-We shall denote by $\hat\pi\colon \hat\cC\to \MM_{1,n}(1)$ the universal curve (and use similar notation for all its pullbacks). We shall also consider the universal Picard stack $\mathfrak{Pic}^{\rm{tot deg}=d,\rm{st}}_{1,n}(1)$ of $\hat\cC\to \mathfrak M_{1,n}^{\rm{wt}=d,\rm{st}}(1)$ with universal line bundle $\hat{\mathcal{L}}$. We shall often use shorthand notation $\hat\MM$ for $\mathfrak M_{1,n}^{\rm{wt}=d,\rm{st}}(1)$ and $\hat{\mathfrak P}$ for $\mathfrak{Pic}^{\rm{tot deg}=d,\rm{st}}_{1,n}(1)$. Let $\hat\lambda$ denote the projection $\hat{\mathfrak P}\to \hat\MM$.
+We shall denote by $\hat{\pi}\colon \widehat{\cC}\to \MM_{1,n}(1)$ the universal curve (and use similar notation for all its pullbacks). We shall also consider the universal Picard stack $\mathfrak{Pic}^{\rm{tot deg}=d,\rm{st}}_{1,n}(1)$ of $\widehat{\cC}\to \mathfrak M_{1,n}^{\rm{wt}=d,\rm{st}}(1)$ with universal line bundle $\widehat{\mathcal{L}}$. We shall often use shorthand notation $\widehat{\MM}$ for $\mathfrak M_{1,n}^{\rm{wt}=d,\rm{st}}(1)$ and $\widehat{\mathfrak P}$ for $\mathfrak{Pic}^{\rm{tot deg}=d,\rm{st}}_{1,n}(1)$. Let $\hat{\lambda}$ denote the projection $\widehat{\mathfrak P}\to \widehat{\MM}$.
 
 
 $T$ shall often the spectrum of a discrete valuation ring (DVR) with closed point $0$ and generic point $\eta$.
@@ -610,32 +611,29 @@ When $\mathcal Z=\rm{Vb}(\mathcal L),$ then the algebraic stack  $\mathfrak{G}\t
 
 \subsubsection*{Moduli of stable maps and $1$-stable maps} 
 Let $X\hookrightarrow \PP^r$ be a projective variety and 
-\[\mathcal Z_X=(\operatorname{Tot}(\mathcal{L}^{\oplus r+1}_{\pP})-0_{\cC_{\pP}})\times_{\PP^r} X.\]
-Then the moduli space of stable maps $\oM_{1,n}(X,\beta)$ is an open substack of the moduli space $\mathfrak{S}_X$ of sections of $\mathcal Z_X\to\cC_{\pP}$: the morphism $\oM_{1,n}(X,\beta)\to \pP$ is given by the line bundle $f^*\OO_{\PP^r}(1)$ on the universal curve, that to $\mathfrak{S}_X$ by its sections $[s_0:\ldots:s_r]$, and the stability condition is open. This is the point of view we have already taken for $X=\PP^n$ in  \S~\ref{sec:equations}Proposition \ref{prop:smoothability} to describe the local equations of the moduli space of maps relative to $\MM^{\rm{div}}$.
+\[\mathcal Z_X=(\operatorname{Vb}(\mathcal{L}^{\oplus r+1}_{\pP})-0_{\cC_{\pP}})\times_{\PP^r} X.\]
+Then the moduli space of stable maps $\oM_{1,n}(X,\beta)$ is an open substack of the moduli space $\mathfrak{S}_X$ of sections of $\mathcal Z_X\to\cC_{\pP}$: the morphism $\oM_{1,n}(X,\beta)\to \pP$ is given by the line bundle $f^*\OO_{\PP^r}(1)$ on the universal curve, that to $\mathfrak{S}_X$ by its sections $[s_0:\ldots:s_r]$, and the stability condition is open. This is the point of view we have already taken for $X=\PP^n$ in Proposition \ref{prop:smoothability} to describe the local equations of the moduli space of maps relative to $\MM^{\rm{div}}$.
 
-Analogously, the moduli space of 1-stable maps, e.g. $\oM_1^{(1)}(\PP^n,d)$, can be thought as an open inside the moduli of sections of 
-\[\hat{\mathcal Z}=(\operatorname{Tot}(\hat{\mathcal{L}}^{\oplus n+1}_{\hP})-0_{\cC_{\hP}})\]
-over $\hat{\cC}_{\hP}.$
+Analogously, the moduli space of 1-stable maps $\oM_1^{(1)}(\PP^n,d)$ can be thought of as an open inside the moduli space of sections of 
+\[\widehat{\mathcal Z}_X=(\operatorname{Vb}(\widehat{\mathcal{L}}^{\oplus r+1}_{\hP})-0_{\widehat{\cC}})\]
+over $\widehat{\cC}_{\hP}.$
 
-\subsubsection*{Moduli space of 1-Stable Maps with fields}
- Denote with $\rm{M}$ the moduli space of 1-stable maps  $\oM_1^{(1)}(\PP^4,d)$ and we write $\mathcal P_{\rm M}=\L_{\rm M}^{\otimes -5}\otimes\omega_{\hat\pi_{\rm M}}.$ 
- Moreover,
- $(\hat\pi_{\rm M},f_{\rm M})\colon \hat\cC_{\rm M}\to \rm M\times \PP^4$ are the universal $1$-stable curve and map over it.
-We define the moduli space of $p$-fields as the cone of sections of the line bundle $\mathcal P_{\rm M}$ over $\hat\cC_{\rm M}$.
+\subsubsection*{Moduli of $1$-stable maps with fields}
+ For this section denote by $\rm{M}$ the moduli space of $1$-stable maps $\oM_1^{(1)}(\PP^4,d)$ and by $\widehat{\mathcal P}_{\rm M}=\hL_{\rm M}^{\otimes -5}\otimes\omega_{\hat\pi_{\rm M}}.$ 
+ As usual let
+ $(\hat\pi_{\rm M},\hat f_{\rm M})\colon \hC_{\rm M}\to \rm M\times \PP^4$ be the universal $1$-stable curve and map.
+The moduli space of $p$-fields is defined as the cone of sections of the line bundle $\widehat{\mathcal P}_{\rm M}$ over $\hC_{\rm M}$.
 
 \begin{dfn}
- The moduli space of $1$-stable maps with $p$-fields \[\Mone{1}{\PP^4}{d}^p:=C(\hat\pi_{\rm M,*}(\mathcal P_{\rm M}))\] parametrises $1$-stable maps
+ The moduli space of $1$-stable maps with $p$-fields \[\Mone{1}{\PP^4}{d}^p:=C(\hat\pi_{\rm M,*}(\widehat{\mathcal P}_{\rm M}))\] parametrises $1$-stable maps
  \bcd
- \hat\cC_S\ar[r,"f_S"]\ar[d,"\hat\pi_S"] & \PP^4 \\
+ \hat\cC_S\ar[r,"\hat f_S"]\ar[d,"\hat\pi_S"] & \PP^4 \\
  S &
  \ecd
- with a $p$-field $\hat\psi\in H^0(\hat\cC_S,f_{S}^*\OO_{\PP^4}(-5)\otimes\omega_{\hat\pi_{S}})$.
+ with a $p$-field $\hat\psi\in H^0(\hC_S,\hat f_{S}^*\OO_{\PP^4}(-5)\otimes\omega_{\hat\pi_{S}})$.
 \end{dfn}
 
-We  abbreviate $\pazocal P:=\Mone{1}{\PP^4}{d}^p$. 
-This should be thought of as the space of sections of the line bundle $\mathcal P_{\rm M}$ over $\hat\cC_{\rm M}$:
-
-Otherwise, in parallel with the above description on the moduli space of 1-stable maps,  $\pazocal P$ can be thought as a (open in a) moduli space of sections of the bundle $\rm{Vb}(\hat{\mathcal L}_{\hP}^{\oplus 5}\oplus \mathcal P_{\hP}). $
+We abbreviate $\widehat{\pazocal P}:=\Mone{1}{\PP^4}{d}^p$. Employing the above description of the moduli space of $1$-stable maps,  $\pazocal P$ can also be thought as an open in the moduli space of sections of the vector bundle $\rm{Vb}(\hL_{\hP}^{\oplus 5}\oplus \widehat{\mathcal P}_{\hP}). $
 %\bcd
 %& \rm{Vb}(\mathcal P_{\rm M})\ar[d] \\
 %\hat \cC_{\pazocal P}\ar[ur,bend left,"\mathfrak e"]\ar[d,"\hat\pi_{\pazocal P}"]\ar[r] & \hat\cC_{\rm M}\ar[d,"\hat\pi_{\rm M}"] \\
