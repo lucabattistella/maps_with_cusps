@@ -52,14 +52,16 @@
 \newcommand{\pP}{\mathfrak P}
 \newcommand{\hP}{\widehat{\mathfrak P}}
 \newcommand{\hM}{\widehat{\mathfrak M}}
+\newcommand{\hrM}{\widehat{\rm{M}}}
 \newcommand{\oM}{\overline{\pazocal M}}
 \newcommand{\tM}{\widetilde{\pazocal M}}
 \newcommand{\R}{\operatorname{R}}
 \newcommand{\Gm}{\mathbb{G}_{\rm{m}}}
 \newcommand{\w}{\mathbf{w}}
-\newcommand{\PtoM}{\rho}
+\newcommand{\PtoM}{\lambda}
 \newcommand{\vir}[1]{[#1]^{\rm{vir}}}
 \newcommand{\virloc}[1]{[#1]^{\rm{vir}}_{\rm{loc}}}
+\newcommand{\dvr}{\Delta}
 
 \newcommand{\bq}{\begin{equation}}
 \newcommand{\eq}{\end{equation}}
@@ -84,7 +86,7 @@
 
 \newcommand{\tr}{{\rm tr}}
 \newcommand{\Isom}{\text{Isom}}
-\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\Spec}{\underline{\operatorname{Spec}}}
 \newcommand{\Proj}{\operatorname{Proj}}
 \newcommand{\Pic}{\operatorname{Pic}}
 \newcommand{\Hom}{\operatorname{Hom}}
@@ -241,24 +243,31 @@ with $\oM_1(\PP^4,d)^p$. Yet $\Zp$ is endowed with a cosection-localised virtual
 
 Throughout the paper we shall have fixed a homogeneous polynomial $\mathbf w\in\k[x_0,\ldots,x_4]_5$ of degree $5$ such that $X=V(\mathbf w)\subseteq\PP^4$ is a generic quintic threefold. Furthermore let us consider a fixed positive integer $d$ determining all the homology classes $d[\ell]\in A_1(\PP^4)$, line bundle weights, etc. that we shall take into account.
 
+Let $\rm{M}:=\M{1}{n}{X}{\beta}$ denote the moduli stack of $n$-pointed genus $1$ stable maps to $X$ in the homology class $\beta$, with universal curve and stable map $(\pi,f)\colon\cC_{\rm M}\to \rm M\times X$. Similarly let $\hrM:=\oM_{1,n}^{(1)}(X,\beta)$ denote the moduli stack of $1$-stable maps to $X$, with universal curve and stable map $(\hat\pi,\hat f)\colon\hC_{\hrM}\to \hrM\times X$.
+
 Let $\MM_{1,n}$ denote the algebraic stack of prestable $n$-marked curves of arithmetic genus $1$. In the following definitions, by \emph{special point} we mean the preimage of a node or a marking in the normalisation.
 \begin{dfn}
 Let $\mathfrak M_{1,n}^{\rm{wt}=d,\rm{st}}$ be the stack of \emph{weighted-stable} curves of genus $1$ with $n$ markings and total weight $d$: every geometric point of $\mathfrak M_{1,n}^{\rm{wt}=d,\rm{st}}$ represents a connected reduced nodal projective curve of arithmetic genus $1$ with $n$ distinct smooth markings and an integer-valued function on the dual graph, such that it is compatible with specialisation maps and the sum of the values on all the vertices is $d$; furthermore we require that it takes nonnegative values, and every $p_a=0$ component of weight $0$ has at least three special points (every $p_a=1$ component of weight $0$ has at least one special point).
 \end{dfn}
 There is an \'{e}tale non-separated morphism $\mathfrak M_{1,n}^{\rm{wt}=d,\rm{st}}\to\mathfrak M_{1,n}$ and the stability condition is such that the forgetful map $\M{1}{n}{\PP^r}{d}\to\mathfrak M_{1,n}$ factors through $\mathfrak M_{1,n}^{\rm{wt}=d,\rm{st}}$, the weight assignment coming from the degree of the map to $\PP^r$.
 
-We shall denote by $\pi\colon \cC\to \MM_{1,n}$ the universal curve (and use similar notation for all its pullbacks). We shall also consider the universal Picard stack $\mathfrak{Pic}^{\rm{tot deg}=d,\rm{st}}_{1,n}$ of $\cC\to \mathfrak M_{1,n}^{\rm{wt}=d,\rm{st}}$ with universal line bundle $\mathcal{L}$. We shall often use shorthand notation $\MM$ for $\mathfrak M_{1,n}^{\rm{wt}=d,\rm{st}}$ and $\mathfrak P$ for $\mathfrak{Pic}^{\rm{tot deg}=d,\rm{st}}_{1,n}$. Let $\lambda$ denote the projection $\mathfrak P\to \MM$.
+We shall denote by $\pi\colon \cC\to \MM_{1,n}$ the universal curve (and use similar notation for all its pullbacks). We shall also consider the universal Picard stack $\mathfrak{Pic}^{\rm{tot deg}=d,\rm{st}}_{1,n}$ of $\cC\to \mathfrak M_{1,n}^{\rm{wt}=d,\rm{st}}$ with universal line bundle $\mathcal{L}$. We shall often use shorthand notation $\MM$ for $\mathfrak M_{1,n}^{\rm{wt}=d,\rm{st}}$ and $\mathfrak P$ for $\mathfrak{Pic}^{\rm{tot deg}=d,\rm{st}}_{1,n}$. Let $\PtoM$ denote the projection $\mathfrak P\to \MM$.
 
 \begin{dfn}
 Let $\mathfrak M_{1,n}^{\operatorname{wt}=d,\text{st}}(1)$ be the stack of \emph{at worst cuspidal} projective reduced connected $n$-marked curves of arithmetic genus $1$ that are weighted-stable with total weight $d$, i.e. the weight is nonnegative, and every $p_a=0$ component of weight $0$ has at least three special points (every $p_a=1$ component  of weight $0$ has at least \emph{two} special points).
 \end{dfn}
 
-We shall denote by $\hat{\pi}\colon \widehat{\cC}\to \MM_{1,n}(1)$ the universal curve (and use similar notation for all its pullbacks). We shall also consider the universal Picard stack $\mathfrak{Pic}^{\rm{tot deg}=d,\rm{st}}_{1,n}(1)$ of $\widehat{\cC}\to \mathfrak M_{1,n}^{\rm{wt}=d,\rm{st}}(1)$ with universal line bundle $\widehat{\mathcal{L}}$. We shall often use shorthand notation $\widehat{\MM}$ for $\mathfrak M_{1,n}^{\rm{wt}=d,\rm{st}}(1)$ and $\widehat{\mathfrak P}$ for $\mathfrak{Pic}^{\rm{tot deg}=d,\rm{st}}_{1,n}(1)$. Let $\hat{\lambda}$ denote the projection $\widehat{\mathfrak P}\to \widehat{\MM}$.
+We shall denote by $\hat{\pi}\colon \widehat{\cC}\to \MM_{1,n}(1)$ the universal curve (and use similar notation for all its pullbacks). We shall also consider the universal Picard stack $\mathfrak{Pic}^{\rm{tot deg}=d,\rm{st}}_{1,n}(1)$ of $\widehat{\cC}\to \mathfrak M_{1,n}^{\rm{wt}=d,\rm{st}}(1)$ with universal line bundle $\widehat{\mathcal{L}}$. We shall often use shorthand notation $\widehat{\MM}$ for $\mathfrak M_{1,n}^{\rm{wt}=d,\rm{st}}(1)$ and $\widehat{\mathfrak P}$ for $\mathfrak{Pic}^{\rm{tot deg}=d,\rm{st}}_{1,n}(1)$. Let $\hat{\PtoM}$ denote the projection $\widehat{\mathfrak P}\to \widehat{\MM}$.
 
 
-$T$ shall often the spectrum of a discrete valuation ring (DVR) with closed point $0$ and generic point $\eta$.
+$\dvr$ shall always denote the spectrum of a discrete valuation ring (DVR) with closed point $0$ and generic point $\eta$.
 
 Subcurves are always connected.
+
+
+
+
+
 
 \section{$\oM_1(\PP^r,d)$ - Components, equations  and alternate compactifications}\label{sec:section1}
 
@@ -409,7 +418,7 @@ Consider the stable map $[f]$ in $\oM_{1}(\PP^3,4)$ from an elliptic bridge $C:=
 \[D:=\Spec\left(\k[x,y,z]/(x,y)\right)\cup \Spec\left(\k[x,y,z]/(z,y^2-x^3)\right).\] 
 Notice that $\operatorname{d}\!f(T_{q_2}R_2)=0$, so there is a non-trivial linear relation:
 \[0\cdot\operatorname{d}\!f(T_{q_1}R_1)+1\cdot\operatorname{d}\!f(T_{q_2}R_2)=0,\]
-and hence the map is smoothable. Viscardi claims that the map factors through the family $\hat\cC_T$, obtained by contracting $E$ to a tacnode. Notice that the image of $\hat f$ would still be $D$, since there is at most one indeterminacy point of $\hat\cC_T\dashrightarrow\PP^r_T$, located at the singularity. However in our example $f$ cannot factor through the tacnode. Indeed in that case we would have a birational morphism between two singular curves with the same $\delta$ invariant and the same normalisation, so $\hat f\colon \hat C\to D$ would be an isomorphism, which is a contradiction.
+and hence the map is smoothable. Viscardi claims that the map factors through the family $\hC_T$, obtained by contracting $E$ to a tacnode. Notice that the image of $\hat f$ would still be $D$, since there is at most one indeterminacy point of $\hC_T\dashrightarrow\PP^r_T$, located at the singularity. However in our example $f$ cannot factor through the tacnode. Indeed in that case we would have a birational morphism between two singular curves with the same $\delta$ invariant and the same normalisation, so $\hat f\colon \hat C\to D$ would be an isomorphism, which is a contradiction.
  We suggest that in this case the correct procedure would be to sprout $(R_1,q_1)$.
 \begin{center}
 \includegraphics[width=10cm,height=5cm]{cusp_line_transv.png}
@@ -537,7 +546,7 @@ Viceversa, let us suppose that $f\colon C\to \PP^r$ factors through $\hat{f}\col
 
 We first show that:
 \begin{claim}
- We can produce smoothings $\cC$ of $C$ and $\hat\cC$ of $\hat C$ with a contraction map $\cC\to\hat\cC$ compatible with the given $C\to\hat C$. See Remark \ref{rem:compatible_smoothing} below
+ We can produce smoothings $\cC$ of $C$ and $\hC$ of $\hat C$ with a contraction map $\cC\to\hC$ compatible with the given $C\to\hat C$. See Remark \ref{rem:compatible_smoothing} below
  \end{claim}
 \begin{proof}
  Assume that $\hat C$ has a $(k,m-k)$-singularity. 
@@ -585,8 +594,8 @@ The ideas above are similar to those employed in \cite[Theorem 4.5.1]{RSPW} to s
 
 
 
-\section{From $p$-fields to the quintic three-fold}
-We introduce the moduli space $\Mone{1}{\PP^4}{d}^p$ of $1$-stable curves with $p$-fields, we endow it with a $0$-dimensional virtual class and show that its degree coincides with the genus $1$ cuspidal invariants of the quintic three-fold $X$ up to a sign. This is a word-by-word repetition of the arguments in \cite{CLpfields} once noticed that they carry over to the situation where we work over a family of Gorenstein (not necessarily nodal) curves. Our aim in this section is to improve the legibility of our paper by providing the non-expert reader with a r\'{e}sum\'{e} of some of the key ideas contained in \cite{CLpfields}; it could otherwise be skipped.
+\section{From $p$-fields to the quintic threefold}
+We introduce the moduli space $\Mone{1}{\PP^4}{d}^p$ of $1$-stable curves with $p$-fields, we endow it with a cosection-localised $0$-dimensional virtual class supported on a proper substack (depending on the polynomial $\w$), and we show that its degree coincides with the genus $1$ cuspidal invariants of the quintic threefold $X$ up to a sign. This is a word-by-word repetition of the arguments in \cite{CLpfields} once noticed that they carry over to the situation where we work with a family of Gorenstein (not necessarily nodal) curves. Our aim in this section is to improve the legibility of this paper by providing the non-expert reader with a r\'{e}sum\'{e} of some of the key ideas contained in \cite{CLpfields}; it can otherwise be skipped.
 \subsection{Moduli of sections}
 \begin{dfn}
  Let $B$ be an algebraic stack and let $\pi\colon \cC\to B$ be a flat proper morphism of finite presentation which is representable by algebraic spaces and whose geometric fibers are reduced l.c.i. curves. Let $\mathcal Z$ be an algebraic stack smooth representable and quasi-projective over $\cC$. The \emph{cone of sections} of $\mathcal Z$ over $\cC$ is a $B$-stack $\mathfrak S$ defined by:
@@ -595,7 +604,7 @@ We introduce the moduli space $\Mone{1}{\PP^4}{d}^p$ of $1$-stable curves with $
  The groupoid $\mathfrak{S}$ is an algebraic stack representable and quasi-projective over $B$ \cite[Proposition~2.3]{CL}.
  
 \end{dfn}
- To fix notation, let us write down the following diagram
+ To fix the notation let us draw the following diagram:
  \bcd
 & \mathcal Z\ar[d] \\
 \cC_{\mathfrak S}\ar[r]\ar[ur,bend left,"\mathfrak e"]\ar[d,"\pi_{\mathfrak S}"] & \cC\ar[d,"\pi"] \\
@@ -605,93 +614,94 @@ where $\mathfrak e$ denotes the universal section.
 Let us see some examples of the above construction we will be interested in. 
 
 \subsubsection*{Direct image cones}
-When $\mathcal Z=\rm{Vb}(\mathcal L),$ then the algebraic stack  $\mathfrak{G}\to B$ representing sections of $\mathcal L$,  can be described as   
+When $\mathcal Z=\rm{Vb}(\mathcal L)$ for a line bundle $\mathcal L$ on $\cC$, the algebraic stack  $\mathfrak{S}\to B$ representing sections of $\mathcal L$ can be constructed as:   
 \[C(\pi_*\mathcal L)=\Spec_B(\R^1\pi_*\mathcal L).\]
- This is essentially because $\R^1\pi_*\mathcal L$ commutes with pullback, and it has the desired modular interpretation by Serre duality. 
+ This is essentially because $\R^1\pi_*\mathcal L$ commutes with pullback, and it has got the desired modular interpretation by Serre duality. 
 
 \subsubsection*{Moduli of stable maps and $1$-stable maps} 
-Let $X\hookrightarrow \PP^r$ be a projective variety and 
-\[\mathcal Z_X=(\operatorname{Vb}(\mathcal{L}^{\oplus r+1}_{\pP})-0_{\cC_{\pP}})\times_{\PP^r} X.\]
-Then the moduli space of stable maps $\oM_{1,n}(X,\beta)$ is an open substack of the moduli space $\mathfrak{S}_X$ of sections of $\mathcal Z_X\to\cC_{\pP}$: the morphism $\oM_{1,n}(X,\beta)\to \pP$ is given by the line bundle $f^*\OO_{\PP^r}(1)$ on the universal curve, that to $\mathfrak{S}_X$ by its sections $[s_0:\ldots:s_r]$, and the stability condition is open. This is the point of view we have already taken for $X=\PP^n$ in Proposition \ref{prop:smoothability} to describe the local equations of the moduli space of maps relative to $\MM^{\rm{div}}$.
+Let $X\subseteq \PP^r$ be a projective variety and let $\mathcal Z_X$ be defined by the following cartesian diagram over $\cC$:
+\bcd
+\mathcal Z_X\ar[r,"/\Gm"]\ar[d,hook]\ar[dr,phantom,"\Box"] & X\times \cC\ar[d,hook] \\
+\mathcal L^{\oplus r+1}\setminus 0_{\cC}\ar[r,"/\Gm"] & \PP^r\times\cC
+\ecd
+Then $\oM_1(X,\beta)$, the moduli space of stable maps to $X$, is an open substack of the moduli space $\mathfrak{S}_X$ of sections of $\mathcal Z_X\to\cC_{\pP}$: the morphism $\oM_1(X,\beta)\to \pP$ is given by the line bundle $f^*\OO_{\PP^r}(1)$ on the universal curve over $\oM_1(X,\beta)$, that to $\mathfrak{S}_X$ by its sections $[s_0:\ldots:s_r]$ corresponding to the universal stable map $f$, and the stability condition is an open one. This is the point of view we have already taken for $X=\PP^n$ in Proposition \ref{prop:smoothability} to describe the local equations of the moduli space of maps.
 
-Analogously, the moduli space of 1-stable maps $\oM_1^{(1)}(\PP^n,d)$ can be thought of as an open inside the moduli space of sections of 
-\[\widehat{\mathcal Z}_X=(\operatorname{Vb}(\widehat{\mathcal{L}}^{\oplus r+1}_{\hP})-0_{\widehat{\cC}})\]
+Analogously the moduli space of $1$-stable maps $\oM_1^{(1)}(X,\beta)$ can be thought of as an open inside the moduli space of sections of 
+\[\widehat{\mathcal Z}_X=(\operatorname{Vb}(\widehat{\mathcal{L}}^{\oplus r+1}_{\hP})\setminus 0_{\widehat{\cC}})\times_{\PP^r} X\]
 over $\widehat{\cC}_{\hP}.$
 
-\subsubsection*{Moduli of $1$-stable maps with fields}
- For this section denote by $\rm{M}$ the moduli space of $1$-stable maps $\oM_1^{(1)}(\PP^4,d)$ and by $\widehat{\mathcal P}_{\rm M}=\hL_{\rm M}^{\otimes -5}\otimes\omega_{\hat\pi_{\rm M}}.$ 
- As usual let
- $(\hat\pi_{\rm M},\hat f_{\rm M})\colon \hC_{\rm M}\to \rm M\times \PP^4$ be the universal $1$-stable curve and map.
-The moduli space of $p$-fields is defined as the cone of sections of the line bundle $\widehat{\mathcal P}_{\rm M}$ over $\hC_{\rm M}$.
+\subsubsection*{Moduli of $1$-stable maps with $p$-fields}
+ In this section we denote by $\hrM$ the moduli space of $1$-stable maps $\oM_1^{(1)}(\PP^4,d)$ and by $\widehat{\mathcal P}_{\hrM}=\hL_{\hrM}^{\otimes -5}\otimes\omega_{\hat\pi_{\hrM}}.$ 
+ 
+The moduli space of $p$-fields is defined as the cone of sections of the line bundle $\widehat{\mathcal P}_{\hrM}$ over $\hC_{\hrM}$.
 
 \begin{dfn}
- The moduli space of $1$-stable maps with $p$-fields \[\Mone{1}{\PP^4}{d}^p:=C(\hat\pi_{\rm M,*}(\widehat{\mathcal P}_{\rm M}))\] parametrises $1$-stable maps
+ The moduli space of $1$-stable maps with $p$-fields \[\Mone{1}{\PP^4}{d}^p:=C(\hat\pi_{\hrM,*}(\widehat{\mathcal P}_{\hrM}))\] parametrises $1$-stable maps
  \bcd
- \hat\cC_S\ar[r,"\hat f_S"]\ar[d,"\hat\pi_S"] & \PP^4 \\
+ \hC_S\ar[r,"\hat f_S"]\ar[d,"\hat\pi_S"] & \PP^4 \\
  S &
  \ecd
  with a $p$-field $\hat\psi\in H^0(\hC_S,\hat f_{S}^*\OO_{\PP^4}(-5)\otimes\omega_{\hat\pi_{S}})$.
 \end{dfn}
 
-We abbreviate $\widehat{\pazocal P}:=\Mone{1}{\PP^4}{d}^p$. Employing the above description of the moduli space of $1$-stable maps,  $\pazocal P$ can also be thought as an open in the moduli space of sections of the vector bundle $\rm{Vb}(\hL_{\hP}^{\oplus 5}\oplus \widehat{\mathcal P}_{\hP}). $
+We abbreviate $\widehat{\pazocal P}:=\Mone{1}{\PP^4}{d}^p$. Employing the above description of the moduli space of $1$-stable maps,  $\widehat{\pazocal P}$ can also be thought as an open in the moduli space of sections of the vector bundle $\rm{Vb}(\hL_{\hP}^{\oplus 5}\oplus \widehat{\mathcal P}_{\hP}). $
 %\bcd
 %& \rm{Vb}(\mathcal P_{\rm M})\ar[d] \\
-%\hat \cC_{\pazocal P}\ar[ur,bend left,"\mathfrak e"]\ar[d,"\hat\pi_{\pazocal P}"]\ar[r] & \hat\cC_{\rm M}\ar[d,"\hat\pi_{\rm M}"] \\
+%\hat \cC_{\pazocal P}\ar[ur,bend left,"\mathfrak e"]\ar[d,"\hat\pi_{\pazocal P}"]\ar[r] & \hC_{\rm M}\ar[d,"\hat\pi_{\rm M}"] \\
 %\pazocal P \ar[r,"\PtoM"] & \rm M
 %\ecd
 
 \subsection{Obstruction theories}
-In the notation of the previous section,
- the morphism $\mathfrak S\to B$ admits a relative dual perfect obstruction theory:
+Sticking to the same notation as above, the morphism $\mathfrak S\to B$ admits a relative dual perfect obstruction theory:
 \[ \phi_{\mathfrak S/B}\colon \mathbb T_{\mathfrak S/B}\to \mathbb E_{\mathfrak S/B}:=\R^\bullet\pi_{\mathfrak S,*}\mathfrak e^* T_{\mathcal Z/\cC}\]
-The proof of this fact is given in \cite[Proposition 2.5]{CLpfields}, and it is enough to notice that it relies on general properties of obstruction theories and the cotangent complex and the fact that $\mathcal Z\to\cC$ is smooth,
-but never on the specification that $\cC\to B$ be a family of \emph{nodal} curves, to conclude that the same results apply when the fibers of $\cC\to B$ are l.c.i curves.
+The proof of this fact is given in \cite[Proposition 2.5]{CLpfields}. We notice at this point that this results applies as well when the fibers of $\cC\to B$ are l.c.i curves, since the proof relies on general properties of obstruction theories and the cotangent complex and the fact that $\mathcal Z\to\cC$ is smooth,
+but never on the specification that $\cC\to B$ be a family of \emph{nodal} curves.
 
-In the examples considered above we get:
- in the case of a line bundle we recover $\mathbb E_{C(\pi_*\mathcal L)/B}=\R^\bullet\pi_*\mathcal L$;
-%The construction for a general smooth $\pazocal Z$ is way more flexible. 
+Let us review the examples above:
+\begin{itemize}
+ \item for the direct image cone of a line bundle $\mathcal L$ the dual obstruction theory is $\mathbb E_{C(\pi_*\mathcal L)/B}=\R^\bullet\pi_*\mathcal L$;
+ \item the moduli space $\hrM=\oM_1^{(1)}(\PP^4,d)$ has a dual obstruction theory relative to $\hP$ given by $ \R^\bullet\hat\pi_{\hrM,*}(\bigoplus_0^4 \hL_{\hrM})$;
+ \item in the case of $1$-stable maps with $p$-fields $\widehat{\pazocal P}=\oM_1^{(1)}(\PP^4,d)^p$ we get $\mathbb E_{\widehat{\pazocal P}/\hP}=\R^\bullet\hat\pi_{\widehat{\pazocal P},*}(\hL_{\widehat{\pazocal P}}^{\oplus 5}\oplus\widehat{\mathcal P}_{\widehat{\pazocal P}}).$
+\end{itemize}
 
-in the case of the moduli space $\rm{M}=\oM_1^{(1)}(\PP^4,d)$ we get an obstruction theory relative to  $\hP$ given by $ \R^\bullet\hat\pi_{\rm M,*}(\bigoplus_0^4 \mathcal L_{\rm M})$;
-
-in the case of 1- stable maps with fields $\pazocal P$ we get $\R^\bullet\hat\pi_{\pazocal P,*}(\mathcal L_{\pazocal P}^{\oplus 5}\oplus\mathcal P_{\pazocal P}).$
-
-On the moduli space of 1-stable map we have another natural perfect obstruction theory relative to $\hM,$ which is the standard one defined by Behrend-Fantechi \cite[Proposition 6.3]{BF}. The next result explain how to compare the two.
+There is a different obstruction theory on the moduli space of $1$-stable maps relative to $\hM$, which is the one introduced by Behrend and Fantechi for spaces of morphisms \cite[Proposition 6.3]{BF}. The two obstruction theories are compatible.
 \begin{lem}
  $\hP$ is a smooth Artin stack of dimension $0$. Furthermore there is a compatible triple of dual perfect obstruction theories:
  \bcd
- \lambda^*\mathbb T_{\hP/\hM}[-1]\ar[r]\ar[d,"\wr"] &  \mathbb T_{\rm M/\hP} \ar[r]\ar[d] &  \mathbb T_{\rm M/\hM} \ar[r,"{[}1{]}"]\ar[d] & {} \\
- \R^\bullet\hat\pi_{\rm M,*}(\OO_{\hat \cC})\ar[r] & \R^\bullet\hat\pi_{\rm M,*}(\bigoplus_0^4 \mathcal L_{\rm M})\ar[r] & \R^\bullet\hat\pi_{\rm M,*}(f_{\rm M}^* T_{\PP^4})\ar[r,"{[}1{]}"] & {}
+ \hat\PtoM^*\mathbb T_{\hP/\hM}[-1]\ar[r]\ar[d,"\wr"] &  \mathbb T_{\hrM/\hP} \ar[r]\ar[d] &  \mathbb T_{\hrM/\hM} \ar[r,"{[}1{]}"]\ar[d] & {} \\
+ \R^\bullet\hat\pi_{\hrM,*}(\OO_{\hat \cC})\ar[r] & \R^\bullet\hat\pi_{\hrM,*}(\bigoplus_0^4 \hL_{\hrM})\ar[r] & \R^\bullet\hat\pi_{\hrM,*}(f_{\hrM}^* T_{\PP^4})\ar[r,"{[}1{]}"] & {}
  \ecd
- implying that $\mathbb T_{\rm M/\hP}\to \mathbb E_{\rm M/\hP}:=\R^\bullet\hat\pi_{\rm M,*}(\bigoplus_0^4 \mathcal L_{\rm M})$ gives the standard Behrend-Fantechi-Viscardi virtual class on $\rm M$.
+ implying that $\mathbb T_{\hrM/\hP}\to \mathbb E_{\hrM/\hP}:=\R^\bullet\hat\pi_{\hrM,*}(\bigoplus_0^4 \mathcal L_{\hrM})$ gives the standard Behrend-Fantechi-Viscardi virtual class on $\hrM$.
 \end{lem}
 \begin{proof}
- The first statement follows from deformation theory: the projection $\lambda\colon\hP\to\hM$ is unobstructed of relative dimension $0$ and $\hM$ is a smooth Artin stack of dimension $0$, since both nodal and cuspidal singularities are l.c.i., so obstructions to their deformations are contained in $\operatorname{Ext}^2_{\OO_{\hat C}}(\Omega_{\hat C},\OO_{\hat C})=0$.
+ The first statement follows from deformation theory: the projection $\hat\PtoM\colon\hP\to\hM$ is unobstructed of relative dimension $0$ and $\hM$ is a smooth Artin stack of dimension $0$, since both nodal and cuspidal singularities are l.c.i., so obstructions to their deformations are contained in $\operatorname{Ext}^2_{\OO_{\hat C}}(\Omega_{\hat C},\OO_{\hat C})=0$.
  
- The fact that $\mathbb T_{\rm M/\hM}\to \mathbb E_{\rm M/\hM}:=\R^\bullet\hat\pi_{\rm M,*}(f_{\rm M}^* T_{\PP^4})$ is a perfect obstruction theory when $\hat\cC\to\rm M$ is a family of Gorenstein curves is proved in \cite[Proposition 6.3]{BF}.
+ The fact that $\mathbb T_{\hrM/\hM}\to \mathbb E_{\hrM/\hM}:=\R^\bullet\hat\pi_{\hrM,*}(f_{\hrM}^* T_{\PP^4})$ is a perfect obstruction theory when $\hC\to\hrM$ is a family of Gorenstein curves is proved in \cite[Proposition 6.3]{BF}.
  
  The lower row in the above diagram is induced by the Euler sequence of $\PP^4$. The middle column comes from identifying the space of stable maps as an open substack of the cone of sections (see above) of $\rm{Vb}(\bigoplus_0^4\mathcal L)$ over $\hP$. The existence of such a commutative diagram is \cite[Lemma 2.8]{CLpfields}.
  
- Finally, the fact that  $\mathbb T_{\rm M/\hP}\to \mathbb E_{\rm M/\hP}:=\R^\bullet\hat\pi_{\rm M,*}(\bigoplus_0^4 \mathcal L_{\rm M})$ gives the standard virtual class for the moduli space of maps follows from functoriality of virtual pullback \cite{Manolache-pullback}.
+ Finally the fact that  $\mathbb T_{\hrM/\hP}\to \mathbb E_{\hrM/\hP}:=\R^\bullet\hat\pi_{\hrM,*}(\bigoplus_0^4 \mathcal L_{\hrM})$ gives the standard virtual class for the moduli space of maps follows from functoriality of virtual pullbacks \cite{Manolache-pullback}.
 \end{proof}
-Finally notice that the relative perfect obstruction theory for $\pazocal P$ fits in the following exact triangle:
+
+Next consider the moduli space of $1$-stable maps with $p$-fields $\widehat{\pazocal P}$.
 \begin{lem}
- There is a compatible triple of dual perfect obstruction theories \[(\R^\bullet\hat\pi_{\pazocal P,*}(\mathcal P_{\pazocal P}),\R^\bullet\hat\pi_{\pazocal P,*}(\mathcal L_{\pazocal P}^{\oplus 5}\oplus\mathcal P_{\pazocal P}),\R^\bullet\hat\pi_{\pazocal P,*}(\mathcal L_{\pazocal P}^{\oplus 5}))\] for the triangle:
+ There is a compatible triple of dual perfect obstruction theories \[(\R^\bullet\hat\pi_{\widehat{\pazocal P},*}(\mathcal P_{\widehat{\pazocal P}}),\R^\bullet\hat\pi_{\widehat{\pazocal P},*}(\mathcal L_{\widehat{\pazocal P}}^{\oplus 5}\oplus\mathcal P_{\widehat{\pazocal P}}),\R^\bullet\hat\pi_{\widehat{\pazocal P},*}(\mathcal L_{\widehat{\pazocal P}}^{\oplus 5}))\] for the triangle:
  \bcd
- \pazocal P\ar[rr,"\PtoM"]\ar[dr] & & \rm M\ar[dl] \\
+ \widehat{\pazocal P}\ar[rr,"\hat\PtoM"]\ar[dr] & & \hrM\ar[dl] \\
  & \hP &
  \ecd
 \end{lem}
-This follows from the general theory of moduli spaces of sections recalled above.
+\noindent This follows from the general theory of moduli of sections recalled above.
 
-Notice that the virtual rank of $\mathbb E_{\pazocal P/\hP}:=\R^\bullet\hat\pi_{\pazocal P,*}(\mathcal L_{\pazocal P}^{\oplus 5}\oplus\mathcal P_{\pazocal P})$ is $0$, hence it endows the moduli space of $1$-stable maps with $p$-fields with a cycle class of dimension $0.$ In the next section we show that this cycles is actually supported on the proper sub-stack $\Mone{1}{X}{d}$ where 
- $X=V(\w)\subseteq\PP^4$ is the smooth quintic three-fold defined by a homogeneous polynomial
- $\w\in k[x_0,\ldots,x_4]_5.$ 
+\smallskip
+
+Notice that the virtual rank of $\mathbb E_{\widehat{\pazocal P}/\hP}:=\R^\bullet\hat\pi_{\widehat{\pazocal P},*}(\mathcal L_{\widehat{\pazocal P}}^{\oplus 5}\oplus\mathcal P_{\widehat{\pazocal P}})$ is $0$, hence it endows the moduli space of $1$-stable maps with $p$-fields with a cycle class of dimension $0$. However $\widehat{\pazocal P}$ is not proper. In the next section we describe Chang-Li's cosection (depending on the choice of $\w\in\k[x_0,\ldots,x_4]_5$) of the obstruction bundle, and show that the corresponding localised cycle is supported on the proper subtack $\Mone{1}{X}{d}$ where $X=V(\w)$ is the quintic threefold, that is the degeneracy locus of the cosection.
 
 
 
 % Notice that the virtual rank of $\mathbb E_{\pazocal P/\hP}:=\R^\bullet\hat\pi_{\pazocal P,*}(\mathcal L_{\pazocal P}^{\oplus 5}\oplus\mathcal P_{\pazocal P})$ is $0$, hence it endows the moduli space of $1$-stable maps with $p$-fields with a cycle class of dimension $0$. In facts such a cycle is supported on a way smaller closed substack, namely $\Mone{1}{X}{d}$; this follows from the
-\subsection{Cosection Localization}
-We show the existence of a cosection of the obstruction bundle whose degeneracy locus is the proper substack $\Mone{1}{X}{d}.$ The machinery of cosection localised virtual classes \cite{KLcosection}. Recall their Theorem 1.1:
+\subsection{Cosection localisation}
+Recall Kiem-Li's machinery of cosection localised virtual classes \cite[Theorem 1.1]{KLcosection}:
 
 \begin{teo*}[Localization by cosection]\label{thm:KLlocalisation}
 Let $\pazocal M$ be a Deligne-Mumford stack endowed with a perfect
@@ -700,53 +710,50 @@ surjective homomorphism $\sigma:\rm{Ob}_\pazocal M|_U  \to \OO_U$
 over an open $U\subseteq \pazocal M$.
 Let $\pazocal{M}(\sigma)=\pazocal{M}\setminus U$.
 Then $(\pazocal{M},\sigma)$ has a localized virtual cycle
-$$[\pazocal{M}]^{\rm{virt}}_{\rm{loc}}\in A_* \pazocal{M}(\sigma).
-$$
+$$[\pazocal{M}]^{\rm{virt}}_{\rm{loc}}\in A_* \pazocal{M}(\sigma).$$
 This cycle enjoys the usual properties of the virtual cycles; it relates to
 the usual virtual cycle $[\pazocal{M}]^{\rm{virt}}$ via 
 $[\pazocal{M}]^{\rm{virt}} = \iota_*[\pazocal{M}]^{\rm{virt}}_{\rm{loc}} \in A_*  \pazocal{M}$, where
 $\iota: \pazocal{M}(\sigma)\to \pazocal{M}$ is the inclusion.
 \end{teo*}
 
-We are now going to construct the cosection as in \cite[\S\S3.2-3.4]{CLpfields}. There is a morphism of vector bundles on $\hP$ induced by tensoring of line bundles:
-\[ h_1\colon\rm{Vb}(\mathcal L_{\hP}^{\oplus 5}\oplus\mathcal P_{\hP})\to \rm{Vb}(\omega_{\hat\pi_{\hP}}),\quad h_1(z,p)=p\w(z_0,\ldots,z_4)\]
+We are going to construct the cosection paralleling \cite[\S\S3.2-3.4]{CLpfields}. There is a morphism of vector bundles on $\hP$ induced by iterated tensoring of line bundles:
+\[ h_1\colon\rm{Vb}(\hL_{\hP}^{\oplus 5}\oplus\widehat{\mathcal P}_{\hP})\to \rm{Vb}(\omega_{\hat\pi_{\hP}}),\quad h_1(z,p)=p\w(z_0,\ldots,z_4)\]
 By differentiating it and pulling it back along the universal evaluation
 \bcd
-& \rm{Vb}(\mathcal L_{\hP}^{\oplus 5})\setminus\{0\}\oplus\rm{Vb}(\mathcal P_{\hP})\ar[d] \\
-\hat \cC_{\pazocal P}\ar[ur,bend left,"\mathfrak e"]\ar[d,"\hat\pi_{\pazocal P}"]\ar[r] & \hat\cC_{\hP}\ar[d,"\hat\pi_{\hP}"] \\
-\pazocal P \ar[r] & \rm \hP
+& \rm{Vb}(\hL_{\hP}^{\oplus 5})\setminus\{0\}\oplus\rm{Vb}(\widehat{\mathcal P}_{\hP})\ar[d] \\
+\hC_{\widehat{\pazocal P}}\ar[ru,bend left,start anchor=north, end anchor=west,"\mathfrak e"]\ar[d,"\hat\pi_{\widehat{\pazocal P}}"]\ar[r] & \hC_{\hP}\ar[d,"\hat\pi_{\hP}"] \\
+\widehat{\pazocal P} \ar[r] & \rm \hP
 \ecd
 %here and in future $\oplus$ at the level of geometric vector bundles means the fiber product over the base
  we obtain a cosection of the relative obstruction sheaf
 \begin{equation}\label{eqn:cosection}
  \begin{split}
- \sigma_1\colon\rm{Ob}_{\pazocal P/\hP}=\R^1\hat\pi_{\pazocal P,*}(\mathcal L_{\pazocal P}^{\oplus 5}\oplus\mathcal P_{\pazocal P})\to \R^1\hat\pi_{\pazocal P,*}(\omega_{\hat\pi_{\pazocal P}})\simeq \OO_{\pazocal P} \\
+ \sigma_1\colon\rm{Ob}_{\widehat{\pazocal P}/\hP}=\R^1\hat\pi_{\widehat{\pazocal P},*}(\hL_{\widehat{\pazocal P}}^{\oplus 5}\oplus\widehat{\mathcal P}_{\widehat{\pazocal P}})\to \R^1\hat\pi_{\widehat{\pazocal P},*}(\omega_{\hat\pi_{\widehat{\pazocal P}}})\simeq \OO_{\widehat{\pazocal P}} \\
  \sigma_{1|(u,\psi)}(x,p)=p\w(u)+\psi\sum_{i=0}^4\partial_i\w(u)x_i
 \end{split}
 \end{equation}
 
-The degeneracy locus of this cosection is $\Mone{1}{X}{d}$: by Serre duality if $\w(u)\neq 0$ then we can find a $p$ such that the cosection does not vanish; similarly we can do if $\psi\sum_{i=0}^4\partial_i\w(u)\neq 0$, but then $\psi=0$ by smoothness of $\w$. 
+The degeneracy locus of this cosection is $\Mone{1}{X}{d}$: by Serre duality if $\w(u)\neq 0$ then we can find a $p$ such that the cosection does not vanish; similarly we can do if $\psi\sum_{i=0}^4\partial_i\w(u)\neq 0$. But $\w(u)=0$ and $\partial_i\w(u)=0$ never happen simultaneously by smoothness of $X$, so it has to be $\psi=0$. 
 
-Moreover, Chang-Li prove that
-$\sigma_1$ lifts to a cosection of the absolute obstruction bundle $\rm{Ob}_{\pazocal P}\to\OO_{\pazocal P}$ with the same degeneracy locus.\marginpar{Why is this needed}
+Moreover Chang and Li prove that $\sigma_1$ lifts to a cosection of the absolute obstruction bundle $\rm{Ob}_{\widehat{\pazocal P}}\to\OO_{\widehat{\pazocal P}}$ with the same degeneracy locus. This is a technical expedient to show that the relative intrinsic normal cone is contained in the closed substack of the obstruction bundle determined by the cosection.
 
 We may thus endow $\Mone{1}{\PP^4}{d}^p$ with a localised virtual cycle:
-\[[\pazocal P]^{\rm{vir}}_{\sigma_1}=0^{!}_{\sigma_1,\rm{loc}}[\mathfrak{C}_{\pazocal P/\hP}]\;\in\; A_0(\Mone{1}{X}{d}).\]
+\[\virloc{\widehat{\pazocal P}}=0^{!}_{\sigma_1,\rm{loc}}[\mathfrak{C}_{\widehat{\pazocal P}/\hP}]\;\in\; A_0\left(\Mone{1}{X}{d}\right).\]
 
-
-We we want to show that it gives the same numerical invariants as the cuspidal Gromov-Witten theory of $X$, up to a sign:
+We want to show that it gives the same numerical invariants as the cuspidal Gromov-Witten theory of $X$, up to a sign:
 \begin{thm}
  \[\deg[\Mone{1}{\PP^4}{d}^p]^{\rm{vir}}_{\rm{loc}}= (-1)^{5d}\deg[\Mone{1}{X}{d}]^{\rm{vir}}\]%=:GW_1^{\rm{cusp}}(X,d)\]
 \end{thm}
 
 \subsection{Sketch of the proof}
-This is done in two steps: first we compare the invariants coming from $\Mone{1}{\PP^4}{d}^p$ with the ones coming from $\Mone{1}{N_{X/\PP^4}}{d}^p$, where $N_{X/\PP^4}$ is the normal of the quintic in $\PP^4.$
+This is achieved in two steps: we first compare the invariants of $\Mone{1}{\PP^4}{d}^p$ with the ones coming from $\Mone{1}{N_{X/\PP^4}}{d}^p$, where $N_{X/\PP^4}$ is the normal bundle of the quintic in $\PP^4.$
 
 Second we compare the latter invariants with $\deg[\Mone{1}{X}{d}]^{\rm{vir}}.$
 
 \subsubsection*{Step~1}
-This is achieved in \cite[\S\S4-5]{CLpfields} by a family version of the $p$-fields construction applied to the deformation to the normal cone of $X\subseteq \PP^4$; let us denote the latter by $V\to\Aaff^1_t$, so that $V_{t\neq 0}=\PP^4$ and $V_0=N_{X/\PP^4}.$
-The idea is: construct a perfect obstruction theory for $\Mone{1}{V}{d}^p$ relative to $\hP$ which is compatible with the obstruction theories of the fibers $\Mone{1}{V_t}{d}^p;$ then construct a family version of the cosection and the fact that for compatible obstruction theories taking cosection localized cycles commutes with Gysin pull-back to conclude this Step.
+This is attained in \cite[\S\S4-5]{CLpfields} by a family version of the $p$-fields construction applied to the deformation to the normal cone of $X\subseteq \PP^4$; let us denote the latter by $V\to\Aaff^1_t$, so that $V_{t\neq 0}=\PP^4$ and $V_0=N_{X/\PP^4}.$
+%The idea is: construct a perfect obstruction theory for $\Mone{1}{V}{d}^p$ relative to $\hP$ which is compatible with the obstruction theories of the fibers $\Mone{1}{V_t}{d}^p;$ then construct a family version of the cosection and the fact that for compatible obstruction theories taking cosection localized cycles commutes with Gysin pull-back to conclude this Step.
 
 \begin{lem}
  The deformation to the normal cone $V$ is cut inside $\rm{Vb}(\OO_{\PP^4}(5))\times\Aaff^1_t$ with basis coordinates $[x_0:\ldots:x_4]$ and fiber coordinate $y$ by the equation $\w(x)-ty=0$. If $C(V)$ denotes the affine cone over $V$, then its tangent bundle is determined by the following exact sequences:
@@ -757,95 +764,101 @@ The idea is: construct a perfect obstruction theory for $\Mone{1}{V}{d}^p$ relat
   \end{split}
  \end{equation*}
 \end{lem}
-This is just a computation in local coordinates.
-This allows a description of the moduli space of maps to $V$ as the cone of sections of a certain smooth object $\mathcal Z'$ over $\hat\cC_{\hP\times\Aaff^1}$:
+%This is just a computation in local coordinates.
+This allows a description of the moduli space of maps to $V$ as the cone of sections of a certain smooth object $\mathcal Z'$ over $\hC_{\hP\times\Aaff^1}$:
 
 \bcd
 & \mathcal Z'\ar[d]\ar[r]\ar[dr,phantom,"\Box"] & V\ar[d] \\
 & \rm{Vb}(\mathcal L_{\hP}^{\oplus 5})\setminus\{0\}\oplus\rm{Vb}(\mathcal L^{\otimes 5}_{\hP})\ar[d] \ar[r] & \rm{Vb}(\OO_{\PP^4}(5))\times\Aaff^1_t\\
-\hat \cC_{\oM_1^{(1)}(V)}\ar[uur,bend left,"\mathfrak e"]\ar[d,"\hat{\pi}_{\oM_1^{(1)}(V)}"]\ar[r] & \hat\cC_{\hP\times\Aaff^1_t}\ar[d,"\hat\pi_{\hP\times\Aaff^1_t}"] & \\
+\hC_{\oM_1^{(1)}(V)}\ar[uur,bend left,"\mathfrak e"]\ar[d,"\hat{\pi}_{\oM_1^{(1)}(V)}"]\ar[r] & \hC_{\hP\times\Aaff^1_t}\ar[d,"\hat\pi_{\hP\times\Aaff^1_t}"] & \\
 \Mone{1}{V}{(d,0)} \ar[r] & \rm \hP\times\Aaff^1_t &
 \ecd
 
-Similarly $\pazocal V:=\Mone{1}{V}{(d,0)}^p$ can be defined as the cone of sections of $\mathcal Z:=\mathcal Z'\oplus\rm{Vb}(\mathcal P_{\hP})$. The general theory explained above provides an obstruction theory for $\pazocal V\to\hP\times\Aaff^1_t$ \cite[Proposition 4.2]{CLpfields}:
+Similarly $\widehat{\pazocal V}:=\Mone{1}{V}{(d,0)}^p$ can be defined as the cone of sections of $\mathcal Z:=\mathcal Z'\oplus\rm{Vb}(\widehat{\mathcal P}_{\hP})$. The general theory explained above provides an obstruction theory for $\widehat{\pazocal V}\to\hP\times\Aaff^1_t$ \cite[Proposition 4.2]{CLpfields}:
 
 \begin{lem}
- A dual perfect obstruction theory is given by 
- \[\phi_{\pazocal V/\hP\times\Aaff^1_t}\colon\mathbb T_{\pazocal V/\hP\times\Aaff^1_t}\to\mathbb E_{\pazocal V/\hP\times\Aaff^1_t}:=\R^\bullet\hat\pi_{\pazocal V}(f_{\pazocal V}^*\mathcal H\oplus\mathcal P_{\pazocal V})\] where $f_{\pazocal V}\colon \hat\cC_{\pazocal V}\to V$ is the universal map and $\mathcal H$ is the vector bundle on $V$ defined by \[0\to\mathcal H\to\pr_{\PP^4}^*\left(\OO_{\PP^4}(1)^{\oplus 5}\oplus \OO_{\PP^4}(5)\right)\xrightarrow{\sum_i\partial_i\w(x)\mathring{x}_i-t\mathring{y}} \pr_{\PP^4}^*\OO_{\PP^4}(5)\to 0\]
- The restriction of $\phi_{\pazocal V/\hP\times\Aaff^1_t}$ to a fiber
+ A dual perfect obstruction theory is given by:
+ \[\phi_{\widehat{\pazocal V}/\hP\times\Aaff^1_t}\colon\mathbb T_{\widehat{\pazocal V}/\hP\times\Aaff^1_t}\to\mathbb E_{\widehat{\pazocal V}/\hP\times\Aaff^1_t}:=\R^\bullet\hat\pi_{\widehat{\pazocal V}}(f_{\widehat{\pazocal V}}^*\mathcal H\oplus\widehat{\mathcal P}_{\widehat{\pazocal V}})\]
+ where $f_{\widehat{\pazocal V}}\colon \hC_{\widehat{\pazocal V}}\to V$ is the universal map and $\mathcal H$ is the vector bundle on $V$ defined by the exact sequence:
+ \[0\to\mathcal H\to\pr_{\PP^4}^*\left(\OO_{\PP^4}(1)^{\oplus 5}\oplus \OO_{\PP^4}(5)\right)\xrightarrow{\sum_i\partial_i\w(x)\mathring{x}_i-t\mathring{y}} \pr_{\PP^4}^*\OO_{\PP^4}(5)\to 0.\]
+The restriction of $\phi_{\widehat{\pazocal V}/\hP\times\Aaff^1_t}$ to a fiber
  \[
- \pazocal V_t=\left\{\begin{array}{lr} \pazocal P & t\neq 0 \\ \Mone{1}{N_{X/\PP^4}}{d}^p & t=0 \end{array}\right.
-\] gives the standard obstruction theory of $\pazocal V_t\to\hP$.
+ \widehat{\pazocal V}_c=\left\{\begin{array}{lr} \widehat{\pazocal P} & c\neq 0 \\ \Mone{1}{N_{X/\PP^4}}{d}^p & c=0 \end{array}\right.
+\]
+gives the standard obstruction theory of $\widehat{\pazocal V}_c\to\hP$.
 \end{lem}
 
 We would like to conclude that the restriction of the virtual cycle to the fibers is the standard virtual cycle on the fiber. The techniques of functoriality in intersection theory teach us that we should look for a triple of compatible obstruction theories for the triangle:
 \bcd
-\pazocal V_t\ar[rr,hook,"\iota_t"]\ar[dr] & & \pazocal V \ar[dl] \\
+\widehat{\pazocal V}_t\ar[rr,hook,"\iota_t"]\ar[dr] & & \widehat{\pazocal V} \ar[dl] \\
 & \hP &
 \ecd
-The cone of sections interpretation provides us with an obstruction theory relative to $\pazocal V\to \hP$ given by:
+The cone of sections interpretation provides us with an obstruction theory relative to $\widehat{\pazocal V}\to \hP$ given by:
 \[
- \mathbb E'_{\pazocal V/\hP}:=\R^\bullet\hat\pi_{\pazocal V}(f_{\pazocal V}^*\mathcal K\oplus\mathcal P_{\pazocal V})
+ \mathbb E'_{\widehat{\pazocal V}/\hP}:=\R^\bullet\hat\pi_{\widehat{\pazocal V}}(f_{\widehat{\pazocal V}}^*\mathcal K\oplus\widehat{\mathcal P}_{\widehat{\pazocal V}})
 \]
 where $\mathcal K$ is determined by the following exact sequence on $V$:
 \[
  0\to\mathcal K\to\pr_{\PP^4}^*\left(\OO_{\PP^4}(1)^{\oplus 5}\oplus \OO_{\PP^4}(5)\oplus\OO_{\PP^4}\right)\xrightarrow{\sum_i\partial_i\w(x)\mathring{x}_i-t\mathring{y}-y\mathring{t}} \pr_{\PP^4}^*\OO_{\PP^4}(5)\to 0
 \]
-Of course $h^0(\mathbb E'_{\pazocal V/\hP})\simeq\mathbb T_{\pazocal V/\hP}$, but the previous lemma hints at the fact that the obstruction sheaf $h^1 (\mathbb E'_{\pazocal V/\hP})$ contains one factor $\R^1\hat\pi_{\pazocal V,*}\OO_{\hat\cC_{\pazocal V}}$ too many, so that restricting to the fibers we would find a different obstruction theory with respect to the standard one. A confirmation of this fact is that $\mathbb E'_{\pazocal V/\hP}$ equips $\pazocal V$ with a $0$-dimensional cycle, while we are looking for a $1$-dimensional cycle such that restricting to any fiber, i.e. applying $\iota_t^!,$ we get $[\pazocal V_t]^{\rm{vir}}\in A_0(\pazocal V_t)$.
+Of course $h^0(\mathbb E'_{\widehat{\pazocal V}/\hP})\simeq\mathbb T_{\widehat{\pazocal V}/\hP}$, but the previous lemma and the difference between $\mathcal H$ and $\mathcal K$ hint at the fact that the obstruction sheaf $h^1 (\mathbb E'_{\widehat{\pazocal V}/\hP})$ contains one factor $\R^1\hat\pi_{\widehat{\pazocal V},*}\OO_{\hC_{\widehat{\pazocal V}}}\simeq \OO_{\widehat{\pazocal V}}$ too many, so that restricting $\mathbb E'_{\widehat{\pazocal V}/\hP}$ to the fibers we would not find their standard obstruction theory. A confirmation of this fact is given by observing that $\mathbb E'_{\widehat{\pazocal V}/\hP}$ equips $\widehat{\pazocal V}$ with a $0$-dimensional cycle, while we are looking for a $1$-dimensional cycle such that restricting to any fiber, i.e. applying $\iota_t^!,$ we get $[\widehat{\pazocal V}_t]^{\rm{vir}}\in A_0(\widehat{\pazocal V}_t)$.
 
-This issue is solved in \cite[\S\S4.5-6]{CLpfields} by lifting the obstruction theory to 
-\[\phi_{\pazocal V/\hP}\colon\mathbb T_{\pazocal V/\hP}\to\mathbb E_{\pazocal V/\hP},\]
- where the latter fits into an exact triangle:
-\[ \R^1\hat\pi_{\pazocal V,*}\OO_{\hat\cC_{\pazocal V}}[-2]\to\mathbb E_{\pazocal V/\hP}\xrightarrow{\nu}\mathbb E_{\pazocal V/\hP}\xrightarrow{[1]}.\]
-Furthermore the lifted obstruction theory is compatible with the one the fibers, 
+This issue is solved in \cite[\S\S4.5-6]{CLpfields} by lifting the standard obstruction theory $\phi'_{\widehat{\pazocal V}/\hP}$ to a different, specifically tailored one: 
+\[\phi_{\widehat{\pazocal V}/\hP}\colon\mathbb T_{\widehat{\pazocal V}/\hP}\to\mathbb E_{\widehat{\pazocal V}/\hP},\]
+ where the latter two-term complex fits into an exact triangle:
+\[ \R^1\hat\pi_{\widehat{\pazocal V},*}\OO_{\hC_{\widehat{\pazocal V}}}[-2]\to\mathbb E_{\widehat{\pazocal V}/\hP}\xrightarrow{\nu}\mathbb E'_{\widehat{\pazocal V}/\hP}\xrightarrow{[1]}\]
+Furthermore the lifted obstruction theory is compatible with the standard one for the fibers.
 \begin{lem}
-There is the following commutative diagram of exact triangles:
+For every $c\in\k$ we have a commutative diagram:\marginpar{the lower one is not exact}
 \bcd
-\hat{\pi}_{\pazocal V_c *}\OO_{\hat\cC_{\pazocal V_c}}[-1]\ar[r] & \mathbb E_{\pazocal V_c/\hP} \ar[r] &\mathbb E_{\pazocal V/\hP}\rvert_{\pazocal V_c}\\
-\mathbb{T}^{\geq 1}_{\pazocal V_c/\pazocal V}\ar[u]\ar[r] & \mathbb{T}^{\geq 1}_{\pazocal V_c/\hP}\ar[u]\ar[r] & \mathbb{T}^{\geq 1}_{\pazocal V/\hP}\rvert_{\pazocal V_c} \ar[u]
+\hat{\pi}_{\widehat{\pazocal V}_c *}\OO_{\hC_{\widehat{\pazocal V}_c}}[-1]\ar[r] & \mathbb E_{\widehat{\pazocal V}_c/\hP} \ar[r] &\mathbb E_{\widehat{\pazocal V}/\hP}\rvert_{\widehat{\pazocal V}_c}\\
+\mathbb{T}^{\geq 1}_{\widehat{\pazocal V}_c/\widehat{\pazocal V}}\ar[u]\ar[r] & \mathbb{T}^{\geq 1}_{\widehat{\pazocal V}_c/\hP}\ar[u]\ar[r] & \mathbb{T}^{\geq 1}_{\widehat{\pazocal V}/\hP}\rvert_{\widehat{\pazocal V}_c} \ar[u]
 \ecd
 \end{lem}
-The proof is exactly the same given in \cite[\S~4.6]{CL}.
+For the proof see \cite[\S~4.6]{CL}.
 
-
-Since we are working with cosection localised cycles, this is not yet enough to conclude.
+%Since we are working with cosection localised cycles, this is not yet enough to conclude.
  A family version of the cosection is induced by differentiating the following vector bundle morphism on $\hP\times\Aaff^1_t$:
 \[
- \rm{Vb}(\mathcal L_{\hP}^{\oplus 5}\oplus\mathcal L_{\hP}^{\otimes 5}\oplus\mathcal P_{\hP})\xrightarrow{(\pr_2,\pr_3)}\rm{Vb}(\mathcal L_{\hP}^{\otimes 5}\oplus\mathcal P_{\hP})\xrightarrow{\cdot}\rm{Vb}(\omega_{\hat\pi_{\hP}})
+ \rm{Vb}(\hL_{\hP}^{\oplus 5}\oplus\hL_{\hP}^{\otimes 5}\oplus\widehat{\mathcal P}_{\hP})\xrightarrow{(\pr_2,\pr_3)}\rm{Vb}(\hL_{\hP}^{\otimes 5}\oplus\widehat{\mathcal P}_{\hP})\xrightarrow{\cdot}\rm{Vb}(\omega_{\hat\pi_{\hP}})
 \]
 The cosection takes then the following form:
 \[\bar\sigma_{1|(u,v,\psi)}(\mathring{x},\mathring{y},\mathring{p})=\psi\mathring{y}+v\mathring{p}\]
-It is showed in \cite[\S4.7]{CLpfields} that $\bar\sigma_1$ lifts to a cosection $\bar\sigma\colon \rm{Ob}_{\pazocal V}\to \OO_{\pazocal V}$ and that the degeneracy locus of $\bar\sigma$ is 
+It is showed in \cite[\S4.7]{CLpfields} that $\bar\sigma_1$ lifts to a cosection $\bar\sigma\colon \rm{Ob}_{\widehat{\pazocal V}}\to \OO_{\widehat{\pazocal V}}$ and that the degeneracy locus of $\bar\sigma$ is 
 \[\Mone{1}{X}{d}\times\Aaff^1_t.\]
 
-Recall that the sections $(x,y)$ are required to satisfy $\w(x)-ty=0$. So $\bar\sigma_1$ coincides up to a non-zero scalar with the above defined cosection $\sigma_1$ for $\pazocal P$ when $t\neq 0$. It is proved in \cite[Theorem 5.2]{KLcosection} that, given compatible perfect obstruction theories, the construction of a cosection localised virtual cycle is compatible with Gysin pullbacks, so that \cite[Proposition 4.9]{CLpfields}:
+Recall that the sections $(x,y)$ are required to satisfy $\w(x)-ty=0$. So $\bar\sigma_1$ coincides up to a non-zero scalar with the above defined cosection $\sigma_1$ for $\widehat{\pazocal P}$ when $t\neq 0$. It is proved in \cite[Theorem 5.2]{KLcosection} that, given compatible perfect obstruction theories, the construction of a cosection localised virtual cycle is compatible with Gysin pullbacks, so that by \cite[Proposition 4.9]{CLpfields}:
 \[
- \iota_{t\neq0}^![\pazocal V]^{\rm{vir}}_{\rm{\bar\sigma}}=[\pazocal P]^{\rm{vir}}_{\rm{\sigma}}\in A_0(\pazocal Q),\quad \iota_{0}^![\pazocal V]^{\rm{vir}}_{\rm{\bar\sigma}}=[\Mone{1}{N_{X/\PP^4}}{d}^p]^{\rm{vir}}_{\rm{\bar\sigma_0}}\in A_0(\pazocal Q)
+ \iota_{t\neq0}^![\widehat{\pazocal V}]^{\rm{vir}}_{\rm{\bar\sigma}}=[\widehat{\pazocal P}]^{\rm{vir}}_{\rm{\sigma}}\in A_0(\widehat{\pazocal Q}),\quad \iota_{0}^![\widehat{\pazocal V}]^{\rm{vir}}_{\rm{\bar\sigma}}=[\Mone{1}{N_{X/\PP^4}}{d}^p]^{\rm{vir}}_{\rm{\bar\sigma_0}}\in A_0(\widehat{\pazocal Q})
 \]
-where we have denoted by $\pazocal Q:=\Mone{1}{X}{d}$.
+where we have denoted by $\widehat{\pazocal Q}:=\Mone{1}{X}{d}$.
 \subsubsection*{Step~2}
-We are left with proving that $[\Mone{1}{N_{X/\PP^4}}{d}^p]^{\rm{vir}}_{\rm{\bar\sigma_0}}$ coincides up to sign with $[\Mone{1}{X}{d}]^{\rm{vir}}$.
-In the rest of the section we use the following notation $\pazocal N:=\Mone{1}{N_{X/\PP^4}}{d}^p$, and $v\colon\pazocal N\to\pazocal Q$. 
-The idea is now to conclude finding a perfect obstruction theory for $v\colon\pazocal N\to\pazocal Q$ compatible with the ones of $\pazocal N\to\hP$ and $\pazocal Q\to\hP$ and then prove a cosection localized version of Manolache's virtual pull-back construction~\cite{Manolache-pullback}.
+We are left with proving that $\deg[\Mone{1}{N_{X/\PP^4}}{d}^p]^{\rm{vir}}_{\rm{\bar\sigma_0}}$ coincides up to sign with $\deg[\Mone{1}{X}{d}]^{\rm{vir}}$.
+In the rest of the section we use the following notation: $\widehat{\pazocal N}:=\Mone{1}{N_{X/\PP^4}}{d}^p$, and $\hat v\colon\widehat{\pazocal N}\to\widehat{\pazocal Q}$. 
+We now find a perfect obstruction theory for $\hat v\colon\widehat{\pazocal N}\to\widehat{\pazocal Q}$ compatible with the ones of $\widehat{\pazocal N}\to\hP$ and $\widehat{\pazocal Q}\to\hP$, and then use a cosection-localised version of Manolache's virtual pullback construction~\cite{Manolache-pullback}.
 
-Chang and Li proved indeed that there is a perfect obstruction theory 
-\[\mathbb E_{\pazocal N/\pazocal Q}:=\R^{\bullet}\hat\pi_{\pazocal N,*}(\mathcal L^{\otimes 5}_{\pazocal N}\oplus \mathcal P_{\pazocal N})\]
- compatible with $\mathbb E_{\pazocal N/\hP}$ and $v^*\mathbb E_{\pazocal Q/\hP}$, so that $\mathbb E_{\pazocal N/\pazocal Q}$ inherits a cosection $\sigma_0'$ with degeneracy locus $D(\sigma_0')=\pazocal Q$. Then \cite[Lemma 5.5]{CLpfields} they show by using the techniques of \cite{KKP} that $\mathfrak C_{\pazocal N/\pazocal Q}$ is supported inside 
+Indeed Chang and Li proved that there is a perfect obstruction theory 
+\[\mathbb E_{\widehat{\pazocal N}/\widehat{\pazocal Q}}:=\R^{\bullet}\hat\pi_{\widehat{\pazocal N},*}(\hL^{\otimes 5}_{\widehat{\pazocal N}}\oplus \widehat{\mathcal P}_{\widehat{\pazocal N}})\]
+ compatible with $\mathbb E_{\widehat{\pazocal N}/\hP}$ and $\hat v^*\mathbb E_{\widehat{\pazocal Q}/\hP}$, so that $\mathbb E_{\widehat{\pazocal N}/\widehat{\pazocal Q}}$ inherits a cosection $\sigma_0'$ with degeneracy locus $D(\sigma_0')=\widehat{\pazocal Q}$. Then in \cite[Lemma 5.5]{CLpfields} they show by using the techniques of \cite{KKP} that $\mathfrak C_{\widehat{\pazocal N}/\widehat{\pazocal Q}}$ is supported inside 
 \[
- h^1/h^0(\mathbb E_{\pazocal N/\pazocal Q})_{\sigma_0'}:=\operatorname{Ker}(\sigma_0')\cup  h^1/h^0(\mathbb E_{\pazocal N/\pazocal Q})_{|D(\sigma_0')}
+ h^1/h^0(\mathbb E_{\widehat{\pazocal N}/\widehat{\pazocal Q}})_{\sigma_0'}:=\operatorname{Ker}(\sigma_0')\cup  h^1/h^0(\mathbb E_{\widehat{\pazocal N}/\widehat{\pazocal Q}})\rvert_{D(\sigma_0')}
 \]
 so that they may combine the techniques of virtual pullback \cite{Manolache-pullback} and localisation by cosection \cite{KLcosection} to define:
 \[
- v^!_{\mathbb E_{\pazocal N/\pazocal Q},\rm{loc}}\colon A_*(\pazocal Q)\to A_*(D(\sigma_0')=\pazocal Q)
+ \hat v^!_{\mathbb E_{\widehat{\pazocal N}/\widehat{\pazocal Q}},\rm{loc}}\colon A_*(\widehat{\pazocal Q})\to A_*(D(\sigma_0')=\widehat{\pazocal Q})
 \]
-sending $[\pazocal Q]^{\rm{vir}}$ to $[\Mone{1}{N_{X/\PP^4}}{d}^p]^{\rm{vir}}_{\rm{\bar\sigma_0}}.$
+sending $[\widehat{\pazocal Q}]^{\rm{vir}}$ to $[\Mone{1}{N_{X/\PP^4}}{d}^p]^{\rm{vir}}_{\rm{\bar\sigma_0}}.$
 
-To conclude it is now enough to compute the degree of $v^!_{\mathbb E_{\pazocal N/\pazocal Q},\rm{loc}}.$
-Since we are just interested in what happens on $A_0(\pazocal Q)$, we only have to compute $\deg(v^!_{\mathbb E_{\pazocal N/\pazocal Q},\rm{loc}}(\zeta)$ for $\zeta$ a closed point. This is done in \cite[Theorem 5.7]{CLpfields} and the same considerations work in our case since the construction of the localized pull-back is completely analogous.
-%They notice that the fibers of $v$ are vector spaces and the obstruction theory $\mathbb E_{\pazocal N/\pazocal Q}$ is symmetric, so it can be represented as 
-%\[[T_{v^{-1}(\xi)}\xrightarrow{0}T^*_{v^{-1}(\xi)}]\] along the fibers. This is enough since we are only interested in the action of $v^!_{\mathbb E_{\pazocal N/\pazocal Q},\rm{loc}}$ on $A_0(\pazocal Q)$ \cite[Theorem 5.7]{CLpfields}.
+To conclude it is now enough to compute the degree of $\hat v^!_{\mathbb E_{\widehat{\pazocal N}/\widehat{\pazocal Q}},\rm{loc}}.$
+Since we are only interested in what happens to $A_0(\widehat{\pazocal Q})$, we just need to compute $\deg(\hat v^!_{\mathbb E_{\widehat{\pazocal N}/\widehat{\pazocal Q}},\rm{loc}}[\zeta])$ for a closed point $\zeta$. This is done in \cite[Theorem 5.7]{CLpfields} and the same considerations work in our case.
+%They notice that the fibers of $v$ are vector spaces and the obstruction theory $\mathbb E_{\pazocal N/\widehat{\pazocal Q}}$ is symmetric, so it can be represented as 
+%\[[T_{v^{-1}(\xi)}\xrightarrow{0}T^*_{v^{-1}(\xi)}]\] along the fibers. This is enough since we are only interested in the action of $v^!_{\mathbb E_{\pazocal N/\widehat{\pazocal Q}},\rm{loc}}$ on $A_0(\widehat{\pazocal Q})$ \cite[Theorem 5.7]{CLpfields}.
 
-Hopefully we have managed to convince the reader that the subtle intersection theory perpetuated in \cite{CLpfields} does not rely at all on working with families of \emph{nodal} curves but every step generalizes automatically in our setting; let us recall that in the end, the moduli space of 1-stable maps should be though as the moduli space of stable maps with the boundary divisor of elliptic tails contracted.
+Hopefully we have managed to convince the reader that the subtle intersection theory perpetuated in \cite{CLpfields} does not rely at all on the hypothesis that the families of curves we are working with are \emph{nodal}, but \emph{l.c.i.} curves are well-behaved enough so that all the proofs carry over to the situation of our interest.
+
+
+
+
 
 
 
@@ -1034,10 +1047,10 @@ Consider the following line bundle on the universal curve over $\MM_1^{\rm{div}}
 Notice that $\mathcal N$ is trivial on the locus of elliptic tails, so the Proj construction applied to it will contract this locus.
 
 \begin{prop}\label{1-stabilization-div}
-In the following diagram $\hat\cC$ is a family of weighted $1$-stable curves and $\phi$ is a regular morphism:
+In the following diagram $\hC$ is a family of weighted $1$-stable curves and $\phi$ is a regular morphism:
  
  \bcd
- (\cC,D)\ar[rr,"\phi"]\ar[dr,"\pi"] & & (\hat\cC=\operatorname{Proj}_{\MM_1^{\rm{div}}}(\bigoplus_{n\geq 0}\pi_*\mathcal N^{\otimes n}),\phi(D))\ar[ld,"\hat\pi"] \\
+ (\cC,D)\ar[rr,"\phi"]\ar[dr,"\pi"] & & (\hC=\operatorname{Proj}_{\MM_1^{\rm{div}}}(\bigoplus_{n\geq 0}\pi_*\mathcal N^{\otimes n}),\phi(D))\ar[ld,"\hat\pi"] \\
  & \MM_1^{\rm{div}} &
  \ecd
 This defines the $1$-stabilisation morphism $\MM_1^{\rm{div}}\to\MM_1^{(1),\rm{div}}$.
@@ -1145,7 +1158,7 @@ By construction there is a birational map $\psi$
  \ecd
 
 We want to show that $\psi$ extends to a regular morphism. 
-Notice that $ \hat{\mathcal C}_i$ is normal, $i=1,2$. Indeed since $S$ is smooth and the singularities of the fibers are in codimension $1$, $ \hat{\mathcal C}_i$ is regular in codimension $1$. Moreover since both $S$ (smooth) and the fibers (Cohen-Macaulay) satisfy Serre's condition $S_2$, so does the total space of $\hat\cC_i$ by \cite[Thorem~23.9]{MAT}. Then, since the geometric fibers of $\phi_i$ are either points or $p_a=1$ subcurves, and in either case connected, Zariski's connectedness theorem implies that
+Notice that $ \hat{\mathcal C}_i$ is normal, $i=1,2$. Indeed since $S$ is smooth and the singularities of the fibers are in codimension $1$, $ \hat{\mathcal C}_i$ is regular in codimension $1$. Moreover since both $S$ (smooth) and the fibers (Cohen-Macaulay) satisfy Serre's condition $S_2$, so does the total space of $\hC_i$ by \cite[Thorem~23.9]{MAT}. Then, since the geometric fibers of $\phi_i$ are either points or $p_a=1$ subcurves, and in either case connected, Zariski's connectedness theorem implies that
 \[\phi_{i,*}\OO_{\cC_S}\cong \OO_{\hat{\mathcal C}_i}. \]
  Moreover by construction $\operatorname{Exc}(\phi_1)=\operatorname{Exc}(\phi_2)$ is the locus of elliptic tails of weight $0$, so in particular $\phi_2$ contracts all fibers of $\phi_1.$ Then \cite[Lemma 1.15]{debarre}
 implies that $\phi_2$ factors through $\phi_1$, and viceversa. This proves the regularity of $\psi$ and its inverse. Notice that $\psi$ is unique as it is the only extension of $\phi_2\circ\phi_1^{-1}$.
@@ -1211,7 +1224,7 @@ We introduce two more relevant spaces: let $\XP$ and $\Z^p$ be the algebraic sta
 \X\ar[r] & \mathfrak M_1^{\rm{wt}}(1)
 \ecd
 
-The obstruction theory $\R^\bullet\hat{\pi}_*(\hat{\mathcal L}^{\oplus 5}\oplus\hat{\mathcal P})$ for the morphism $\overline{\mathcal M}_1^{(1)}(\PP^4,d)^p\to\mathfrak{Pic}_1{(1)}$ together with its cosection induce a localised virtual class on $\Z^p$ by virtual pullback of $[\XP]$. In Section \ref{section:main_proof} we shall conduct on this a similar analysis to that in \cite{CL} and compare the contribution of the main component to Vakil-Zinger's reduced invariants.
+The obstruction theory $\R^\bullet\hat{\pi}_*(\hat{\mathcal L}^{\oplus 5}\oplus\widehat{\mathcal P})$ for the morphism $\overline{\mathcal M}_1^{(1)}(\PP^4,d)^p\to\mathfrak{Pic}_1{(1)}$ together with its cosection induce a localised virtual class on $\Z^p$ by virtual pullback of $[\XP]$. In Section \ref{section:main_proof} we shall conduct on this a similar analysis to that in \cite{CL} and compare the contribution of the main component to Vakil-Zinger's reduced invariants.
 
 \begin{remark}
 The stack $\XP$ parametrises
@@ -1298,17 +1311,17 @@ Following \cite{HL}, we work locally on $\Z$: start with a point $\xi=[(C\xright
  
   Notice though that the projection $\MM_1^{(1),\rm{div}}\to \XP$ (or to $\Pic_1^{(1)}$ for what it is worth) is \emph{not} smooth. In fact, when the line bundle is trivial on the minimal elliptic subcurve $E$, it may be deformed to a degree $0$, non-effective line bundle on such a subcurve, so that sections of $\OO_{\hat C}(D)$ which are constant and non-zero on $E$ are obstructed.
 
-There is a way around this: in a neighbourhood $V\subseteq \XP$ of $[C\to\hat C,\OO_{\hat C}(D)]$ we can write the universal line bundle $\mathcal L_V$ as $\OO_{\hat\cC_V}(\pazocal D + p-p_0)$. Indeed we can pick a local section $p_0$ through the minimal genus $1$ subcurve, so that $\mathcal L_V(p_0)$ becomes effective. We should then think of $p$ as a local coordinate on $\XP$ relative to $\X$.
+There is a way around this: in a neighbourhood $V\subseteq \XP$ of $[C\to\hat C,\OO_{\hat C}(D)]$ we can write the universal line bundle $\mathcal L_V$ as $\OO_{\hC_V}(\pazocal D + p-p_0)$. Indeed we can pick a local section $p_0$ through the minimal genus $1$ subcurve, so that $\mathcal L_V(p_0)$ becomes effective. We should then think of $p$ as a local coordinate on $\XP$ relative to $\X$.
 
 Locally on $V$ we can pick another smooth section $\A$ of the minimal genus $1$ subcurve not intersecting $p_0$, neither the support of $\pazocal D+p$.
 
 \begin{lem}
 $C(\hat\pi_*\mathcal L)$ is the kernel of the vector bundle map:
-\[ \hat\pi_*\OO_{\hat\cC}(\A+\pazocal D+p-p_0)\xrightarrow{\varphi}\hat\pi_*\OO_{\A}(\A)\]
+\[ \hat\pi_*\OO_{\hC}(\A+\pazocal D+p-p_0)\xrightarrow{\varphi}\hat\pi_*\OO_{\A}(\A)\]
 Up to shrinking $V$ we may write:
-\[\hat\pi_*\OO_{\hat\cC}(\A+\pazocal D+p-p_0)\cong\bigoplus_{i=1}^d\hat\pi_*\OO_{\hat\cC}(\A+\pazocal \delta_i+p-p_0)\oplus\hat\pi_*\OO_{\hat\cC}(\A+p-p_0)\]
+\[\hat\pi_*\OO_{\hC}(\A+\pazocal D+p-p_0)\cong\bigoplus_{i=1}^d\hat\pi_*\OO_{\hC}(\A+\pazocal \delta_i+p-p_0)\oplus\hat\pi_*\OO_{\hC}(\A+p-p_0)\]
 \end{lem}
-Compare with \cite[Lemma 4.10]{HL}. Denote by \[\varphi_i\colon\hat\pi_*\OO_{\hat\cC}(\A+\pazocal \delta_i+p-p_0)\to\hat\pi_*\OO_{\A}(\A)\] (and similarly $\varphi_p$) the composite of the inclusion with $\varphi$.
+Compare with \cite[Lemma 4.10]{HL}. Denote by \[\varphi_i\colon\hat\pi_*\OO_{\hC}(\A+\pazocal \delta_i+p-p_0)\to\hat\pi_*\OO_{\A}(\A)\] (and similarly $\varphi_p$) the composite of the inclusion with $\varphi$.
 
 Let us introduce some more notation: around a point $[\hat C]\in\MM_1^{(1),\rm{wt}}$, for every node $q$ of $\hat C$ there is a coordinate $\zeta_q$ whose vanishing locus is the divisor where such a node is \emph{not} smoothed. These functions can be pulled back to $V$. Denote by \[\zeta_{[\delta_i,a]}=\prod\zeta_q\]
 where the product runs over all the nodes separating $\delta_i$ from the minimal genus $1$ curve.
@@ -1407,7 +1420,7 @@ Compare with \cite[Proposition~2.5]{CL}.
 \section{Splitting the cone and proof of the Main Theorem}\label{section:main_proof}
 We are finally in a position to study the cone $\mathfrak{C}_{\tZp/\tXP}.$ This is essentially going to be a word-by-word repetition of the arguments in \cite{CLpfields}.
 \begin{lem}\label{lem:open_cones}
-Let $\tilde{\rho}\colon \tZp\to\tXP$ be the natural map and $\mathbb {E}_{\tZp/\tXP}=\R\hat\pi_*(\mathcal L^{\oplus 5}\oplus\mathcal P)$  the relative perfect obstruction theory for $\tilde{\rho},$ then $\mathfrak{C}_{\tZp/\tXP}$ has the following properties:
+Let $\tilde{\rho}\colon \tZp\to\tXP$ be the natural map and $\mathbb {E}_{\tZp/\tXP}=\R\hat\pi_*(\mathcal L^{\oplus 5}\oplus\widehat{\mathcal P})$  the relative perfect obstruction theory for $\tilde{\rho},$ then $\mathfrak{C}_{\tZp/\tXP}$ has the following properties:
 \begin{enumerate}
 \item Its restriction to  $\tZ^{p,\circ}= \tZ^{p,\rm{main}}\setminus \bigcup_{k\geq 2}D^k \tZp$ can be described as the zero section of $h^1/h^0(\mathbb {E}_{\tZp/\tXP})\rvert_{\tZ^{p,\circ}}$
 \item Its restriction to $\tZ^{p,gst,\circ}=\tZp - \tZ^{p,\rm{main}}$  is a rank $2$ subbundle stack of $h^1/h^0(\mathbb {E}_{\tZp/\tXP})\rvert_{\tZ^{p,gst,\circ}}$
@@ -1416,7 +1429,7 @@ Let $\tilde{\rho}\colon \tZp\to\tXP$ be the natural map and $\mathbb {E}_{\tZp/\
 \begin{proof} Compare with \cite[Lemma 4.3]{CLpfields}
 \begin{enumerate}
 \item Observe that $\tZ^{p,\circ}\cong \tZ^{\circ}$ because here $H^0(\hat C, L^{\otimes -5}\otimes \omega_{\hat C})=0$. Moreover $\tZ^{\circ}$ is unobstructed on its image, which is an open of $\tXP$, because $\R^1\hat{\pi}_*\mathcal L=0$.
-So the normal cone is $[\tZ^{p,\circ}/\hat{\pi}_*\mathcal L^{\oplus 5}]$, which is the zero section of $h^1/h^0(\mathbb {E}_{\tZp/\tXP})\rvert_{\tZ^{p,\circ}}=[0\oplus \R^1\hat{\pi}_*\mathcal P/\hat{\pi}_*\mathcal L^{\oplus 5}\oplus 0]$.
+So the normal cone is $[\tZ^{p,\circ}/\hat{\pi}_*\mathcal L^{\oplus 5}]$, which is the zero section of $h^1/h^0(\mathbb {E}_{\tZp/\tXP})\rvert_{\tZ^{p,\circ}}=[0\oplus \R^1\hat{\pi}_*\widehat{\mathcal P}/\hat{\pi}_*\mathcal L^{\oplus 5}\oplus 0]$.
 \item We know that $\tZ^{p,gst,\circ}$ is a line bundle over $\tZ^{gst,\circ}$. From the equations \ref{rmk:eqn} we see that the latter is smooth over its image $\pazocal W$ in $\tXP$, which is the codimension $2$ locus where the minimal genus $1$ subcurve has weight $0$ and the line bundle is trivial on it. Recall that every smooth morphism $A\to B$ factors as $A\xrightarrow{\acute{e}t} B\times \Aaff^n\xrightarrow{\pr_1} B$. So we have
 \bcd
 \tZ^{p,gst,\circ} \ar[r,"\acute{e}t"] & \pazocal W\times\Aaff^{5d+5}\ar[r,hook]\ar[d,"q"] & \tXP\times \Aaff^{5d+5}\ar[d] \\
@@ -1448,7 +1461,7 @@ We are going to show that:
  \item the other cones $\mathfrak C^k,\ k\geq 2,$ are enumeratively meaningless.
 \end{enumerate}
 
-In order to prove the first we proceed as in \cite[\S5]{CLpfields}: notice that the obstruction theory $\mathbb E$ splits as $\mathbb E_1\oplus\mathbb E_2$ where $\mathbb E_1=\R\hat\pi_*(\mathcal L^{\oplus 5})$ and $\mathbb E_2=\R\hat\pi_*(\mathcal P)$. When we restrict ourselves to $\tZ^{p,\rm{main}}$ we see that $\mathbb E_1$ is the closure of its own zero section; it follows that:
+In order to prove the first we proceed as in \cite[\S5]{CLpfields}: notice that the obstruction theory $\mathbb E$ splits as $\mathbb E_1\oplus\mathbb E_2$ where $\mathbb E_1=\R\hat\pi_*(\mathcal L^{\oplus 5})$ and $\mathbb E_2=\R\hat\pi_*(\widehat{\mathcal P})$. When we restrict ourselves to $\tZ^{p,\rm{main}}$ we see that $\mathbb E_1$ is the closure of its own zero section; it follows that:
 \[
  \mathfrak C^{\rm{main}}=\overline{0}_{\mathbb E\rvert_{\tZ^{p,\rm{main}}}}=\mathbb E_1\rvert_{\tZ^{p,\rm{main}}}\oplus \overline{0}_{\mathbb E_2\rvert_{\tZ^{p,\rm{main}}}}
 \]
@@ -1484,7 +1497,7 @@ we deduce from the equation that the image sheaf of this map is $\pi_*\mathcal L
  \[
   \pi_*\mathcal L=\hat{\pi}_*\phi_*\phi^*\hat{\mathcal L}=\hat{\pi}_*\hat{\mathcal L}
  \]
-by projection formula and since $\phi_*\OO_{\cC_{\tZ^{p,\rm{main}}}}=\OO_{\hat\cC_{\tZ^{p,\rm{main}}}}$. The result follows then from the projection formula for Chern classes.
+by projection formula and since $\phi_*\OO_{\cC_{\tZ^{p,\rm{main}}}}=\OO_{\hC_{\tZ^{p,\rm{main}}}}$. The result follows then from the projection formula for Chern classes.
 \end{proof}
 
 We are left with showing that the rest of the $\mathfrak C^k$'s do not contribute to the invariants. This is essentially a dimensional computation. The arguments of \cite[\SS6-8]{CLpfields} may be directly applied; we shall outline them for the benefit of the reader. We introduce the notation $\tZ^{p,\rm{gst}}:=\bigcup_{k\geq 2} D^k\tZp$ for the union of the boundary components, and $\mathfrak C^{\rm{gst}}=\bigcup_{k\geq 2}\mathfrak C^k$.
@@ -1494,7 +1507,7 @@ This section deals with removing the technicalities of working with a cone stack
 
 The key point is that $\mathbb E\rvert_{\tZ^{p,\rm{gst}}}$ has locally free $h^0$ \emph{and} $h^1$, as can be seen from the equations. Then, when we pick a resolution by locally free sheaves $\mathbb E=[F_0\xrightarrow{d} F_1]$, the image sheaf $d(F_0)$, which is the kernel of $F_1\to h^1(\mathbb E\rvert_{\tZ^{p,\rm{gst}}})$, is really a sub-vector bundle of $F_1$. Then the projections:
 \[
- \beta\colon F_1\to h^1/h^0(\mathbb E) \quad \text{and} \quad \beta'\colon F_1\to \tilde{V}:=\R^1\hat{\pi}_*(\hat{\mathcal L}^{\oplus 5}\oplus\mathcal P)
+ \beta\colon F_1\to h^1/h^0(\mathbb E) \quad \text{and} \quad \beta'\colon F_1\to \tilde{V}:=\R^1\hat{\pi}_*(\hat{\mathcal L}^{\oplus 5}\oplus\widehat{\mathcal P})
 \]
 are both flat. The cone stack $\mathfrak C^{\rm{gst}}$ can be descended to a cone $C^{\rm{gst}}$ by means of taking the quotient of $\beta^{-1}\mathfrak C^{\rm{gst}}$ by the free action of $d(F_0)$; $C^{\rm{gst}}$ should then be thought of as the coarse moduli of $\mathfrak C^{\rm{gst}}$. Recall that the cosection $\sigma$ is induced by a cosection $\sigma_1$ of $\tilde V$ (see Eq. \eqref{eqn:cosection}). 
 \marginpar{rewrite what they are}It follows from the commutativity of localised Gysin pullback with flat pullback that:
@@ -1504,7 +1517,7 @@ are both flat. The cone stack $\mathfrak C^{\rm{gst}}$ can be descended to a con
 See \cite[Proposition 6.3]{CLpfields}.
 
 They then introduce the notion of \emph{homogeneity} for substacks of $\tilde V$: write 
-\[\tilde V=\tilde V_1\oplus\tilde V_2\;\;\text{ with} \;\;\tilde V_1=\R^1\hat{\pi}_*(\hat{\mathcal L}^{\oplus 5})\;\; \text{and}\;\; \tilde V_2=\R^1\hat{\pi}_*(\mathcal P),\]
+\[\tilde V=\tilde V_1\oplus\tilde V_2\;\;\text{ with} \;\;\tilde V_1=\R^1\hat{\pi}_*(\hat{\mathcal L}^{\oplus 5})\;\; \text{and}\;\; \tilde V_2=\R^1\hat{\pi}_*(\widehat{\mathcal P}),\]
  and $\gamma\colon \tZ^{p,\rm{gst}}\to\tZ^{\rm{gst}}$ the projection. Since $\tZ^{p,\rm{gst}}$ is the total space of a line bundle over $\tZ^{\rm{gst}}$, it comes with a natural $\Gm$-action on the fibers of $\gamma$. Moreover, since 
  \[\tilde V_i=\gamma^*V_i\]
  \marginpar{say few words, that is not the definition of $\tilde V_i$ but a property (Lemma 6.1)}
@@ -1517,7 +1530,7 @@ They then introduce the notion of \emph{homogeneity} for substacks of $\tilde V$
  Locally we may pick coordinates $t$ on the fibers of $\gamma$, $x_1,\ldots,x_5$ on the fibers of $\tilde V_1$, and $y_1,\ldots,y_{5d+5}$ on the fibers of $\tilde V_2$, such that the ideal of $\tilde C$ is generated by homogeneous polynomials $p_j$ in $t^{-l_1}x_i$ and $t^{-l_2}y_i$. The ideal of $\tilde C\cap(0\oplus\tilde V_2)$ is then given by $\langle x_1,\ldots, x_5,p_j(0,t^{-l_2}y)\rangle_j$, where $p_j(0,t^{-l_2}y)$ results from setting $x_i=0$ in $p_j$; notice now that $\tilde C$ being a cone, it is invariant by scalar multiplication on the fibers of $\tilde V$, so we may as well say that $\tilde C\cap(0\oplus\tilde V_2)$ is cut by the ideal $\langle x_1,\ldots, x_5,p_j(0,y)\rangle_j$. This makes it clear that $\tilde C\cap(0\oplus\tilde V_2)$ is pulled back from $(0\oplus V_2)$ on $\tZ^{\rm{gst}}$.
 \end{proof}
 
-Finally Chang and Li point out that the coarse moduli cone $C^{\rm{gst}}$ is $(0,1)$-homogeneous \cite[Proposition 6.7]{CLpfields}: recalling the interpretation of $\Mone{1}{\PP^4}{d}^p$ as an open inside the cone of sections of $\mathcal V=\rm{Vb}(\mathcal L^{\oplus 5}\oplus \mathcal P)$ over $\hat\cC_{\mathfrak{Pic}_1^{(1)}}$, the desired $\Gm$-action on the fibers of $\gamma\colon \tZ^{p,\rm{gst}}\to\tZ^{\rm{gst}}$ is induced by endowing $\rm{Vb}(\mathcal L^{\oplus 5}\oplus \mathcal P)$ with the $\Gm$-action that is trivial on the fibers of every copy of $\rm{Vb}(\mathcal L)$, and has character $1$ on those of $\rm{Vb}(\mathcal P)$, with an underlying trivial action on $\mathfrak{Pic}_1^{(1)}$. This influences the obstruction theory  $\R^\bullet\hat\pi_*\left(\mathfrak e^* T_{\mathcal V/\hat\cC_{\mathfrak{Pic}_1^{(1)}}}\right)$ of $\Mone{1}{\PP^4}{d}^p$ in the obvious way, and consequently $\mathbb E$ on $\tZp$.
+Finally Chang and Li point out that the coarse moduli cone $C^{\rm{gst}}$ is $(0,1)$-homogeneous \cite[Proposition 6.7]{CLpfields}: recalling the interpretation of $\Mone{1}{\PP^4}{d}^p$ as an open inside the cone of sections of $\mathcal V=\rm{Vb}(\mathcal L^{\oplus 5}\oplus \widehat{\mathcal P})$ over $\hC_{\mathfrak{Pic}_1^{(1)}}$, the desired $\Gm$-action on the fibers of $\gamma\colon \tZ^{p,\rm{gst}}\to\tZ^{\rm{gst}}$ is induced by endowing $\rm{Vb}(\mathcal L^{\oplus 5}\oplus \widehat{\mathcal P})$ with the $\Gm$-action that is trivial on the fibers of every copy of $\rm{Vb}(\mathcal L)$, and has character $1$ on those of $\rm{Vb}(\widehat{\mathcal P})$, with an underlying trivial action on $\mathfrak{Pic}_1^{(1)}$. This influences the obstruction theory  $\R^\bullet\hat\pi_*\left(\mathfrak e^* T_{\mathcal V/\hC_{\mathfrak{Pic}_1^{(1)}}}\right)$ of $\Mone{1}{\PP^4}{d}^p$ in the obvious way, and consequently $\mathbb E$ on $\tZp$.
 
 
 
@@ -1556,8 +1569,8 @@ and $E$ is the vector bundle containing the cone.
 
 Then to compute $0^!_{\tilde V,\sigma_1}(C^{\rm{gst}})$ we plan to compactify $\tZ^{p,\rm{gst}},$ extend the cone, the vector bundle and the section over it and then make use of the fact we just recalled.
 
-Since $\tZ^{p,\rm{gst}}\cong\operatorname{Tot}_{\tZ^{\rm{gst}}}\left(\R^1\hat{\pi}_*\mathcal P\right)$ we compactify considering
-\[\overline{\gamma}\colon \overline{\tZ^{p,\rm{gst}}}:=\PP\left(\R^1\hat{\pi}_*\mathcal P\oplus \OO_{\tZ^{\rm{gst}}}\right)\to \tZ^{\rm{gst}}\]
+Since $\tZ^{p,\rm{gst}}\cong\operatorname{Tot}_{\tZ^{\rm{gst}}}\left(\R^1\hat{\pi}_*\widehat{\mathcal P}\right)$ we compactify considering
+\[\overline{\gamma}\colon \overline{\tZ^{p,\rm{gst}}}:=\PP\left(\R^1\hat{\pi}_*\widehat{\mathcal P}\oplus \OO_{\tZ^{\rm{gst}}}\right)\to \tZ^{\rm{gst}}\]
 and extend $\tilde{V}_1,\tilde{V}_2$ via:
 \[\tilde{V}^{\rm{cpt}}_1=\overline{\gamma}V_1(-D_{\infty}),\qquad \tilde{V}^{\rm{cpt}}_2=\overline{\gamma}V_2.\]
 Finally, let us extend the cosection as well. From the cosection $\sigma$ defined by \ref{eqn:cosection} we clearly get a cosection on $\Z^p$ by pull-back and again a 

@@ -7,6 +7,22 @@
 	year = "2013"
 }
 
+@article{KLcosection,
+	author = "Kiem, Young-Hoon and Li, Jun",
+	fjournal = "Journal of the American Mathematical Society",
+	issn = "0894-0347",
+	journal = "J. Amer. Math. Soc.",
+	mrclass = "14N35",
+	mrnumber = "3073883",
+	mrreviewer = "Flavia Poma",
+	number = "4",
+	pages = "1025--1050",
+	title = "{Localizing virtual cycles by cosections}",
+	url = "https://doi.org/10.1090/S0894-0347-2013-00768-7",
+	volume = "26",
+	year = "2013"
+}
+
 @book{MAT,
 	author = "Matsumura, Hideyuki",
 	edition = "Second",
@@ -28,6 +44,20 @@
 	title = "{N{\'e}ron models}",
 	volume = "21",
 	year = "2012"
+}
+
+@book{serre,
+	author = "Serre, Jean-Pierre",
+	isbn = "3-540-66641-9",
+	mrclass = "13-01 (13D05 13H05 13H15)",
+	mrnumber = "1771925",
+	note = "Translated from the French by CheeWhye Chin and revised by the author",
+	pages = "xiv+128",
+	publisher = "Springer-Verlag, Berlin",
+	series = "{Springer Monographs in Mathematics}",
+	title = "{Local algebra}",
+	url = "https://doi.org/10.1007/978-3-662-04203-8",
+	year = "2000"
 }
 
 @article{Joyce,
@@ -406,16 +436,35 @@
 	year = "2009"
 }
 
-@book{Har,
-	author = "Hartshorne, Robin",
-	isbn = "0-387-90244-9",
-	mrclass = "14-01",
-	mrnumber = "0463157",
-	mrreviewer = "Robert Speiser",
-	note = "Graduate Texts in Mathematics, No. 52",
-	pages = "xvi+496",
-	publisher = "Springer-Verlag, New York-Heidelberg",
-	title = "{Algebraic geometry}",
-	year = "1977"
+@article{Wang,
+	author = "Wang, Jie",
+	fjournal = "Proceedings of the American Mathematical Society",
+	issn = "0002-9939",
+	journal = "Proc. Amer. Math. Soc.",
+	mrclass = "14B10 (14B12)",
+	mrnumber = "2917069",
+	mrreviewer = "Marko Roczen",
+	number = "9",
+	pages = "2953--2966",
+	title = "{Deformations of pairs {$(X,L)$} when {$X$} is singular}",
+	url = "https://doi.org/10.1090/S0002-9939-2011-11230-9",
+	volume = "140",
+	year = "2012"
+}
+
+@article{BF,
+	author = "Behrend, K. and Fantechi, B.",
+	fjournal = "Inventiones Mathematicae",
+	issn = "0020-9910",
+	journal = "Invent. Math.",
+	mrclass = "14F99 (14C15 14D20)",
+	mrnumber = "1437495",
+	mrreviewer = "Tohru Nakashima",
+	number = "1",
+	pages = "45--88",
+	title = "{The intrinsic normal cone}",
+	url = "https://doi.org/10.1007/s002220050136",
+	volume = "128",
+	year = "1997"
 }
 
