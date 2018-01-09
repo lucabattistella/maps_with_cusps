@@ -1215,7 +1215,7 @@ Notice that the above lemma means that each and every component of $\Z$ is isomo
 
 We introduce two more spaces: let $\XP$ and $\Z^p$ be the algebraic stacks defined by the following cartesian diagram:
 \bcd
-\Z^p \ar[r,"\alpha"]\ar[d]\ar[rd,phantom,"\Box"] & \overline{\mathcal M}_1^{(1)}(\PP^4,d)^p \ar[d] \\
+\Z^p \ar[r,"\alpha"]\ar[d,"\gamma"]\ar[rd,phantom,"\Box"] & \overline{\mathcal M}_1^{(1)}(\PP^4,d)^p \ar[d] \\
 \XP \ar[r]\ar[d]\ar[rd,phantom,"\Box"] & \mathfrak{Pic}_1{(1)} \ar[d] \\
 \X\ar[r] & \MM_1^{\rm{wt}}(1)
 \ecd
@@ -1262,71 +1262,72 @@ with a $p$-field $\psi\in H^0(\hC_S,f_S^*\OO_{\PP^4}(-5)\otimes\omega_{\hat\pi_S
 We were not able to compare $\Z^p$ with $\oM_1(\PP^4,d)^p$ directly, since denoting by $\hL=f^*\OO_{\PP^4}(1)$ and by $\mathcal L=\phi^*\hL$ we only have a map $\R^1\hat\pi_*\hL\to\R^1\pi_*\mathcal L$ on $\Zp$ which is not an isomorphism (dually, since $\phi^*\omega_{\hat\pi}=\omega_{\pi}(\pazocal E)$, the $p$-fields on $\cC$ that we get by pulling back from $\hC$ vanish on elliptic tails).
 \end{remark}
 
-\subsection{Cosection Localized Virtual Pull-Back}
-In this section we define an analogous of virtual pull-back \cite{Manolache} for localised cycles and we show that this operation commutes with proper push-forward. 
-For the non expert reader, we first recall the basic construction of \cite{KLcosection}.
-Let $Y\to S$ be a morphism of algebraic stacks of DM type and let $E$ over $Y$ be a vector bundle admitting a cosection
+\subsection{Cosection-localised virtual pullback}
+In this section we slightly generalise the notion of virtual pullback \cite{Manolache-pullback} to localised cycles and we show that this operation commutes with proper pushforward. 
+We start by recalling the construction of \cite{KLcosection} for the benefit of the non-expert reader.
+
+Let $Y\to S$ be a morphism of algebraic stacks of DM type and let $E$ be a vector bundle over $Y$ admitting a cosection
 \[E\xrightarrow{\sigma}\OO_Y\]
-surjective on an open $U$ and denote by $Y(\sigma)=Y\setminus E(\sigma).$ We use the following notation:
+surjective on an open $U\subseteq Y$; denote by $Y(\sigma)$ the complement $Y\setminus U.$ Recall the following notation from \cite{KLcosection}:
 \[G=\operatorname{Ker}\left(E\rvert_U\to\OO_Y\rvert_U\right),\qquad E(\sigma)=E\rvert_{Y(\sigma)}\cup G.\]
- In the above setting we want to define a localized Gysin map
+ Kiem and Li define a localized Gysin map:
  \[s^!_{\sigma,\rm{loc}}\colon A_*(E(\sigma))\to A_*(Y(\sigma)).\]
- Let $B\in Z_*(E(\sigma)$ be a cycle represented by a closed integral sub-stack. If $B\subset  E\rvert_{Y(\sigma)}$ then
- \[s^!_{\sigma,\rm{loc}}[B]:=s^!_{E\rvert_{Y(\sigma)}}[B]\in A_*(Y(\sigma))\]
- and there is nothing to say as this is just the standard Gysin morphism.
- Suppose now $B$ is not contained in $E\rvert_{Y(\sigma)}.$ Then choose a variety $X\xrightarrow{\nu} Y$ such that:
+ Let $[B]\in Z_*(E(\sigma))$ be a cycle represented by a closed integral substack. If $B\subset  E\rvert_{Y(\sigma)}$ then
+  they just consider the standard Gysin morphism: \[s^!_{\sigma,\rm{loc}}[B]:=s^!_{E\rvert_{Y(\sigma)}}[B]\in A_*(Y(\sigma)).\]
+ Suppose now that $B$ is not contained in $E\rvert_{Y(\sigma)}.$ Then we may choose a variety $X\xrightarrow{\nu} Y$ such that:
  \begin{itemize}\label{cond:deflocal}
  \item $\nu$ is proper and $\nu(X)\cap U\neq\emptyset$;
- \item The pull-back along $\nu$ of the cosection $\tilde{\sigma}=\nu^*\sigma$ give a surjective morphism
+ \item the pullback along $\nu$ of the cosection $\nu^*\sigma=:\tilde{\sigma}$ extends to a surjective morphism
  \[\nu^*E\xrightarrow{\tilde{\sigma}}\OO_X(D)\to 0\]
- for $D$ a Cartier divisor in $X.$ Notice that the restriction of $\nu$ to the divisor give a proper morphism $D\xrightarrow{\nu(\sigma)} Y(\sigma);$
- \item there is a closed integral $\widetilde{B}\subset\widetilde{G}=\operatorname{Ker}(\tilde{\sigma})$ such that $\tilde{\nu}_*[\widetilde{B}]=k[B]$ for some $k\in\mathbb Z.$
+ for a Cartier divisor $D\subseteq X.$ The restriction of $\nu$ to the divisor gives a proper morphism $\nu(\sigma)\colon D\to Y(\sigma);$
+ \item there is a closed integral $\widetilde{B}\subset\widetilde{G}=\operatorname{Ker}(\tilde{\sigma})$ such that $\tilde{\nu}_*[\widetilde{B}]=k[B]$ for some $k\in\mathbb N.$
  \end{itemize}
- We the define
- \[s^!_{\sigma,\rm{loc}}[B]:=k^{-1} \nu(\sigma)_*\left([D]\cdot s^!_{\widetilde{G}}[\widetilde{B}]\right)\,\in\,A_*(Y(\sigma)).\]
- In \cite[\S~2]{KLcosection} they prove that: such an $X$ always exist; the cycle $s^!_{\sigma,\rm{loc}}[B]$ is independent from the choice of $X;$ the construction preserves rational equivalences and thus define the wanted morphism.
+ The localised Gysin pullback is then defined as:
+ \[s^!_{\sigma,\rm{loc}}[B]:=\frac{1}{k} \nu(\sigma)_*\left([D]\cdot s^!_{\widetilde{G}}[\widetilde{B}]\right)\,\in\,A_*(Y(\sigma)).\]
+ In \cite[\S~2]{KLcosection} they prove that: such $(X,\nu,\widetilde B)$ always exist; the cycle $s^!_{\sigma,\rm{loc}}[B]$ is independent of the above choices; the construction preserves rational equivalences and thus defines the desired morphism on Chow groups.
  \begin{remark}
- If we consider as cycle in $E(\sigma)$ $[Y]$ thought as zero section of $E$, notice that a natural choice for $X$ is $\operatorname{Bl}_{Y(\sigma)}Y.$
+ If we consider $[Y]$ as a cycle in $E(\sigma)$, thought of as the zero section of $E$, notice that a natural choice for $X$ is $\operatorname{Bl}_{Y(\sigma)}Y.$
  \end{remark}
-  Once defined such a operation, to get Theorem~1.1 in \cite{KLcosection} one would still need to show that: the same operation can be defined when we have a cosection of a vector bundle stacks $\mathbb E$ (easy to do if we have a surjection from a genuine vector bundle $E\to\mathbb E$, which is the situation in our case); the relative cone $\mathfrak C_{Y/S}\subseteq\mathbb{E}(\sigma),$ a sufficient condition for the latter to hold is that the cosection of the relative obstruction lifts to a cosection of the absolute obstruction \cite[Corollary~4.5]{KLcosecion}. 
+  Kiem and Li then proceed to extend the cosection-localised Gysin pullback to vector bundle stacks $h^1/h^0(\mathbb E)$ (this is relatively easy in the presence of a global resolution, which is the case in the situation at hand); they show that the intrinsic normal cone $\mathfrak C_{Y/S}$ is contained in the closed substack $h^1/h^0(\mathbb{E})(\sigma),$ at least when the cosection of the relative obstruction bundle lifts to a cosection of the absolute obstruction bundle \cite[Corollary~4.5]{KLcosection}. 
 \begin{defprop}
-Let consider the cartesian diagram of algebraic stacks
+Consider a cartesian diagram of stacks:
 \bcd
-Y'\ar[r,"\varphi'"]\ar[d,"\rho'"] & Y\ar[d,"\rho"]\\
+Y'\ar[r,"\varphi'"]\ar[d,"\rho'"]\ar[dr,phantom,"\Box"] & Y\ar[d,"\rho"]\\
 S'\ar[r,"\varphi"] & S
 \ecd
 such that $\rho$ is a morphism of DM type admitting a perfect obstruction theory $\mathbb E_{Y/S}.$ Assume furthermore that we have a cosection 
 \[\OO b_{Y/S}\to \OO_Y\]
-lifting to a cosection of the absolute obstruction sheaf.
-Then we can define a localised virtual cycle on $Y'$ supported on $Y'(\sigma')=Y(\sigma)\times_{Y} Y',$ where $\sigma'=\varphi'^*\sigma.$
-Pulling back along $\varphi'$ endows $\rho'$ with a relative perfect obstruction theory $\mathbb E_{Y'/S'}:=\varphi'^*\mathbb E_{Y/S}.$ Furthermore, we can pull back the cosection 
-\[\OO b_{Y'/S'}\cong \varphi^* \OO b_{Y/S}\xrightarrow{\sigma'}\OO_{Y'}.\]
-Notice that since $\sigma$ lifts to the absolute obstruction sheaf, $\sigma'$ does as well and it is plain that the degeneracy locus of $\sigma'$ is $Y'(\sigma')=Y(\sigma)\times_{Y} Y',$ which in turns implies that 
-\[\varphi'^*\mathbb E_{Y/S}(\sigma)=\mathbb E_{Y'/S'}(\sigma').\]
-Recall that, following the notation in \cite{KLcosection}, if $U\subseteq Y$ is the open where the cosection is surjective, we denoted
-\[\mathbb E_{Y/S}(\sigma)=\mathbb E_{Y/S}\rvert_{Y(\sigma)}\cup\operatorname{Ker}\left(\mathbb E_{Y/S}\rvert_U \to \OO_Y\rvert_U\right).\]
-By \cite[Corollary 5.4]{KLcosection} or by cartesianity of the diagram plus the discussion above,
-\[\mathfrak{C}_{Y'/S'}\subseteq \varphi'^* \mathfrak{C}_{Y/S}\subseteq \mathbb E_{Y'/S'}(\sigma')\]
-and we can thus define the localized virtual pull-back to be:
-\[\varphi'^!_{\rm{loc}}[Y]^{\rm{vir}}_{\rm{loc}}=[Y']_{\rm{loc}}^{\rm{vir}}=s^!_{\sigma',\rm{loc}}[\mathfrak{C}_{Y'/S'}],\]
-compare also with \cite[Theorem~5.2]{KLcosection}
+that lifts to a cosection of the absolute obstruction sheaf $\OO b_Y$.
+Then we can define a localised virtual pullback operation: \[(\rho')^!_{\mathbb E_{Y'/S'},\sigma'}\colon A_*(S')\to A_{*-\operatorname{rk}(\mathbb E)}(Y'(\sigma'))\] where $\sigma'=(\varphi')^*(\sigma)$ and $Y'(\sigma')=Y(\sigma)\times_{Y} Y'$.
 \end{defprop}
+Replace $S'$ by a primitive cycle in it, i.e. assume that $S'$ is irreducible and reduced. Recall that pulling back $\mathbb E_{Y/S}$ along $\varphi'$ endows $\rho'$ with a relative perfect obstruction theory $\mathbb E_{Y'/S'}:=(\varphi')^*\mathbb E_{Y/S}.$ Furthermore notice that we can pullback the cosection:
+\[\OO b_{Y'/S'}\cong \varphi^* \OO b_{Y/S}\xrightarrow{\sigma'}\OO_{Y'}.\]
+Notice that since $\sigma$ lifts to the absolute obstruction sheaf, $\sigma'$ does as well. The degeneracy locus of $\sigma'$ is $Y'(\sigma')=Y(\sigma)\times_{Y} Y',$ which in turns implies that:
+\[h^1/h^0(\mathbb E_{Y'/S'})(\sigma')=(\varphi')^*h^1/h^0(\mathbb E_{Y/S})(\sigma).\]
+%Recall that, following the notation in \cite{KLcosection}, if $U\subseteq Y$ is the open where the cosection is surjective, we denoted
+%\[\mathbb E_{Y/S}(\sigma)=\mathbb E_{Y/S}\rvert_{Y(\sigma)}\cup\operatorname{Ker}\left(\mathbb E_{Y/S}\rvert_U \to \OO_Y\rvert_U\right).\]
+By \cite[Corollary 4.5]{KLcosection} and by the cartesian diagram above,
+\[\mathfrak{C}_{Y'/S'}\subseteq \varphi'^* \mathfrak{C}_{Y/S}\subseteq \mathbb E_{Y'/S'}(\sigma')\]
+thus we can define the localised virtual pullback of $[S']$ to be:
+\[(\rho')^!_{\mathbb E_{Y'/S'},\sigma'}[S']=s^!_{\sigma',\rm{loc}}[\mathfrak{C}_{Y'/S'}].\]
+%compare also with \cite[Theorem~5.2]{KLcosection}
+
 
 
 The above construction applies to $\Z^p$.
-Indeed, consider on $\Z^p$ the perfect obstruction theory $\mathbb E_{\Z^p/\XP}:=\alpha^*\left(\mathbb E_{\Mone{1}{\PP^4}{d}^p/\mathfrak{Pic_1{(1)}}}\right)$ and the induces cosection
-\[\alpha^*\sigma\colon \OO b_{\Z^p/\XP}\to \Z^p\]
-whose degeneracy locus is
-\[\pazocal D(\alpha^*\sigma)=\pazocal D(\sigma)\times_{\Mone{1}{\PP^4}{d}^p} \Z^p.\]
+Indeed consider on $\Z^p$ the perfect obstruction theory: \[\mathbb E_{\Z^p/\XP}:=\alpha^*\left(\mathbb E_{\Mone{1}{\PP^4}{d}^p/\mathfrak{Pic}_1{(1)}}\right)\] and the induced cosection
+$\alpha^*\sigma\colon \OO b_{\Z^p/\XP}\to \Z^p$
+with degeneracy locus:
+\[\pazocal D(\alpha^*\sigma)=\Mone{1}{X}{d}\times_{\Mone{1}{\PP^4}{d}^p} \Z^p.\]
 Then we have that
 \begin{align*}
-\mathfrak C_{\Z^p/\XP}& \subseteq \alpha^*\mathfrak C_{\Mone{1}{\PP^4}{d}^p/\mathfrak{Pic_1{(1)}}}\\
-& \subseteq \alpha^* h^1/h^0\left(\mathbb E_{\Mone{1}{\PP^4}{d}^p/\mathfrak{Pic_1{(1)}}}\right)_\sigma\\
-&\cong h^1/h^0\left(\mathbb E_{\Z^p/\XP}\right)_{\alpha^*\sigma}
+\mathfrak C_{\Z^p/\XP}& \subseteq \alpha^*\mathfrak C_{\Mone{1}{\PP^4}{d}^p/\mathfrak{Pic_1}{(1)}}\\
+& \subseteq \alpha^* h^1/h^0\left(\mathbb E_{\Mone{1}{\PP^4}{d}^p/\mathfrak{Pic_1{(1)}}}\right)(\sigma)\\
+&\cong h^1/h^0\left(\mathbb E_{\Z^p/\XP}\right)(\alpha^*\sigma)
 \end{align*}
-and we can thus define $[\Z^p]^{\rm{vir}}_{\alpha^*\sigma,\rm{loc}}.$
+and we can thus define $[\Z^p]^{\rm{vir}}_{\alpha^*\sigma,\rm{loc}}:=\gamma^!_{\mathbb E_{\Z^p/\XP},\alpha^*\sigma}[\XP].$
 \begin{lem}\label{lem:comutativity}
-In the setting of the localised virtual-pullback definition, suppose furthermore that $\varphi$ is proper and $\varphi'(Y')\cap U\neq\emptyset$ then
+With the same setup and notation as in the definition of localised virtual pullback, suppose furthermore that $\varphi$ is proper and $\varphi'(Y')\cap U\neq\emptyset$. then
 for any $[B']\in A_*(\varphi'^*\mathbb{E}(\sigma'))$
 \begin{equation}\label{eq:commcos}\varphi'_*( s^!_{\sigma',\rm{loc}}[B'])=s^!_{\sigma,\rm{loc}}\left(\varphi^{\mathbb{E}}_*[B']\right)\,\in\, A_*(Y(\sigma)) 
 \end{equation}
