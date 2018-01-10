@@ -1307,7 +1307,7 @@ Notice that since $\sigma$ lifts to the absolute obstruction sheaf, $\sigma'$ do
 %Recall that, following the notation in \cite{KLcosection}, if $U\subseteq Y$ is the open where the cosection is surjective, we denoted
 %\[\mathbb E_{Y/S}(\sigma)=\mathbb E_{Y/S}\rvert_{Y(\sigma)}\cup\operatorname{Ker}\left(\mathbb E_{Y/S}\rvert_U \to \OO_Y\rvert_U\right).\]
 By \cite[Corollary 4.5]{KLcosection} and by the cartesian diagram above,
-\[\mathfrak{C}_{Y'/S'}\subseteq \varphi'^* \mathfrak{C}_{Y/S}\subseteq \mathbb E_{Y'/S'}(\sigma')\]
+\[\mathfrak{C}_{Y'/S'}\subseteq (\varphi')^* \mathfrak{C}_{Y/S}\subseteq \mathbb E_{Y'/S'}(\sigma')\]
 thus we can define the localised virtual pullback of $[S']$ to be:
 \[(\rho')^!_{\mathbb E_{Y'/S'},\sigma'}[S']=s^!_{\sigma',\rm{loc}}[\mathfrak{C}_{Y'/S'}].\]
 %compare also with \cite[Theorem~5.2]{KLcosection}
@@ -1322,69 +1322,83 @@ with degeneracy locus:
 Then we have that
 \begin{align*}
 \mathfrak C_{\Z^p/\XP}& \subseteq \alpha^*\mathfrak C_{\Mone{1}{\PP^4}{d}^p/\mathfrak{Pic_1}{(1)}}\\
-& \subseteq \alpha^* h^1/h^0\left(\mathbb E_{\Mone{1}{\PP^4}{d}^p/\mathfrak{Pic_1{(1)}}}\right)(\sigma)\\
+& \subseteq \alpha^* h^1/h^0\left(\mathbb E_{\Mone{1}{\PP^4}{d}^p/\mathfrak{Pic}_1{(1)}}\right)(\sigma)\\
 &\cong h^1/h^0\left(\mathbb E_{\Z^p/\XP}\right)(\alpha^*\sigma)
 \end{align*}
 and we can thus define $[\Z^p]^{\rm{vir}}_{\alpha^*\sigma,\rm{loc}}:=\gamma^!_{\mathbb E_{\Z^p/\XP},\alpha^*\sigma}[\XP].$
 \begin{lem}\label{lem:comutativity}
-With the same setup and notation as in the definition of localised virtual pullback, suppose furthermore that $\varphi$ is proper and $\varphi'(Y')\cap U\neq\emptyset$. then
-for any $[B']\in A_*(\varphi'^*\mathbb{E}(\sigma'))$
-\begin{equation}\label{eq:commcos}\varphi'_*( s^!_{\sigma',\rm{loc}}[B'])=s^!_{\sigma,\rm{loc}}\left(\varphi^{\mathbb{E}}_*[B']\right)\,\in\, A_*(Y(\sigma)) 
-\end{equation}
-where $\varphi^{\mathbb{E}}\colon \varphi'^*\mathbb{E}(\sigma')\to \mathbb{E}(\sigma)$ is the natural induced morphism.
+With the same setup and notation as in the definition of localised virtual pullback, suppose furthermore that $\varphi$ is proper and $\varphi'(Y')\cap U\neq\emptyset$. For every cycle $[B']\in A_*(S')$,
+\[\phi'_*\circ(\rho')^!_{\mathbb E_{Y'/S'}}[B']=(\rho)^!_{\mathbb E_{Y/S}}\circ\phi_*[B]\in A_*(Y(\sigma)).\]
+
 \end{lem}
 \begin{proof}
-If $B'\subset \mathbb{E}\rvert_{Y'(\sigma')}$ then $\varphi(\sigma)(B')\subset \mathbb{E}\rvert_{Y(\sigma)}$
-thus the localised Gysin morphism are just $s^!_{\mathbb{E}\rvert_{Y'(\sigma')}}$, $s^!_{\mathbb{E}\rvert_{Y(\sigma)}}$ and the fact they commute with proper push-forward is already well known, see \cite{Kresh} or simply \cite[Chapter~4]{Fulton} if we assume the existence of global resolutions.
+Consider the following diagram:
+\bcd
+A_*(S')\ar[r]\ar[d] & A_*(\mathfrak C_{Y'/S'}) \ar[r]\ar[d] & A_*(h^1/h^0(\mathbb E_{Y'/S'})(\sigma'))\ar[r,"s_{\sigma',\rm{loc}}^!"]\ar[d] & A_*(Y'(\sigma'))\ar[d] \\
+A_*(S)\ar[r] & A_*(\mathfrak C_{Y/S}) \ar[r] & A_*(h^1/h^0(\mathbb E_{Y/S})(\sigma))\ar[r,"s_{\sigma,\rm{loc}}^!"] & A_*(Y(\sigma))
+\ecd
+Only the left-most square is not classical. Hence we are left with showing that for every cycle $[B']\in A_*(h^1/h^0(\mathbb{E}_{Y'/S'})(\sigma'))$ we have:
+\begin{equation}\label{eq:commcos}\varphi'_*( s^!_{\sigma',\rm{loc}}[B'])=s^!_{\sigma,\rm{loc}}\left(\varphi^{\mathbb{E}}_*[B']\right)\,\in\, A_*(Y(\sigma)),
+\end{equation}
+where $\varphi^{\mathbb{E}}\colon h^1/h^0(\mathbb{E}_{Y'/S'})(\sigma')\to h^1/h^0(\mathbb{E}_{Y/S})(\sigma)$ is induced by the morphism of vector bundle stacks.
 
-Let now $B'$ be a (integral) cycle in $\mathbb{E}(\sigma')$ not contained in  the restriction of the vector bundle stack to the degeneracy locus of $\sigma'.$ Then, accordingly to the construction recalled at the beginning of this section, 
- \[s^!_{\sigma',\rm{loc}}[B']:=k^{-1} \nu'(\sigma')_*\left([D]\cdot s^!_{\widetilde{G}}[\widetilde{B}]\right)\,\in\,A_*(Y'(\sigma')).\]
- where $\nu'\colon X\to Y'$ and $\nu'*\sigma'$ satisfy conditions~\eqref{cond:deflocal}. Notice that if we consider the composition
- $\nu\colon X\xrightarrow{\nu'} Y'\xrightarrow{\varphi} Y$ and the pull-back $\nu^*\sigma,$ the first two conditions in \eqref{cond:deflocal} are satisfied for any $B\in A_*(\mathbb E(\sigma)).$ 
- Consider 
- \[\widetilde{B}\to B'\to \varphi^{\mathbb{E}}(B'):=B.\]
- Suppose first that $B'\to B$ is generically finite of degree $h$, then $\widetilde{B}\to B$ satisfy the last condition in \eqref{cond:deflocal} and
+If $B'\subset h^1/h^0(\mathbb{E}_{Y'/S'})\rvert_{Y'(\sigma')}$ then $\varphi^{\mathbb E}(B')\subset h^1/h^0(\mathbb{E}_{Y/S})\rvert_{Y(\sigma)}$,
+thus the localised Gysin morphisms coincide with $s^!_{h^1/h^0(\mathbb{E}_{Y'/S'})\rvert_{Y'(\sigma')}}$ and $s^!_{h^1/h^0(\mathbb{E}_{Y/S})\rvert_{Y(\sigma)}}$, and their commutativity with proper pushforward is well-known, see \cite{Kresch} (or \cite[Chapter~3]{FUL} if we assume the existence of global resolutions).
+
+Assume then that $B'$ is a prime cycle in $h^1/h^0(\mathbb{E}_{Y'/S'})(\sigma')$ not contained in $h^1/h^0(\mathbb{E}_{Y'/S'})\rvert_{Y'(\sigma')}$. Then, according to the construction recalled at the beginning of this section, 
+ \[s^!_{\sigma',\rm{loc}}[B']:=\frac{1}{k} \nu'(\sigma')_*\left([D]\cdot s^!_{\widetilde{G}}[\widetilde{B}]\right)\,\in\,A_*(Y'(\sigma')),\]
+ where $\nu'\colon X\to Y'$, $(\nu')^*(\sigma')$ and $\widetilde B$ satisfy the conditions~\eqref{cond:deflocal}. Notice that if we consider the composition
+ $\nu\colon X\xrightarrow{\nu'} Y'\xrightarrow{\varphi'} Y$ and the pull-back $\nu^*(\sigma)$, the first two conditions in \eqref{cond:deflocal} are satisfied. How about
+ \[\widetilde{B}\to B'\to \varphi^{\mathbb{E}}(B')=:B?\]
+ Suppose first that $B'\to B$ is generically finite of degree $h$; then $\widetilde{B}\to B$ satisfies the last condition in \eqref{cond:deflocal} and has degree $hk$, so:
  \begin{align*}
- \varphi'_*( s^!_{\sigma',\rm{loc}}[B'])&= k^{-1}\varphi'_*\ \nu'(\sigma')_*\left([D]\cdot s^!_{\widetilde{G}}[\widetilde{B}]\right)\\
- &=k^{-1} \nu(\sigma)_*\left([D]\cdot s^!_{\widetilde{G}}[\widetilde{B}]\right)\\
+ \varphi'_*( s^!_{\sigma',\rm{loc}}[B'])&= \frac{1}{k}\varphi'_*\ \nu'(\sigma')_*\left([D]\cdot s^!_{\widetilde{G}}[\widetilde{B}]\right)\\
+ &=\frac{1}{k} \nu(\sigma)_*\left([D]\cdot s^!_{\widetilde{G}}[\widetilde{B}]\right)\\
  &=h\, s_{\sigma,\rm{loc}}^![B]\\
- &=s_{\sigma,\rm{loc}}^!(\varphi^{\mathbb{E}}_*[B'])
+ &=s_{\sigma,\rm{loc}}^!(\varphi^{\mathbb{E}}_*[B']).
  \end{align*}
-If instead $B'\to B$ is not generically finite, then the RHS  in \eqref{eq:commcos} is zero. Let us show that the same is true for the LHS. By \cite[Lemma~2.7]{KLcosection}, to show that 
-\[\operatorname{LHS}=\nu(\sigma)_*\left([D]\cdot s^!_{\widetilde{G}}[\widetilde{B}]\right)=0\,\in A_*(Y(\sigma)),\]
-with $[\widetilde{B}]\in \, Z_*(G),$
-it is enough to show that $\nu_*^{\mathbb{E}}[\widetilde B]$ is zero in $A_*(\mathbb{E})$ where $\nu^{\mathbb{E}}$ is the natural morphism induced by $\nu.$ Then it is immediate, indeed since  $\nu^{\mathbb{E}}=\varphi^{\mathbb{E}}\circ\nu'^{\mathbb{E}}$  and we assumed $\varphi^{\mathbb{E}}\colon B'\to B$ has fibers of positive dimension, $\nu_*^{\mathbb{E}}[\widetilde B]=0$ by definition of proper push-forward.
-
- 
- 
+If instead $B'\to B$ is not generically finite, then the right-hand side in formula \eqref{eq:commcos} is zero. In order to show that the same is true for the left-hand side it is enough to appeal to \cite[Lemma~2.7]{KLcosection}, since $\nu_*^{\mathbb{E}}[\widetilde B]=(\nu')_*^{\mathbb E}\circ \phi^{\mathbb E}_*[\widetilde B]=0.$ %to show that 
+%\[\operatorname{LHS}=\nu(\sigma)_*\left([D]\cdot s^!_{\widetilde{G}}[\widetilde{B}]\right)=0\,\in A_*(Y(\sigma)),\]
+%with $[\widetilde{B}]\in \, Z_*(G),$
+%it is enough to show that $\nu_*^{\mathbb{E}}[\widetilde B]$ is zero in $A_*(\mathbb{E})$ where $\nu^{\mathbb{E}}$ is the natural morphism induced by $\nu.$ Then it is immediate, indeed since  $\nu^{\mathbb{E}}=\varphi^{\mathbb{E}}\circ\nu'^{\mathbb{E}}$  and we assumed $\varphi^{\mathbb{E}}\colon B'\to B$ has fibers of positive dimension, $\nu_*^{\mathbb{E}}[\widetilde B]=0$ by definition of proper push-forward.
 \end{proof}
 
 \begin{cor}
 $\deg[\Z^p]^{\rm{vir}}_{\rm{loc}}=\deg[\Mone{1}{\PP^4}{d}^p]^{\rm{vir}}_{\rm{loc}}$
 \end{cor}
+
+This descends from the following lemma and the fact that $\XP$ and $\mathfrak{Pic}_1(1)$ are birational.
+
+\begin{lem}
+ The $1$-stabilisation $\mathfrak{M}_1^{\rm{wt,st}}\to \mathfrak{M}_1^{\rm{wt,st}}(1)$ is a proper morphism.
+\end{lem}
 \begin{proof}
-We show that
-\[\alpha_*[\Z^p]^{\alpha^*\sigma_1,\rm{vir}}_{\rm{loc}}=[\Mone{1}{\PP^4}{d}^p]^{\rm{vir}}_{\sigma_1,\rm{loc}},\]
-then the statement follow given that $\alpha$ is generically 1 to 1.
-Notice  first of all that the 1-stabilisation $\mathfrak{M}_1^{\rm{w}}\to \mathfrak{M}_1^{1,\rm{w}}$ is proper. As usual, we use the lifting criterion and thus we have to show that, up to a base change, the dashed arrow and the $\mathcal C$ in the following commutative diagram exist
+Use the valuative criterion: let $\dvr$ be a DVR scheme with generic point $\eta$; we have to fill in the upper right part of the following diagram:
 \bcd
 \mathcal C_{\eta}\ar[d,"\phi_{\eta}"] \ar[r,dashed, hookrightarrow] &\mathcal C\ar[d, dashed, "\phi"]\\
-\hat{\mathcal C_{\eta}}\ar[r, hookrightarrow] &\hat{\mathcal{C}}
+\hC_{\eta}\ar[r, hookrightarrow] &\hC
 \ecd
-where the family are over a DVR $T$ and $\eta$ is its generic point. We can in fact assume that $\phi_{\eta}$ is an isomorphism and then notice that it is enough to consider the semi-stable model of $\hat{\mathcal C}.$
-Thus, since the 1-stabilisation $\phi$ is generically an isomorphism it follows that
-\[\phi_*[\mathfrak{M}_1^{\rm{w}}]=[\mathfrak{M}_1^{1,\rm{w}}]\]
-and analogously,
-\[\phi_*[\XP]=[\mathfrak{Pic_1{(1)}}]\]
-Finally, recall that the deformation to the normal cone construction ensures the commutativity of
-\bcd
-A_*(\XP)\ar[r,"\zeta'"]\ar[d,"\phi_*"] & A_*(\mathfrak C_{\Z^p/\XP}) \ar[d,"\phi(\sigma)_*"]\\
-A_*(\mathfrak{Pic_1{(1)}})\ar[r,"\zeta"] & A_*(\mathfrak C_{\Mone{1}{\PP^4}{d}^p/\mathfrak{Pic_1{(1)}}})
-\ecd
-and thus 
-\[\phi(\sigma)_*[\mathfrak C_{\Z^p/\XP}]\cong [\mathfrak C_{\Mone{1}{\PP^4}{d}^p/\mathfrak{Pic_1{(1)}}}].\]
-The identity at the level of virtual classes now follows from the definition of cosection localised virtual class and Lemma~\ref{lem:comutativity}.
+We may in fact assume that $\phi_{\eta}$ is an isomorphism, and then it is enough to take the semistable model of $\hC.$
 \end{proof}
+%We show that
+%\[\alpha_*[\Z^p]^{\alpha^*\sigma_1,\rm{vir}}_{\rm{loc}}=[\Mone{1}{\PP^4}{d}^p]^{\rm{vir}}_{\sigma_1,\rm{loc}},\]
+%then the statement follow given that $\alpha$ is generically 1 to 1.
+%Notice  first of all that  As usual, we use the lifting criterion and thus we have to show that, up to a base change, the dashed arrow and the $\mathcal C$ in the following commutative diagram exist
+
+%where the family are over a DVR $T$ and $\eta$ is its generic point. We can in fact assume that $\phi_{\eta}$ is an isomorphism and then notice that it is enough to consider the semi-stable model of $\hat{\mathcal C}.$
+%Thus, since the 1-stabilisation $\phi$ is generically an isomorphism it follows that
+%\[\phi_*[\mathfrak{M}_1^{\rm{w}}]=[\mathfrak{M}_1^{1,\rm{w}}]\]
+%and analogously,
+%\[\phi_*[\XP]=[\mathfrak{Pic_1{(1)}}]\]
+%Finally, recall that the deformation to the normal cone construction ensures the commutativity of
+%\bcd
+%A_*(\XP)\ar[r,"\zeta'"]\ar[d,"\phi_*"] & A_*(\mathfrak C_{\Z^p/\XP}) \ar[d,"\phi(\sigma)_*"]\\
+%A_*(\mathfrak{Pic_1{(1)}})\ar[r,"\zeta"] & A_*(\mathfrak C_{\Mone{1}{\PP^4}{d}^p/\mathfrak{Pic_1{(1)}}})
+%\ecd
+%and thus 
+%\[\phi(\sigma)_*[\mathfrak C_{\Z^p/\XP}]\cong [\mathfrak C_{\Mone{1}{\PP^4}{d}^p/\mathfrak{Pic_1{(1)}}}].\]
+%The identity at the level of virtual classes now follows from the definition of cosection localised virtual class and %Lemma~\ref{lem:comutativity}.
+%\end{proof}
 
 
 
